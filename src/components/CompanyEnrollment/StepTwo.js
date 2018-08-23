@@ -20,13 +20,43 @@ export class StepTwo extends React.Component {
       AutoEnroll: "",
       enrollmentPercentage: "",
       planType: "",
-      payrollProvider: "",
+      provider: "",
       paymentCycle: "",
-      modalIsOpen: false
+      modalIsOpen: false,
+      providerOtherTwo: false,
+      paymentCycleOther: false
     };
     this.initialState = this.state;
     Modal.setAppElement(document.body);
   }
+
+  providerOtherTwo = () => {
+    return (
+      <div>
+        <label htmlFor="provider">Please indicate your provider</label>
+        <input
+          type="text"
+          name="provider"
+          id="signupInput"
+          onChange={this.handleProviderChange}
+        />
+      </div>
+    );
+  };
+
+  paymentCycleOther = () => {
+    return (
+      <div>
+        <label htmlFor="paymentCycle">Please indicate your payment cycle</label>
+        <input
+          type="text"
+          name="paymentCycle"
+          id="signupInput"
+          onChange={this.handlePaymentCycleChange}
+        />
+      </div>
+    );
+  };
 
   handleAutoEnrollChange = event => {
     this.setState({ AutoEnroll: event.target.value });
@@ -46,6 +76,28 @@ export class StepTwo extends React.Component {
 
   handlePaymentCycleChange = event => {
     this.setState({ paymentCycle: event.target.value });
+  };
+
+  handleOtherProviderChangeTwo = event => {
+    this.setState(
+      { provider: event.target.value, providerOtherTwo: false },
+      () => {
+        if (this.state.provider === "Other") {
+          this.setState({ providerOtherTwo: true });
+        }
+      }
+    );
+  };
+
+  handlePaymentCycleOtherChange = event => {
+    this.setState(
+      { paymentCycle: event.target.value, paymentCycleOther: false },
+      () => {
+        if (this.state.paymentCycle === "Other") {
+          this.setState({ paymentCycleOther: true });
+        }
+      }
+    );
   };
 
   openModal = () => {
@@ -137,12 +189,12 @@ export class StepTwo extends React.Component {
 
         <hr />
         <div id="formSection2">
-          <label htmlFor="payrollProvider">Payroll Provider</label>
+          <label htmlFor="provider">Payroll Provider</label>
           <select
             id="signupInputDrop"
-            name="payrollProvider"
-            onChange={this.handleProviderChange}
-            value={this.state.payrollProvider}
+            name="provider"
+            onChange={this.handleOtherProviderChangeTwo}
+            value={this.state.provider}
           >
             <option value="" disabled selected>
               Select something...
@@ -154,11 +206,12 @@ export class StepTwo extends React.Component {
             <option value="SurePayroll">SurePayroll</option>
             <option value="Other">Other</option>
           </select>
+          {this.state.providerOtherTwo ? this.providerOtherTwo() : null}
           <hr />
           <label htmlFor="paymentCycle">Payment Cycle</label>
           <select
             name="paymentCycle"
-            onChange={this.handlePaymentCycleChange}
+            onChange={this.handlePaymentCycleOtherChange}
             value={this.state.paymentCycle}
           >
             <option value="" disabled selected>
@@ -167,7 +220,9 @@ export class StepTwo extends React.Component {
             <option value="Weekly">Weekly</option>
             <option value="Bi-Weekly">Bi-Weekly</option>
             <option value="Semi-Monthly">Semi-Monthly</option>
+            <option value="Other">Other</option>
           </select>
+          {this.state.paymentCycleOther ? this.paymentCycleOther() : null}
         </div>
         <br />
         <hr />

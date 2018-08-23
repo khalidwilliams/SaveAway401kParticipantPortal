@@ -7,9 +7,42 @@ export class StepThree extends React.Component {
     super();
     this.state = {
       Admin: "",
-      PlanStatus: ""
+      PlanStatus: "",
+      adminOther: false,
+      AdminName: "",
+      AdminPhone: "",
+      AdminEmail: ""
     };
   }
+
+  adminOther = () => {
+    return (
+      <div>
+        <label htmlFor="Admin">Please Provide Admin Info</label>
+        <input
+          type="text"
+          name="AdminName"
+          id="signupInput"
+          onChange={this.handleAdminOtherForm}
+          placeholder="Name"
+        />
+        <input
+          type="text"
+          name="AdminPhone"
+          id="signupInput"
+          onChange={this.handleAdminOtherForm}
+          placeholder="Phone"
+        />
+        <input
+          type="text"
+          name="AdminEmail"
+          id="signupInput"
+          onChange={this.handleAdminOtherForm}
+          placeholder="Email"
+        />
+      </div>
+    );
+  };
 
   handleAdminChange = event => {
     this.setState({ Admin: event.target.value });
@@ -18,6 +51,23 @@ export class StepThree extends React.Component {
   handlePlanStatusChange = event => {
     this.setState({ PlanStatus: event.target.value });
   };
+
+  handleOtherAdminChange = event => {
+    this.setState({ Admin: event.target.value, adminOther: false }, () => {
+      if (this.state.Admin === "No, it will be someone else") {
+        this.setState({ adminOther: true });
+      }
+    });
+  };
+
+  handleAdminOtherForm = event => {
+    this.setState({
+      AdminName: event.target.value,
+      AdminPhone: event.target.value,
+      AdminEmail: event.target.value
+    });
+  };
+
   render() {
     return (
       <div>
@@ -30,15 +80,16 @@ export class StepThree extends React.Component {
             <select
               name="Admin"
               id="signupInputDrop"
-              onChange={this.handleAdminChange}
+              onChange={this.handleOtherAdminChange}
               value={this.state.Admin}
             >
               <option value="" disabled selected>
                 Please Select Yes or No
               </option>
               <option>Yes, use my contact information as primary</option>
-              <option>No, It will be someone else</option>
+              <option>No, it will be someone else</option>
             </select>
+            {this.state.adminOther ? this.adminOther() : null}
           </div>
           <div id="signupDiv">
             <label htmlFor="PlanStatus">

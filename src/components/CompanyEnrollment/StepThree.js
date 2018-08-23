@@ -6,10 +6,43 @@ export class StepThree extends React.Component {
     super();
     this.state = {
       Admin: "",
-      PlanStatus: ""
+      PlanStatus: "",
+      adminOtherTwo: false,
+      AdminName: "",
+      AdminPhone: "",
+      AdminEmail: ""
     };
     this.initialState = this.state;
   }
+
+  adminOtherTwo = () => {
+    return (
+      <div>
+        <label htmlFor="Admin">Please Provide Admin Info</label>
+        <input
+          type="text"
+          name="AdminName"
+          id="signupInput"
+          onChange={this.handleAdminOtherForm}
+          placeholder="Name"
+        />
+        <input
+          type="text"
+          name="AdminPhone"
+          id="signupInput"
+          onChange={this.handleAdminOtherForm}
+          placeholder="Phone"
+        />
+        <input
+          type="text"
+          name="AdminEmail"
+          id="signupInput"
+          onChange={this.handleAdminOtherForm}
+          placeholder="Email"
+        />
+      </div>
+    );
+  };
 
   handleAdminChange = event => {
     this.setState({ Admin: event.target.value });
@@ -17,6 +50,22 @@ export class StepThree extends React.Component {
 
   handlePlanStatusChange = event => {
     this.setState({ PlanStatus: event.target.value });
+  };
+
+  handleOtherAdminChangeTwo = event => {
+    this.setState({ Admin: event.target.value, adminOtherTwo: false }, () => {
+      if (this.state.Admin === "No, it will be someone else") {
+        this.setState({ adminOtherTwo: true });
+      }
+    });
+  };
+
+  handleAdminOtherFormTwo = event => {
+    this.setState({
+      AdminName: event.target.value,
+      AdminPhone: event.target.value,
+      AdminEmail: event.target.value
+    });
   };
 
   render() {
@@ -32,7 +81,7 @@ export class StepThree extends React.Component {
           </label>
           <select
             name="Admin"
-            onChange={this.handleAdminChange}
+            onChange={this.handleOtherAdminChangeTwo}
             value={this.state.Admin}
             id="signupInputDrop"
           >
@@ -40,8 +89,9 @@ export class StepThree extends React.Component {
               Please Select Yes or No
             </option>
             <option>Yes, use my contact information as primary</option>
-            <option>No, It will be someone else</option>
+            <option>No, it will be someone else</option>
           </select>
+          {this.state.adminOtherTwo ? this.adminOtherTwo() : null}
           <hr />
           <label htmlFor="PlanStatus">
             Does your company have a 401k plan now?

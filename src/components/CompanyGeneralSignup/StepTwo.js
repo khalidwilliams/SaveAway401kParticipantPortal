@@ -1,6 +1,6 @@
 "use strict";
 import React from "react";
-import SimpleStorage, { resetParentState } from "../../stores/SimpleStorage";
+import SimpleStorage from "../../stores/SimpleStorage";
 
 export class StepTwo extends React.Component {
   constructor() {
@@ -9,20 +9,38 @@ export class StepTwo extends React.Component {
       payroll: "",
       provider: "",
       heardAbout: "",
-      providerOther: false
+      providerOther: false,
+      heardAboutOther: false
     };
   }
 
-  componentWillMount() {
-    console.log("I am a log message !");
-  }
+  providerOther = () => {
+    return (
+      <div>
+        <label htmlFor="provider">Please indicate your provider</label>
+        <input
+          type="text"
+          name="provider"
+          id="signupInput"
+          onChange={this.handleProviderChange}
+        />
+      </div>
+    );
+  };
 
-  componentDidUpdate(prevState) {
-    // Typical usage (don't forget to compare props):
-    if (this.state.provider !== prevState.provider) {
-      console.log("working?");
-    }
-  }
+  heardAboutOther = () => {
+    return (
+      <div>
+        <label htmlFor="heardAbout">Please indicate your source</label>
+        <input
+          type="text"
+          name="heardAbout"
+          id="signupInput"
+          onChange={this.handleHeardAboutChange}
+        />
+      </div>
+    );
+  };
 
   handlePayrollChange = event => {
     this.setState({ payroll: event.target.value });
@@ -36,35 +54,29 @@ export class StepTwo extends React.Component {
     this.setState({ heardAbout: event.target.value });
   };
 
-  handleOptionChange = () => {
-    if (this.state.provider === "Other") {
-      this.setState({ providerOther: true });
-      console.log("true triggered", this.state.providerOther);
-    } else {
-      this.setState({ providerOther: false });
-      console.log("false triggered", this.state.providerOther);
-    }
+  handleOtherProviderChange = event => {
+    this.setState(
+      { provider: event.target.value, providerOther: false },
+      () => {
+        if (this.state.provider === "Other") {
+          this.setState({ providerOther: true });
+        }
+      }
+    );
   };
 
-  handleOtherProviderChange = event => {
-    this.setState({ provider: event.target.value });
-    this.handleOptionChange();
+  handleHeardAboutProviderChange = event => {
+    this.setState(
+      { heardAbout: event.target.value, heardAboutOther: false },
+      () => {
+        if (this.state.heardAbout === "Other") {
+          this.setState({ heardAboutOther: true });
+        }
+      }
+    );
   };
 
   render() {
-    const providerOther = this.state.providerOther ? (
-      <div>
-        <label htmlFor="provider">
-          If you chose other please indicate your provider
-        </label>
-        <input
-          type="text"
-          name="provider"
-          id="signupInput"
-          onChange={this.handleProviderChange}
-        />
-      </div>
-    ) : null;
     return (
       <div>
         <SimpleStorage parent={this} />
@@ -79,7 +91,7 @@ export class StepTwo extends React.Component {
               onChange={this.handlePayrollChange}
               value={this.state.payroll}
             >
-              <option value="" disabled selected>
+              <option disabled selected>
                 Please Select
               </option>
               <option>No, we do it manually</option>
@@ -100,11 +112,11 @@ export class StepTwo extends React.Component {
               <option>ADP</option>
               <option>Intuit</option>
               <option>Gusto</option>
-              <option>Pay</option>
+              <option>OnPay</option>
               <option>SurePayroll</option>
               <option>Other</option>
             </select>
-            {providerOther}
+            {this.state.providerOther ? this.providerOther() : null}
           </div>
           <div id="signupDiv">
             <label htmlFor="heardAbout">
@@ -113,7 +125,7 @@ export class StepTwo extends React.Component {
             <select
               name="heardAbout"
               id="signupInputDrop"
-              onChange={this.handleHeardAboutChange}
+              onChange={this.handleHeardAboutProviderChange}
               value={this.state.heardAbout}
             >
               <option value="" disabled selected>
@@ -126,6 +138,7 @@ export class StepTwo extends React.Component {
               <option>Advertisement</option>
               <option>Other</option>
             </select>
+            {this.state.heardAboutOther ? this.heardAboutOther() : null}
           </div>
           <br />
           <hr />

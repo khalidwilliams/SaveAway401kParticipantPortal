@@ -10,6 +10,7 @@ import Welcome from "../WelcomePage/Index";
 import WhatWeDo from "../About/WhatWeDo";
 import FundChoices from "../About/FundChoices";
 import Pricing from "../About/Pricing";
+import CompanyGeneralInfo from "../CompanyGeneralSignup/Index";
 import CompanyEnrollmentInfo from "../CompanyEnrollment/Index";
 import EmployeeInfo from "../CompanyEnrollment/EmployeeInfo";
 import FreeGuide from "../FreeGuide/Index";
@@ -24,7 +25,7 @@ const App = () => (
     <div className="app">
       <Navigation />
       <Route exact path={routes.LANDING} component={Welcome} />
-      <Route exact path={routes.SIGN_UP} component={() => <SignUpPage />} />
+      <Route exact path={routes.SIGN_UP} component={CompanyGeneralInfo} />
       <Route exact path={routes.LOG_IN} component={() => <SignInPage />} />
       <Route
         exact
@@ -42,7 +43,6 @@ const App = () => (
       <Route exact path="/Guide" component={Guide} />
       <Route exact path="/401K-News" component={News} />
       <Route exact path="/Confirmation" component={Confirmation} />
-      <Route exact path={routes.ACCOUNT} component={() => <AccountPage />} />
       <hr />
     </div>
   </Router>

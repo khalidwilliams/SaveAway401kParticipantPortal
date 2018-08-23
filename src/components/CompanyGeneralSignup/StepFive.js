@@ -20,7 +20,7 @@ export class StepFive extends React.Component {
     let heardAbout = JSON.parse(window.localStorage._heardAbout);
     let Admin = JSON.parse(window.localStorage._Admin);
     let PlanStatus = JSON.parse(window.localStorage._PlanStatus);
-    let checked = JSON.parse(window.localStorage._checked);
+    let checked = true;
     super(props);
     this.state = {
       redirect: false,

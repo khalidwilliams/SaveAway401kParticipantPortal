@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import SimpleStorage from "../CompanyEnrollment/SimpleStorage";
+import SimpleStorage from "../../stores/SimpleStorage";
 
 export default class States extends React.Component {
   constructor() {

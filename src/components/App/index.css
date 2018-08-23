@@ -8,8 +8,8 @@
   src: url("../Fonts/DINAlternateRegular.otf");
 }
 
-#App {
-  font-family: DINAlternateRegular, sans-serif;
+.App {
+  font-family: DINAlternateRegular;
 }
 html,
 body {
@@ -32,7 +32,7 @@ a:hover {
 header {
   display: flex;
   justify-content: space-between;
-  font-family: DINAlternateBold, sans-serif;
+  font-family: DINAlternateBold;
   background-color: rgba(146, 43, 33, 0.9);
 }
 

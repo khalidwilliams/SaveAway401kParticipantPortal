@@ -1,7 +1,8 @@
-"use strict";
 import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
+import { auth, db } from "../../firebase";
+import * as routes from "../../constants/routes";
 import SimpleStorage from "../../stores/SimpleStorage";
-import { Redirect } from "react-router-dom";
 import { Toaster, Intent } from "@blueprintjs/core";
 import { config } from "../../firebase/firebase";
 
@@ -14,167 +15,153 @@ const loginStyles = {
   padding: "10px"
 };
 
+const SignUpPage = ({ history }) => (
+  <div id="signup-form">
+    <SimpleStorage parent={this} />
+    <h1 id="loginPage">Sign Up for an Account</h1>
+    <p>
+      note: you will not be able to create an account unless your passwords
+      match
+    </p>
+    <StepFour history={history} />
+  </div>
+);
+
+const updateByPropertyName = (propertyName, value) => () => ({
+  [propertyName]: value
+});
+
 const INITIAL_STATE = {
+  username: "",
   email: "",
-  password: "",
-  passwordConfirmed: "",
-  error: null,
-  checked: false
+  passwordOne: "",
+  passwordTwo: "",
+  error: null
 };
 
-export class StepFour extends React.Component {
+class StepFour extends Component {
   constructor(props) {
     super(props);
 
     this.state = { ...INITIAL_STATE };
   }
 
-  handleEmailChange = event => {
-    this.setState({
-      email: event.target.value
-    });
-  };
+  onSubmit = event => {
+    const { username, email, passwordOne } = this.state;
 
-  handlePasswordChange = event => {
-    this.setState({
-      password: event.target.value
-    });
-  };
+    const { history } = this.props;
 
-  handlePasswordConfirmedChange = event => {
-    this.setState({ passwordConfirmed: event.target.value });
-  };
-
-  handleCheckedChanged = event => {
-    this.setState(prevState => ({
-      checked: !prevState.checked
-    }));
-    console.log(this.state);
-  };
-
-  authWithEmailPassword = event => {
-    event.preventDefault();
-
-    const email = this.emailInput.value;
-    const password = this.passwordInput.value;
-    const passwordConfirmed = this.passwordConfirmedInput.value;
-
-    config
-      .auth()
-      .fetchSignInMethodsForEmail(email)
-      .then(providers => {
-        if (providers.length === 0) {
-          return config.auth().createUserWithEmailAndPassword(email, password);
-        } else {
-          return config.auth().signInWithEmailAndPassword(email, password);
-        }
+    auth
+      .doCreateUserWithEmailAndPassword(email, passwordOne)
+      .then(authUser => {
+        // Create a user in your own accessible Firebase Database too
+        db
+          .doCreateUser(authUser.user.uid, username, email)
+          .then(() => {
+            this.setState(() => ({ ...INITIAL_STATE }));
+            history.push(routes.HOME);
+          })
+          .catch(error => {
+            this.setState(updateByPropertyName("error", error));
+          });
       })
-      .then(alert("Account Created! Now click 'next' below to submit your information"));
+      .catch(error => {
+        this.setState(updateByPropertyName("error", error));
+      });
+
+    event.preventDefault();
   };
 
   render() {
-    const { email, password, passwordConfirmed, error, checked } = this.state;
+    const { username, email, passwordOne, passwordTwo, error } = this.state;
 
     const isInvalid =
-      password !== passwordConfirmed ||
-      password === "" ||
-      email === "" ||
-      checked === false;
+      passwordOne !== passwordTwo ||
+      passwordOne === "" ||
+      username === "" ||
+      email === "";
 
     return (
-      <div id="signup-form">
-        <SimpleStorage parent={this} />
-        <div id="accountDiv">
-          <h3 id="formHeader"> Create your Account </h3>
-        </div>
-        <div style={loginStyles}>
-          <Toaster
-            ref={element => {
-              this.toaster = element;
-            }}
-          />
-          <p>
-            note: you will not be able to create an account unless your
-            passwords match
-          </p>
-          <form
-            onSubmit={event => {
-              this.authWithEmailPassword(event);
-            }}
-            ref={form => {
-              this.loginForm = form;
-            }}
-          >
+      <div style={loginStyles}>
+      <div id="accountDiv">
+        <h3 id="formHeader"> Create your Account </h3>
+      </div>
+      <p>
+        note: you will not be able to create an account unless your
+        passwords match
+      </p>
+        <form onSubmit={this.onSubmit}>
+          <div id="loginInput">
+            <label>
+              Username
+              <input
+                value={username}
+                onChange={event =>
+                  this.setState(
+                    updateByPropertyName("username", event.target.value)
+                  )
+                }
+                type="text"
+                placeholder="Username"
+              />
+            </label>
             <label>
               Email
               <input
-                name="email"
-                type="email"
-                ref={input => {
-                  this.emailInput = input;
-                }}
-                placeholder="Email"
-                onChange={this.handleEmailChange}
+                value={email}
+                onChange={event =>
+                  this.setState(
+                    updateByPropertyName("email", event.target.value)
+                  )
+                }
+                type="text"
+                placeholder="Email Address"
               />
             </label>
-            <br />
+          </div>
+          <br />
+          <div id="loginInput">
             <label>
               Password
               <input
-                name="password"
+                value={passwordOne}
+                onChange={event =>
+                  this.setState(
+                    updateByPropertyName("passwordOne", event.target.value)
+                  )
+                }
                 type="password"
-                ref={input => {
-                  this.passwordInput = input;
-                }}
                 placeholder="Password"
-                onChange={this.handlePasswordChange}
               />
-            </label>
-            <br />
-            <label>
-              Confirm Password
               <input
-                name="passwordConfirmed"
+                value={passwordTwo}
+                onChange={event =>
+                  this.setState(
+                    updateByPropertyName("passwordTwo", event.target.value)
+                  )
+                }
                 type="password"
-                ref={input => {
-                  this.passwordConfirmedInput = input;
-                }}
-                placeholder="Password"
-                onChange={this.handlePasswordConfirmedChange}
+                placeholder="Confirm Password"
               />
             </label>
-            <br />
-            <hr />
-            <div>
-              <span>By clicking "Accept" I agree that:</span>
-              <ul>
-                <li>
-                  I have read and accepted the <a href="#">User Agreement</a>
-                </li>
-                <li>
-                  I have read and accepted the <a href="#">Privacy Policy</a>
-                </li>
-                <li>I am at least 18 years old</li>
-              </ul>
-              <label>
-                <input
-                  type="checkbox"
-                  defaultChecked={this.state.checked}
-                  onChange={this.handleCheckedChanged}
-                  autoFocus
-                />
-                <span> Accept </span>
-              </label>
-            </div>
-            <input
-              type="submit"
-              value="Create Account"
-              id="accountSignin"
-              disabled={isInvalid}
-            />
-          </form>
-        </div>
+          </div>
+          <button disabled={isInvalid} type="submit" id="accountSignin">
+            Create Account
+          </button>
+
+          {error && <p>{error.message}</p>}
+        </form>
       </div>
     );
   }
 }
+
+const SignUpLink = () => (
+  <p>
+    Dont have an account? <Link to={routes.SIGN_UP}>Sign Up</Link>
+  </p>
+);
+
+export default withRouter(SignUpPage);
+
+export { StepFour, SignUpLink };
