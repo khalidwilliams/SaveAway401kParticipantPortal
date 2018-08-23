@@ -37,11 +37,11 @@ ol.progtrckr li.progtrckr-todo {
 }
 ol.progtrckr li.progtrckr-doing {
   color: #616a6b;
-  border-bottom: 4px solid #A93226;
+  border-bottom: 4px solid #a93226;
 }
 ol.progtrckr li.progtrckr-done {
   color: #616a6b;
-  border-bottom: 4px solid #A93226;
+  border-bottom: 4px solid #a93226;
 }
 ol.progtrckr li:after {
   content: "\00a0\00a0";
@@ -66,7 +66,7 @@ ol.progtrckr li.progtrckr-todo:hover:before {
 ol.progtrckr li.progtrckr-doing:before {
   content: "\2022";
   color: white;
-  background-color: #A93226;
+  background-color: #a93226;
   width: 1.2em;
   line-height: 1.2em;
   border-radius: 1.2em;
@@ -78,7 +78,7 @@ ol.progtrckr li.progtrckr-doing:hover:before {
 ol.progtrckr li.progtrckr-done:before {
   content: "\2713";
   color: white;
-  background-color: #A93226;
+  background-color: #a93226;
   width: 1.2em;
   line-height: 1.2em;
   border-radius: 1.2em;
@@ -87,58 +87,57 @@ ol.progtrckr li.progtrckr-done:hover:before {
   color: #943126;
 }
 
-#formAnswer{
-  display:flex;
+#formAnswer {
+  display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-#formInput{
-
+#formInput {
 }
 
-#formHeader{
-  display:flex;
+#formHeader {
+  display: flex;
   justify-content: center;
 }
 
 #nextButton {
-  height:35px;
+  height: 35px;
   font-size: 1.5rem;
   background-color: rgb(146, 43, 33, 0.9);
   color: white;
   border-radius: 4px;
-  margin:1rem
+  margin: 1rem;
 }
 
-#multiPageSubmit{
-  display:flex;
+#multiPageSubmit {
+  display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
-#submitButtonMulti{
-  height:40px;
+#submitButtonMulti {
+  height: 40px;
   font-size: 1.5rem;
   background-color: rgb(146, 43, 33, 0.9);
   color: white;
   border-radius: 4px;
-  margin-right: 10rem
+  margin-right: 10rem;
 }
 
-#signupInput{
-  width:20%;
-  padding:0.5rem;
-  margin: 1rem 0.5rem
+#signupInput {
+  width: 20%;
+  padding: 0.5rem;
+  margin: 1rem 0.5rem;
 }
-#signupInputDrop{
-  width:auto;
-  padding:0.5rem;
-  margin: 1rem 0.5rem
+#signupInputDrop {
+  width: auto;
+  padding: 0.5rem;
+  margin: 1rem 0.5rem;
 }
 
-#signupDiv{
+#signupDiv {
   display: flex;
   flex-direction: row;
-  align-items:center;
-  margin: 1rem 0.5rem
+  align-items: center;
+  margin: 1rem 0.5rem;
 }

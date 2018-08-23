@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action } from "mobx";
 
 class SessionStore {
   @observable authUser = null;
@@ -7,9 +7,10 @@ class SessionStore {
     this.rootStore = rootStore;
   }
 
-  @action setAuthUser = authUser => {
+  @action
+  setAuthUser = authUser => {
     this.authUser = authUser;
-  }
+  };
 }
 
 export default SessionStore;

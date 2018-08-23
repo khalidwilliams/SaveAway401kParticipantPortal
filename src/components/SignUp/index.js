@@ -132,7 +132,7 @@ class SignUpForm extends Component {
             />
           </label>
         </div>
-        <button disabled={isInvalid} type="submit" id="accountSignin" >
+        <button disabled={isInvalid} type="submit" id="accountSignin">
           Create Account
         </button>
 
