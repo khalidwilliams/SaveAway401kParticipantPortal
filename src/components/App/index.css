@@ -1,3 +1,821 @@
-.app {
-  margin: 20px;
+@font-face {
+  font-family: DINAlternateBold;
+  src: url("../Fonts/DINAlternateBold.otf");
+}
+
+@font-face {
+  font-family: DINAlternateRegular;
+  src: url("../Fonts/DINAlternateRegular.otf");
+}
+
+#App {
+  font-family: DINAlternateRegular, sans-serif;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: rgba(100, 30, 22, 0.5);
+}
+
+a {
+  color: #78281f;
+  text-decoration: none;
+}
+a:hover {
+  color: #cb4335;
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  font-family: DINAlternateBold, sans-serif;
+  background-color: rgba(146, 43, 33, 0.9);
+}
+
+nav {
+  display: flex;
+  font-size: 1rem;
+  padding-right: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+select {
+  font-size: 1.3rem;
+  color: #626567;
+  width: 200px;
+  margin-left: 1rem;
+}
+
+label {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  margin: 0.5rem;
+}
+
+input {
+  height: 15px;
+  margin: 0.5rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(100, 30, 22);
+  height: 80px;
+  width: 100%;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+#footerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(100, 30, 22);
+  height: 80px;
+  width: 100%;
+  color: white;
+  position: sticky;
+  left: 0;
+  bottom: 0;
+}
+
+.logo {
+  height: 8rem;
+  padding: 1rem;
+}
+
+#navBar {
+  display: flex;
+  flex-direction: row;
+}
+
+#signOutButton {
+  display: flex;
+  padding: 0.5rem 1rem;
+  font-family: DINAlternateRegular, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.4rem;
+  border: 1px;
+  border-radius: 5px;
+  border-style: dotted;
+  color: white;
+  background-color: rgba(146, 43, 33, 0.9);
+}
+#signOutButton:hover {
+  color: #8b3d30;
+  background-color: #f9ebea;
+}
+
+#navItem {
+  display: flex;
+  padding: 0.5rem 1rem;
+  font-family: DINAlternateRegular, sans-serif;
+  margin: 0.4rem;
+  border: 1px;
+  border-radius: 5px;
+  border-style: dotted;
+  color: white;
+}
+#navItem:hover {
+  color: #f9ebea;
+}
+
+#infoSignup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#introInfo {
+  display: flex;
+  font-size: 1.5rem;
+  color: #eefcfa;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+#welcomePageForm {
+  font-size: 1.5rem;
+  padding: 0;
+  padding-left: 0.5rem;
+  margin: 0;
+}
+
+#welcomePageForm1 {
+  font-size: 1.3rem;
+  padding: 0;
+  padding-left: 0.5rem;
+  margin: 0;
+}
+
+#inputWelcome {
+  width: 75px;
+}
+
+#welcomePageDrop {
+  width: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#upperTagline {
+  font-size: 4rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#lowerTagline {
+  padding: 2rem;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+#signup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: white;
+  margin: 1rem;
+}
+
+#signup-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  color: white;
+  background-color: rgba(249, 235, 234, 0.5);
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border-color: rgba(146, 43, 33, 0.9);
+  border-style: groove;
+}
+
+#signupSelect {
+  width: auto;
+}
+
+#companySignupDiv {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 1.3rem;
+  padding-left: 5rem;
+}
+
+#signupDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom-style: ridge;
+  border-color: rgba(146, 43, 33, 0.7);
+  border-radius: 2px;
+  padding-bottom: 1.2rem;
+}
+
+#signupDivOther {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  border-bottom-style: ridge;
+  border-color: rgba(146, 43, 33, 0.7);
+  border-radius: 2px;
+  padding-bottom: 1.2rem;
+}
+
+#accountDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom-style: ridge;
+  border-color: rgba(146, 43, 33, 0.7);
+  border-radius: 2px;
+}
+
+#loginPage {
+  text-align: center;
+  color: white;
+}
+
+#loginContainer {
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#loginInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#accountInfoLabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accountInfoInput {
+  height: 25px;
+  padding-left: 1rem;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+#linkToSignup {
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-right: 0.8rem;
+}
+
+#accomplishList {
+  display: flex;
+  flex-direction: row;
+}
+
+#navBarSide {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 15%;
+  height: 70%;
+  margin-left: 2rem;
+  background-color: rgb(146, 43, 33, 0.9);
+  margin-top: 3.5rem;
+  border-radius: 4px;
+}
+
+/*same height centered*/
+#navItemAbout1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: DINAlternateRegular, sans-serif;
+  width: 120px;
+  height: 60px;
+  font-size: 1.2;
+  padding: 0.5rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  margin-left: 0.7rem;
+  border: 1px;
+  border-radius: 5px;
+  border-style: ridge;
+  color: white;
+  background-color: rgb(146, 43, 33, 0.9);
+}
+
+/*small font centered*/
+#navItemAbout {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: DINAlternateRegular, sans-serif;
+  width: 120px;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  margin-left: 0.7rem;
+  border: 1px;
+  border-radius: 5px;
+  border-style: ridge;
+  color: white;
+  background-color: rgb(146, 43, 33, 0.9);
+}
+
+#navItemAbout:hover {
+  color: #f9ebea;
+}
+
+#aboutContent {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+#aboutSections {
+  display: flex;
+  flex-direction: row;
+}
+
+#fundsDescription {
+  color: white;
+}
+
+#fundLists {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+#fullFund {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+#fundBreakDowns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#fullFundHeader {
+  font-size: 1.8rem;
+}
+
+#fullFundIcon {
+  width: 90%;
+  padding: 0.5rem;
+}
+
+#fundIcon {
+  width: 95%;
+  margin: 0.5rem;
+}
+
+#priceImage {
+  padding: 1rem;
+}
+
+#companyInfo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#formSection {
+  background-color: rgb(146, 43, 33, 0.4);
+  margin: 0.5rem;
+  border-radius: 3px;
+  border-style: groove;
+}
+
+#formSection2 {
+  background-color: rgb(146, 43, 33, 0.3);
+  margin: 0.5rem;
+  border-radius: 3px;
+  padding: 1rem;
+  border-style: groove;
+}
+
+#shorterInput {
+  width: 120px;
+  height: 18px;
+}
+
+#dropDownInput {
+  width: 200px;
+  height: 25px;
+}
+
+#modalButton {
+  height: 30px;
+  font-size: 1.2rem;
+  color: rgb(146, 43, 33, 0.9);
+  background-color: rgb(255, 248, 247, 0.9);
+  border-radius: 4px;
+  margin-right: 5rem;
+}
+
+#planModal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#employeeInfoBox {
+  color: white;
+  background-color: rgba(249, 235, 234, 0.5);
+}
+
+#employeeInfoHeader {
+  font-size: 1.8rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+#employeeInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin: 1rem;
+  background-color: #ac8984;
+}
+
+#employeeInput {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  padding: 0.3rem;
+  width: 150px;
+}
+
+#submitButton {
+  height: 40px;
+  font-size: 1.5rem;
+  background-color: rgb(146, 43, 33, 0.9);
+  color: white;
+  border-radius: 4px;
+}
+
+#accountSignin:disabled {
+  height: 40px;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  background-color: rgba(112, 123, 124, 0.4);
+}
+
+#accountSignin {
+  height: 40px;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  background-color: rgb(146, 43, 33, 0.9);
+  color: white;
+}
+
+#blogFeed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+#guideHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+}
+
+.retirement {
+  display: flex;
+  width: 90%;
+  padding: 2.5rem;
+}
+
+.accountInfo {
+  width: 90%;
+  padding: 0.5rem 2.5rem;
+}
+
+#guideInfo {
+  padding: 0.5rem 2.5rem;
+  color: white;
+}
+
+#guideInfoStory {
+  padding: 0.5rem 4rem;
+  color: white;
+}
+
+#compoundLine {
+  width: 70%;
+}
+
+#quote {
+  padding: 0 3.5rem;
+  color: white;
+  font-style: italic;
+}
+
+#confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+#confirmationInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#confirmButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  font-size: 1.5rem;
+  background-color: #a96659;
+  color: white;
+  border-radius: 4px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#gif {
+  width: 100%;
+}
+
+#blogHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#blogTitle {
+  font-size: 5rem;
+}
+
+#blogDate {
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+#blogContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+#blogSingleImage {
+  width: 50%;
+}
+
+#sectionTitle {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+#blogPara {
+  font-size: 1.5rem;
+  margin: 0.5;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+#blogParaIndented {
+  font-size: 1.5rem;
+  margin: 0.5;
+  margin-left: 3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+#blogParaItallic {
+  font-size: 1.5rem;
+  margin: 0.5;
+  font-style: italic;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+#quote {
+  font-size: 1.5rem;
+  margin: 0.5;
+  font-style: italic;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: 3rem;
+}
+
+#imagePara {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#blogImage {
+  width: 100%;
+}
+
+#imageBox {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#imageParaSection {
+  font-size: 1.5rem;
+  margin: 0.5;
+  width: 50%;
+}
+
+#imageDescription {
+  font-size: 1.2rem;
+}
+
+#pdfImage {
+  width: 70%;
+}
+
+#pdfContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pricingContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+}
+
+#titlePrice {
+  font-size: 4rem;
+}
+
+#pricingSection {
+  display: flex;
+  flex-direction: column;
+  background-color: #ae7167;
+  color: #8b3d30;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  border-color: #5c2319;
+  border-width: 3px;
+  border-style: solid;
+}
+
+#pricingSection:hover {
+  display: flex;
+  flex-direction: column;
+  color: #8b3d30;
+  background-color: rgb(254, 242, 241, 0.5);
+  margin: 1rem;
+  padding: 1rem;
+}
+
+#pricingSection2 {
+  display: flex;
+  flex-direction: column;
+  background-color: #ae7167;
+  color: #8b3d30;
+  margin: 1rem;
+  margin-left: 6rem;
+  padding: 1rem;
+  border-radius: 4px;
+  border-color: #5c2319;
+  border-width: 3px;
+  border-style: solid;
+}
+
+#pricingSection2:hover {
+  display: flex;
+  flex-direction: column;
+  color: #8b3d30;
+  background-color: rgb(254, 242, 241, 0.5);
+  margin: 1rem;
+  margin-left: 6rem;
+  padding: 1rem;
+}
+
+#pricingSection3 {
+  display: flex;
+  flex-direction: column;
+  background-color: #ae7167;
+  color: #8b3d30;
+  margin: 1rem;
+  margin-left: 12rem;
+  padding: 1rem;
+  border-radius: 4px;
+  border-color: #5c2319;
+  border-width: 3px;
+  border-style: solid;
+}
+
+#pricingSection3:hover {
+  display: flex;
+  flex-direction: column;
+  color: #8b3d30;
+  background-color: rgb(254, 242, 241, 0.5);
+  margin: 1rem;
+  margin-left: 12rem;
+  padding: 1rem;
+}
+
+#planDeets {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5rem;
+}
+
+#planName {
+  font-size: 3rem;
+  text-align: left;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+#planInfo {
+  font-size: 2rem;
+  margin: 0.5rem;
+  margin-left: 5rem;
+}
+
+#passwordForget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+}
+
+#passwordForgetInput {
+  height: 50px;
+  width: 300px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#passwordRecoverForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
 }
