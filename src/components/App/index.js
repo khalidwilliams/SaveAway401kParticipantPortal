@@ -25,6 +25,7 @@ const App = () => (
     <div className="app">
       <Navigation />
       <Route exact path={routes.HOME} component={Welcome} />
+      <Route exact path={routes.WELCOME} component={Welcome} />
       <Route exact path={routes.SIGN_UP} component={CompanyGeneralInfo} />
       <Route exact path={routes.LOG_IN} component={() => <SignInPage />} />
       <Route
@@ -53,7 +54,6 @@ const App = () => (
       <Route exact path={routes.GUIDE} component={() => <Guide />} />
       <Route exact path={routes.NEWS} component={() => <News />} />
       <Route exact path={routes.CONFIRM} component={() => <Confirmation />} />
-      <hr />
     </div>
   </Router>
 );
