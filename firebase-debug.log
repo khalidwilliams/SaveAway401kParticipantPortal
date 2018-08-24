@@ -1,26 +1,26 @@
-[debug] [2018-08-24T18:47:32.580Z] ----------------------------------------------------------------------
-[debug] [2018-08-24T18:47:32.582Z] Command:       /usr/local/Cellar/node/9.8.0/bin/node /usr/local/bin/firebase deploy
-[debug] [2018-08-24T18:47:32.582Z] CLI Version:   3.18.6
-[debug] [2018-08-24T18:47:32.582Z] Platform:      darwin
-[debug] [2018-08-24T18:47:32.582Z] Node Version:  v9.8.0
-[debug] [2018-08-24T18:47:32.583Z] Time:          Fri Aug 24 2018 12:47:32 GMT-0600 (MDT)
-[debug] [2018-08-24T18:47:32.583Z] ----------------------------------------------------------------------
+[debug] [2018-08-24T18:56:48.793Z] ----------------------------------------------------------------------
+[debug] [2018-08-24T18:56:48.795Z] Command:       /usr/local/Cellar/node/9.8.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-08-24T18:56:48.795Z] CLI Version:   3.18.6
+[debug] [2018-08-24T18:56:48.795Z] Platform:      darwin
+[debug] [2018-08-24T18:56:48.795Z] Node Version:  v9.8.0
+[debug] [2018-08-24T18:56:48.796Z] Time:          Fri Aug 24 2018 12:56:48 GMT-0600 (MDT)
+[debug] [2018-08-24T18:56:48.796Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-08-24T18:47:32.592Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-08-24T18:47:32.593Z] > authorizing via signed-in user
-[debug] [2018-08-24T18:47:32.594Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/saveaway-401k  
+[debug] [2018-08-24T18:56:48.808Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-24T18:56:48.808Z] > authorizing via signed-in user
+[debug] [2018-08-24T18:56:48.809Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/saveaway-401k  
   
- Fri Aug 24 2018 12:47:32 GMT-0600 (MDT)
-[debug] [2018-08-24T18:47:32.983Z] <<< HTTP RESPONSE 200
-[debug] [2018-08-24T18:47:32.983Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/saveaway-401k/tokens  
+ Fri Aug 24 2018 12:56:48 GMT-0600 (MDT)
+[debug] [2018-08-24T18:56:49.319Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-24T18:56:49.320Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/saveaway-401k/tokens  
   
- Fri Aug 24 2018 12:47:32 GMT-0600 (MDT)
-[debug] [2018-08-24T18:47:33.365Z] <<< HTTP RESPONSE 200
+ Fri Aug 24 2018 12:56:49 GMT-0600 (MDT)
+[debug] [2018-08-24T18:56:49.722Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Deploying to 'saveaway-401k'...
 [info] 
 [info] i  deploying hosting
 [info] i  hosting: preparing public/build directory for upload...
-[debug] [2018-08-24T18:47:40.275Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/saveaway-401k/uploads/-LKhFpDdYF6cU0JoigDk?fileCount=260&message=  
+[debug] [2018-08-24T18:56:57.907Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/saveaway-401k/uploads/-LKhHx2SRVQhGwYF7a8u?fileCount=303&message=  
   
- Fri Aug 24 2018 12:47:40 GMT-0600 (MDT)
+ Fri Aug 24 2018 12:56:57 GMT-0600 (MDT)

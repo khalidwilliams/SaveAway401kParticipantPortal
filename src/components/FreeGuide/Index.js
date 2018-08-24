@@ -1,54 +1,18 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
-} from "react-router-dom";
-import FooterMovable from "../Footer/footerMovable";
+import { withRouter, Redirect } from "react-router-dom";
+import Footer from "../Footer/Index";
 
 var baseURL = "https://saveawaytest.herokuapp.com/";
 
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true;
-    setTimeout(cb, 100);
-  },
-  signout(cb) {
-    this.isAuthenticated = false;
-    setTimeout(cb, 100);
-  }
-};
-
-const AuthButton = withRouter(
-  ({ history }) =>
-    fakeAuth.isAuthenticated ? (
-      <p>
-        Welcome!{" "}
-        <button
-          onClick={() => {
-            fakeAuth.signout(() => history.push("/About"));
-          }}
-        >
-          Sign out
-        </button>
-      </p>
-    ) : (
-      <p>You are not logged in.</p>
-    )
+const GuideSubmit = ({ history }) => (
+  <div>
+    <FreeGuide history={history} />
+  </div>
 );
 
-export default class FreeGuide extends React.Component {
+class FreeGuide extends Component {
   state = {
-    redirectToReferrer: false
-  };
-
-  login = () => {
-    fakeAuth.authenticate(() => {
-      this.setState({ redirectToReferrer: true });
-    });
+    redirect: false
   };
 
   getBasicInfo = event => {
@@ -78,6 +42,7 @@ export default class FreeGuide extends React.Component {
   };
 
   addBasicInfo = event => {
+    const { history } = this.props;
     event.preventDefault();
     console.log(this.getBasicInfo(event));
     fetch(baseURL + "guideRegistration", {
@@ -89,20 +54,15 @@ export default class FreeGuide extends React.Component {
       })
     })
       .then(this.sendMessage(event))
-      .then(this.login())
+      .then(this.setState({ redirect: true }))
       .catch(error => {
         console.log(error);
       });
   };
 
   render() {
-    const { from } = this.props.location.state || {
-      from: { pathname: "/Guide" }
-    };
-    const { redirectToReferrer } = this.state;
-
-    if (redirectToReferrer) {
-      return <Redirect to={from} />;
+    if (this.state.redirect === true) {
+      return <Redirect to="/Guide" />;
     }
     return (
       <div>
@@ -133,8 +93,11 @@ export default class FreeGuide extends React.Component {
             </form>
           </div>
         </div>
-        <FooterMovable />
+        <Footer />
       </div>
     );
   }
 }
+
+export default withRouter(GuideSubmit);
+export { FreeGuide };
