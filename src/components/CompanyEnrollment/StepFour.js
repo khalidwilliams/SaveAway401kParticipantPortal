@@ -1,26 +1,28 @@
-import React from "react";
-import { BrowserRouter as Redirect } from "react-router-dom";
+import React, { Component } from "react";
+import { withRouter, Redirect } from "react-router-dom";
 import SimpleStorage, { resetParentState } from "../../stores/SimpleStorage";
 
 var baseURL = "https://saveawaytest.herokuapp.com/";
 
-export class StepFour extends React.Component {
+const Confirm = ({ history }) =>
+  <div>
+    <h1>Confirm Info</h1>
+    <StepFour history={history} />
+  </div>
+
+class StepFour extends Component {
   constructor(props) {
-    let signupName = JSON.parse(window.localStorage._signupName);
-    console.log(localStorage.getItem('signupName'));
-    console.log(window.localStorage._signupName);
-    let signupPhone = JSON.parse(window.localStorage._signupPhone);
+    let companyName = JSON.parse(window.localStorage._companyName);
+    let accountName = JSON.parse(window.localStorage._accountName);
     let signupEmail = JSON.parse(window.localStorage._signupEmail);
+    let companyPhone = JSON.parse(window.localStorage._companyPhone);
     let signupAdressStreet = JSON.parse(
-      localStorage.getItem("signupAdressStreet")
+      window.localStorage._signupAdressStreet
     );
     let signupAdressApt = JSON.parse(window.localStorage._signupAdressApt);
     let signupAdressCity = JSON.parse(window.localStorage._signupAdressCity);
-    let signupAdressState = JSON.parse(
-      window.localStorage._signupAdressState
-    );
+    let signupAdressState = JSON.parse(window.localStorage._signupAdressState);
     let signupAdressZip = JSON.parse(window.localStorage._signupAdressZip);
-    let adminName = JSON.parse(window.localStorage._adminName);
     let companyEIN = JSON.parse(window.localStorage._companyEIN);
     let businessHours = JSON.parse(window.localStorage._businessHours);
     let AutoEnroll = JSON.parse(window.localStorage._AutoEnroll);
@@ -28,30 +30,36 @@ export class StepFour extends React.Component {
       window.localStorage._enrollmentPercentage
     );
     let planType = JSON.parse(window.localStorage._planType);
-    let payrollProvider = JSON.parse(window.localStorage._payrollProvider);
+    let provider = JSON.parse(window.localStorage._provider);
     let paymentCycle = JSON.parse(window.localStorage._paymentCycle);
     let Admin = JSON.parse(window.localStorage._Admin);
+    let AdminName = JSON.parse(window.localStorage._AdminName);
+    let AdminPhone = JSON.parse(window.localStorage._AdminPhone);
+    let AdminEmail = JSON.parse(window.localStorage._AdminEmail);
     let PlanStatus = JSON.parse(window.localStorage._PlanStatus);
     super(props);
     this.state = {
       redirect: false,
-      signupName: signupName,
-      signupPhone: signupPhone,
+      companyName: companyName,
+      accountName: accountName,
       signupEmail: signupEmail,
+      companyPhone: companyPhone,
       signupAdressStreet: signupAdressStreet,
       signupAdressApt: signupAdressApt,
       signupAdressCity: signupAdressCity,
       signupAdressState: signupAdressState,
       signupAdressZip: signupAdressZip,
-      adminName: adminName,
       companyEIN: companyEIN,
       businessHours: businessHours,
       AutoEnroll: AutoEnroll,
       enrollmentPercentage: enrollmentPercentage,
       planType: planType,
-      payrollProvider: payrollProvider,
+      provider: provider,
       paymentCycle: paymentCycle,
       Admin: Admin,
+      AdminName: AdminName,
+      AdminPhone: AdminPhone,
+      AdminEmail: AdminEmail,
       PlanStatus: PlanStatus
     };
   }
@@ -60,23 +68,26 @@ export class StepFour extends React.Component {
     event.preventDefault();
     var data = new FormData(event.target);
     return {
-      signupName: data.get("signupName"),
-      signupPhone: data.get("signupPhone"),
+      companyName: data.get("companyName"),
+      accountName: data.get("accountName"),
+      companyPhone: data.get("companyPhone"),
       signupEmail: data.get("signupEmail"),
       signupAdressStreet: data.get("signupAdressStreet"),
       signupAdressApt: data.get("signupAdressApt"),
       signupAdressCity: data.get("signupAdressCity"),
       signupAdressState: data.get("signupAdressState"),
       signupAdressZip: data.get("signupAdressZip"),
-      adminName: data.get("adminName"),
       companyEIN: data.get("companyEIN"),
       businessHours: data.get("businessHours"),
       AutoEnroll: data.get("AutoEnroll"),
       enrollmentPercentage: data.get("enrollmentPercentage"),
       planType: data.get("planType"),
-      payrollProvider: data.get("payrollProvider"),
+      provider: data.get("provider"),
       paymentCycle: data.get("paymentCycle"),
       Admin: data.get("Admin"),
+      AdminName: data.get("AdminName"),
+      AdminPhone: data.get("AdminPhone"),
+      AdminEmail: data.get("AdminEmail"),
       PlanStatus: data.get("PlanStatus")
     };
   };
@@ -96,6 +107,7 @@ export class StepFour extends React.Component {
   };
 
   addCompanyInfo = event => {
+    const { history } = this.props;
     event.preventDefault();
     console.log(this.getCompanyInfo(event));
     fetch(baseURL + "companyEnrollment", {
@@ -107,9 +119,7 @@ export class StepFour extends React.Component {
     })
       .then(this.sendMessage(event))
       .then(resetParentState(this, this.initialState))
-      .then(this.setState({ redirect: true }, () => {
-        console.log(this.state.redirect);
-      }))
+      .then(this.setState({ redirect: true }))
       .catch(error => {
         console.log(error);
       });
@@ -117,9 +127,8 @@ export class StepFour extends React.Component {
 
   render() {
     if (this.state.redirect === true) {
-      return <Redirect to="/Confirmation" />;
-    }
-
+  return <Redirect to="/Confirmation" />;
+}
     return (
       <div>
         <SimpleStorage parent={this} />
@@ -127,30 +136,30 @@ export class StepFour extends React.Component {
         <form onSubmit={this.addCompanyInfo}>
           <div id="formSection">
             <div id="formAnswer">
-              <label htmlFor="signupName">Company Name</label>
+              <label htmlFor="companyName">Company Name</label>
               <input
                 id="formInput"
-                name="signupName"
-                defaultValue={this.state.signupName}
+                name="companyName"
+                defaultValue={this.state.companyName}
               />
-              <label htmlFor="signupPhone">Company Phone Number</label>
+              <label htmlFor="companyPhone">Company Phone Number</label>
               <input
                 id="formInput"
-                name="signupPhone"
-                defaultValue={this.state.signupPhone}
+                name="companyPhone"
+                defaultValue={this.state.companyPhone}
               />
             </div>
           </div>
           <br />
           <div id="formSection">
             <div id="formAnswer">
-              <label htmlFor="adminName">401k Administrator Name</label>
+              <label htmlFor="accountName">Your Name</label>
               <input
                 id="formInput"
-                name="adminName"
-                defaultValue={this.state.adminName}
+                name="accountName"
+                defaultValue={this.state.accountName}
               />
-              <label htmlFor="signupEmail">Administrator Email</label>
+              <label htmlFor="signupEmail">Your Email</label>
               <input
                 id="formInput"
                 name="signupEmail"
@@ -252,11 +261,11 @@ export class StepFour extends React.Component {
           <br />
           <div id="formSection2">
             <div id="formAnswer">
-              <label htmlFor="payrollProvider">Payroll Provider</label>
+              <label htmlFor="provider">Payroll Provider</label>
               <input
                 id="formInput"
-                name="payrollProvider"
-                defaultValue={this.state.payrollProvider}
+                name="provider"
+                defaultValue={this.state.provider}
               />
               <label htmlFor="paymentCycle">Payment Cycle</label>
               <input
@@ -275,6 +284,29 @@ export class StepFour extends React.Component {
                 id="formInput"
                 name="Admin"
                 defaultValue={this.state.Admin}
+              />
+            </div>
+            <hr />
+            <label>
+              If you will not be the administrator, this is the administrator
+              information. <br />
+              ***Note: it will be blank if you are the admin.
+            </label>
+            <div id="adminOtherInputs">
+              <input
+                id="formInput"
+                name="AdminName"
+                defaultValue={this.state.AdminName}
+              />
+              <input
+                id="formInput"
+                name="AdminPhone"
+                defaultValue={this.state.AdminPhone}
+              />
+              <input
+                id="formInput"
+                name="AdminEmail"
+                defaultValue={this.state.AdminEmail}
               />
             </div>
             <hr />
@@ -305,3 +337,6 @@ export class StepFour extends React.Component {
     );
   }
 }
+
+export default withRouter(Confirm);
+export { StepFour };

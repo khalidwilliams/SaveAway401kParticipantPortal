@@ -5,16 +5,15 @@ export class StepOne extends React.Component {
   constructor() {
     super();
     this.state = {
-      signupName: "",
+      companyName: "",
+      accountName: "",
       signupEmail: "",
-      signupPhone: "",
+      companyPhone: "",
       signupAdressStreet: "",
       signupAdressApt: "",
       signupAdressCity: "",
       signupAdressState: "",
       signupAdressZip: "",
-      adminName: "",
-      adminPhone: "",
       companyEIN: "",
       businessHours: ""
     };
@@ -23,13 +22,17 @@ export class StepOne extends React.Component {
 
   handleNameChange = event => {
     this.setState({
-      signupName: event.target.value
+      companyName: event.target.value
     });
+  };
+
+  handleAdminNameChange = event => {
+    this.setState({ accountName: event.target.value });
   };
 
   handlePhoneChange = event => {
     this.setState({
-      signupPhone: event.target.value
+      companyPhone: event.target.value
     });
   };
 
@@ -59,14 +62,6 @@ export class StepOne extends React.Component {
     this.setState({ signupAdressZip: event.target.value });
   };
 
-  handleAdminNameChange = event => {
-    this.setState({ adminName: event.target.value });
-  };
-
-  handleAdminPhoneChange = event => {
-    this.setState({ adminPhone: event.target.value });
-  };
-
   handleCompanyEINChange = event => {
     this.setState({ companyEIN: event.target.value });
   };
@@ -87,7 +82,7 @@ export class StepOne extends React.Component {
           <input
             type="text"
             id="shorterInput"
-            value={this.state.signupName}
+            value={this.state.companyName}
             onChange={this.handleNameChange}
             name="signupName"
           />
@@ -95,22 +90,22 @@ export class StepOne extends React.Component {
           <input
             type="text"
             id="shorterInput"
-            value={this.state.signupPhone}
+            value={this.state.companyPhone}
             onChange={this.handlePhoneChange}
             name="signupPhone"
           />
         </div>
         <br />
         <div id="formSection">
-          <label htmlFor="adminName">401k Administrator Name</label>
+          <label htmlFor="accountName">Your Name</label>
           <input
             type="text"
             id="shorterInput"
-            value={this.state.adminName}
+            value={this.state.accountName}
             onChange={this.handleAdminNameChange}
-            name="adminName"
+            name="accountName"
           />
-          <label htmlFor="signupEmail">Administrator Email</label>
+          <label htmlFor="signupEmail">Your Company Email</label>
           <input
             type="text"
             id="shorterInput"

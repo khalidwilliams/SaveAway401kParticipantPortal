@@ -24,7 +24,7 @@ const App = () => (
   <Router>
     <div className="app">
       <Navigation />
-      <Route exact path={routes.LANDING} component={Welcome} />
+      <Route exact path={routes.HOME} component={Welcome} />
       <Route exact path={routes.SIGN_UP} component={CompanyGeneralInfo} />
       <Route exact path={routes.LOG_IN} component={() => <SignInPage />} />
       <Route
@@ -32,17 +32,27 @@ const App = () => (
         path={routes.PASSWORD_FORGET}
         component={() => <PasswordForgetPage />}
       />
-      <Route exact path={routes.HOME} component={Welcome} />
-      <Route exact path="/About" component={WhatWeDo} />
-      <Route exact path="/WhatWeDo" component={WhatWeDo} />
-      <Route exact path="/FundChoices" component={FundChoices} />
-      <Route exact path="/Pricing" component={Pricing} />
-      <Route exact path="/Enroll" component={CompanyEnrollmentInfo} />
-      <Route exact path="/EmployeeInfo" component={EmployeeInfo} />
-      <Route exact path="/Free-Guide" component={FreeGuide} />
-      <Route exact path="/Guide" component={Guide} />
-      <Route exact path="/401K-News" component={News} />
-      <Route exact path="/Confirmation" component={Confirmation} />
+      <Route exact path={routes.ABOUT} component={() => <WhatWeDo />} />
+      <Route
+        exact
+        path={routes.FUNDCHOICES}
+        component={() => <FundChoices />}
+      />
+      <Route exact path={routes.PRICING} component={() => <Pricing />} />
+      <Route
+        exact
+        path={routes.ENROLL}
+        component={() => <CompanyEnrollmentInfo />}
+      />
+      <Route
+        exact
+        path={routes.EMPLOYEEINFO}
+        component={() => <EmployeeInfo />}
+      />
+      <Route exact path={routes.FREEGUIDE} component={() => <FreeGuide />} />
+      <Route exact path={routes.GUIDE} component={() => <Guide />} />
+      <Route exact path={routes.NEWS} component={() => <News />} />
+      <Route exact path={routes.CONFIRM} component={() => <Confirmation />} />
       <hr />
     </div>
   </Router>

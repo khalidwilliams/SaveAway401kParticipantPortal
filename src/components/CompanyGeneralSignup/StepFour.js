@@ -3,8 +3,6 @@ import { Link, withRouter } from "react-router-dom";
 import { auth, db } from "../../firebase";
 import * as routes from "../../constants/routes";
 import SimpleStorage from "../../stores/SimpleStorage";
-import { Toaster, Intent } from "@blueprintjs/core";
-import { config } from "../../firebase/firebase";
 
 const loginStyles = {
   width: "90%",
@@ -36,6 +34,7 @@ const INITIAL_STATE = {
   email: "",
   passwordOne: "",
   passwordTwo: "",
+  checked: false,
   error: null
 };
 
@@ -46,10 +45,15 @@ class StepFour extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
+  handleCheckedChanged = event => {
+    this.setState(prevState => ({
+      checked: !prevState.checked
+    }));
+    console.log(this.state);
+  };
+
   onSubmit = event => {
     const { username, email, passwordOne } = this.state;
-
-    const { history } = this.props;
 
     auth
       .doCreateUserWithEmailAndPassword(email, passwordOne)
@@ -57,10 +61,9 @@ class StepFour extends Component {
         // Create a user in your own accessible Firebase Database too
         db
           .doCreateUser(authUser.user.uid, username, email)
-          .then(() => {
-            this.setState(() => ({ ...INITIAL_STATE }));
-            history.push(routes.HOME);
-          })
+          .then(
+            alert("Account Created! Click next to confirm your information")
+          )
           .catch(error => {
             this.setState(updateByPropertyName("error", error));
           });
@@ -73,23 +76,32 @@ class StepFour extends Component {
   };
 
   render() {
-    const { username, email, passwordOne, passwordTwo, error } = this.state;
+    const {
+      username,
+      email,
+      passwordOne,
+      passwordTwo,
+      checked,
+      error
+    } = this.state;
 
     const isInvalid =
       passwordOne !== passwordTwo ||
       passwordOne === "" ||
       username === "" ||
-      email === "";
+      email === "" ||
+      checked === false;
 
     return (
       <div style={loginStyles}>
-      <div id="accountDiv">
-        <h3 id="formHeader"> Create your Account </h3>
-      </div>
-      <p>
-        note: you will not be able to create an account unless your
-        passwords match
-      </p>
+        <SimpleStorage parent={this} />
+        <div id="accountDiv">
+          <h3 id="formHeader"> Create your Account </h3>
+        </div>
+        <p>
+          note: you will not be able to create an account unless your passwords
+          match
+        </p>
         <form onSubmit={this.onSubmit}>
           <div id="loginInput">
             <label>
@@ -145,6 +157,29 @@ class StepFour extends Component {
               />
             </label>
           </div>
+          <hr />
+          <div>
+            <span>By clicking "Accept" I agree that:</span>
+            <ul>
+              <li>
+                I have read and accepted the <a href="#">User Agreement</a>
+              </li>
+              <li>
+                I have read and accepted the <a href="#">Privacy Policy</a>
+              </li>
+              <li>I am at least 18 years old</li>
+            </ul>
+            <label>
+              <input
+                type="checkbox"
+                defaultChecked={this.state.checked}
+                onChange={this.handleCheckedChanged}
+                autoFocus
+              />
+              <span> Accept </span>
+            </label>
+          </div>
+
           <button disabled={isInvalid} type="submit" id="accountSignin">
             Create Account
           </button>

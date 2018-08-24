@@ -1,13 +1,17 @@
-import React from "react";
-import {
-  BrowserRouter as
-  Redirect
-} from "react-router-dom";
+import React, { Component } from "react";
+import { withRouter, Redirect } from "react-router-dom";
 import SimpleStorage, { resetParentState } from "../../stores/SimpleStorage";
 
 var baseURL = "https://saveawaytest.herokuapp.com/";
 
-export class StepFive extends React.Component {
+const Confirm = ({ history }) => (
+  <div>
+  <h1>Confirm Info</h1>
+    <StepFive history={history} />
+  </div>
+);
+
+class StepFive extends Component {
   constructor(props) {
     let FullName = JSON.parse(window.localStorage._FullName);
     let CompanyEmail = JSON.parse(window.localStorage._CompanyEmail);
@@ -19,6 +23,9 @@ export class StepFive extends React.Component {
     let provider = JSON.parse(window.localStorage._provider);
     let heardAbout = JSON.parse(window.localStorage._heardAbout);
     let Admin = JSON.parse(window.localStorage._Admin);
+    let AdminName = JSON.parse(window.localStorage._AdminName);
+    let AdminPhone = JSON.parse(window.localStorage._AdminPhone);
+    let AdminEmail = JSON.parse(window.localStorage._AdminEmail);
     let PlanStatus = JSON.parse(window.localStorage._PlanStatus);
     let checked = true;
     super(props);
@@ -34,6 +41,9 @@ export class StepFive extends React.Component {
       provider: provider,
       heardAbout: heardAbout,
       Admin: Admin,
+      AdminName: AdminName,
+      AdminPhone: AdminPhone,
+      AdminEmail: AdminEmail,
       PlanStatus: PlanStatus,
       checked: checked
     };
@@ -53,6 +63,9 @@ export class StepFive extends React.Component {
       provider: data.get("provider"),
       heardAbout: data.get("heardAbout"),
       Admin: data.get("Admin"),
+      AdminName: data.get("AdminName"),
+      AdminPhone: data.get("AdminPhone"),
+      AdminEmail: data.get("AdminEmail"),
       PlanStatus: data.get("PlanStatus"),
       checked: data.get("checked")
     };
@@ -73,6 +86,7 @@ export class StepFive extends React.Component {
   };
 
   addCompanyInfo = event => {
+    const { history } = this.props;
     event.preventDefault();
     console.log(this.getCompanyInfo(event));
     fetch(baseURL + "basicInfo", {
@@ -189,6 +203,29 @@ export class StepFive extends React.Component {
               />
             </div>
             <hr />
+            <label>
+              If you will not be the administrator, this is the administrator
+              information. <br />
+              ***Note: it will be blank if you are the admin.
+            </label>
+            <div id="adminOtherInputs">
+              <input
+                id="formInput"
+                name="AdminName"
+                defaultValue={this.state.AdminName}
+              />
+              <input
+                id="formInput"
+                name="AdminPhone"
+                defaultValue={this.state.AdminPhone}
+              />
+              <input
+                id="formInput"
+                name="AdminEmail"
+                defaultValue={this.state.AdminEmail}
+              />
+            </div>
+            <hr />
             <div id="signupDiv">
               <label htmlFor="PlanStatus">
                 Does your company have a 401k plan now?
@@ -228,3 +265,6 @@ export class StepFive extends React.Component {
     );
   }
 }
+
+export default withRouter(Confirm);
+export { StepFive };

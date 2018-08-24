@@ -23,33 +23,28 @@ export class StepThree extends React.Component {
           type="text"
           name="AdminName"
           id="signupInput"
-          onChange={this.handleAdminOtherForm}
+          onChange={this.handleAdminName}
           placeholder="Name"
+          value={this.state.AdminName}
         />
         <input
           type="text"
           name="AdminPhone"
           id="signupInput"
-          onChange={this.handleAdminOtherForm}
+          onChange={this.handleAdminPhone}
           placeholder="Phone"
+          value={this.state.AdminPhone}
         />
         <input
           type="text"
           name="AdminEmail"
           id="signupInput"
-          onChange={this.handleAdminOtherForm}
+          onChange={this.handleAdminEmail}
           placeholder="Email"
+          value={this.state.AdminEmail}
         />
       </div>
     );
-  };
-
-  handleAdminChange = event => {
-    this.setState({ Admin: event.target.value });
-  };
-
-  handlePlanStatusChange = event => {
-    this.setState({ PlanStatus: event.target.value });
   };
 
   handleOtherAdminChangeTwo = event => {
@@ -60,12 +55,30 @@ export class StepThree extends React.Component {
     });
   };
 
-  handleAdminOtherFormTwo = event => {
+  handleAdminChange = event => {
+    this.setState({ Admin: event.target.value });
+  };
+
+  handleAdminName = event => {
     this.setState({
-      AdminName: event.target.value,
-      AdminPhone: event.target.value,
+      AdminName: event.target.value
+    });
+  };
+
+  handleAdminPhone = event => {
+    this.setState({
+      AdminPhone: event.target.value
+    });
+  };
+
+  handleAdminEmail = event => {
+    this.setState({
       AdminEmail: event.target.value
     });
+  };
+
+  handlePlanStatusChange = event => {
+    this.setState({ PlanStatus: event.target.value });
   };
 
   render() {

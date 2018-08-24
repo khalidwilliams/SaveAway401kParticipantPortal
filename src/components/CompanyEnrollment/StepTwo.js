@@ -38,7 +38,8 @@ export class StepTwo extends React.Component {
           type="text"
           name="provider"
           id="signupInput"
-          onChange={this.handleProviderChange}
+          onChange={this.handleProviderChangeTwo}
+          value={this.state.provider}
         />
       </div>
     );
@@ -53,6 +54,7 @@ export class StepTwo extends React.Component {
           name="paymentCycle"
           id="signupInput"
           onChange={this.handlePaymentCycleChange}
+          value={this.state.paymentCycle}
         />
       </div>
     );
@@ -70,8 +72,8 @@ export class StepTwo extends React.Component {
     this.setState({ planType: event.target.value });
   };
 
-  handleProviderChange = event => {
-    this.setState({ payrollProvider: event.target.value });
+  handleProviderChangeTwo = event => {
+    this.setState({ provider: event.target.value });
   };
 
   handlePaymentCycleChange = event => {
@@ -199,12 +201,12 @@ export class StepTwo extends React.Component {
             <option value="" disabled selected>
               Select something...
             </option>
-            <option value="ADP">ADP</option>
-            <option value="Intuit">Intuit</option>
-            <option value="Gusto">Gusto</option>
-            <option value="OnPay">OnPay</option>
-            <option value="SurePayroll">SurePayroll</option>
-            <option value="Other">Other</option>
+            <option>ADP</option>
+            <option>Intuit</option>
+            <option>Gusto</option>
+            <option>OnPay</option>
+            <option>SurePayroll</option>
+            <option>Other</option>
           </select>
           {this.state.providerOtherTwo ? this.providerOtherTwo() : null}
           <hr />
