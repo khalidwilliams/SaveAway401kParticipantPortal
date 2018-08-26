@@ -7,26 +7,26 @@ export default class Secrets extends React.Component {
   render() {
     return (
       <div>
-        <div id="blogHeader">
-          <h1 id="blogTitle"> Your 401k Plan's 3 dirtiest secrets....</h1>
-          <h3 id="blogDate">April 30, 2018</h3>
+        <div className="blogHeader">
+          <h1 className="blogTitle"> Your 401k Plan's 3 dirtiest secrets....</h1>
+          <h3 className="blogDate">April 30, 2018</h3>
         </div>
-        <div id="blogContent">
-          <div id="blogSection">
-          <div id="pdfContainer">
+        <div className="blogContent">
+          <div className="blogSection">
+          <div className="pdfContainer">
             <img
-              id="blogSingleImage"
+              className="blogSingleImage"
               src={understandingFees}
               alt="understandingFees"
             />
             </div>
-            <h4 id="sectionTitle">
+            <h4 className="sectionTitle">
               Maybe your company has a 401k plan setup---and if they do, I hope
               you are participating. I’ve written before about the importance of
               Compounding Interest in your 401k plan, but I want to bring up
               another equally important topic. Fees.
             </h4>
-            <p id="blogPara">
+            <p className="blogPara">
               Imagine your retirement is a sink, and there are two variables
               that effect the water level in your sink. The water pouring in
               through the faucet (i.e. your contributions) and the water
@@ -34,7 +34,7 @@ export default class Secrets extends React.Component {
               fees). Maximizing the first variable and minimizing the second
               variable is how you get a full sink.
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               If understanding Compounding Interest helps people get motivated
               to start saving for retirement, fees are a close second in
               importance. Fees will have a direct impact on the amount of
@@ -44,7 +44,7 @@ export default class Secrets extends React.Component {
               that you probably shredded because it was taking up a ton of room
               on your kitchen counter at home).
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               {" "}
               You can always request information about the funds that you are
               investing in, and if you are unaware of the fees that you are
@@ -52,7 +52,7 @@ export default class Secrets extends React.Component {
               (there are others we'll talk about later) that you should be on
               the lookout for in your plan.
             </p>
-            <p id="blogParaIndented">
+            <p className="blogParaIndented">
               The Expense Ratio: This is the percentage amount you pay,
               annually, to have the fund managed for you. Here is a quick simple
               example. Let’s say you invest in the Fidelity Select
@@ -64,7 +64,7 @@ export default class Secrets extends React.Component {
               as well as to trade in and out of various positions as the fund
               manager sees fit.
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               Looking at an ETF Expense Ratio, you’ll notice that it is much
               lower. An ETF (or Exchange Traded Fund) is managed by a computer
               and has lower trading volatility (meaning that it mirrors a
@@ -72,18 +72,18 @@ export default class Secrets extends React.Component {
               period of time.) The Vanguard Telecommunication Services ETF (VOX)
               has an expense ration of just .12%.
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               So, what does it all mean. Assuming* that these funds performed
               exactly the same over time, you’d be paying roughly .65% of your
               contributions towards an actively managed fund (FSTCX), versus
               saving yourself the expense ratio with the passively managed ETF
               (VOX).
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               Sounds like a tiny amount of money (.65%) but it can really stack
               up over the years that you are saving.
             </p>
-            <p id="blogParaItallic">
+            <p className="blogParaItallic">
               Advice: Pay attention to what expense ratio you are paying on your
               funds. Call your 401k provider and have them go over the
               information with you on the phone. You might be surprised to find
@@ -102,15 +102,15 @@ export default class Secrets extends React.Component {
             </p>
           </div>
 
-          <div id="blogSection">
-            <img id="blogImage" src={fsctx} alt="fsctx" />
-            <p id="blogParaIndented">
+          <div className="blogSection">
+            <img className="blogImage" src={fsctx} alt="fsctx" />
+            <p className="blogParaIndented">
               Wrap Fee: A wrap fee is a comprehensive charge enacted by a
               investment advisor or manager which may include additional fees on
               top of an expense ratio that might include additional brokerage
               services or access to investment advisors.
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               I worked for a brokerage years ago that placed a wrap fee to
               investment products. This in itself is not particularly sneaky,
               any brokerage service is going to incur fees managing your
@@ -121,26 +121,26 @@ export default class Secrets extends React.Component {
               investments and understand the size of the wrap. Some wrap funds
               seem to cover the costs, others seem to be much larger.
             </p>
-            <p id="blogParaItallic">
+            <p className="blogParaItallic">
               Advice: Call your 401k provider and ask them if they have a wrap
               fee associated with your 401k account, and if so---what is the
               wrap fee. Once again, every little bit that you can save in a 401k
               account matters, and you have the right to know what type of fees
               you are paying in your retirement account.
             </p>
-            <p id="blogParaIndented">
+            <p className="blogParaIndented">
               Front-End/Back-End Load Charge: This is a sales charge that is
               applied on the upfront/or back end transaction that you make in
               your account. Here is an example of both:
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               Front-End: You setup your 401k and then invest $1,000 for an
               initial contribution. The fund has a 5% load charge on investments
               you make. When you submit your funds to your 401k for investment,
               a load charge of $50 (5% of $1,000) dollars is subtracted from the
               amount you invest, and your actual investment ends up being $950.
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               Back-End: You decide to accept a position at another company and
               roll out your 401k to another financial services firm (an IRA
               rollover). You decided that you didn't like the funds that your
@@ -152,7 +152,7 @@ export default class Secrets extends React.Component {
               $1,000 for their charge and send the balance over to where you had
               your account transferred.
             </p>
-            <p id="blogParaItallic">
+            <p className="blogParaItallic">
               Advice: Your 401k provider should be able to tell you whether or
               not the funds you are invested in have Front or Back-End Load
               Charges. If they do, find out how long you need to be in the funds
@@ -161,7 +161,7 @@ export default class Secrets extends React.Component {
               lose 5% of your 401k in you are close to being out of the load
               time window.
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               In Conclusion: There are a lot of different ways to get stung in
               your 401k, and they can have massive ramifications years down the
               road on your account balance. Stay informed of the choices you

@@ -6,13 +6,9 @@ import MultiStep from "./MultiStep";
 export default class CompanyGeneralInfo extends React.Component {
   render() {
     return (
-      <div>
-        <div id="aboutContent">
-          <div id="enrollmentInfo">
-            <div id="companySignupDiv">
-              <MultiStep />
-            </div>
-          </div>
+      <div className="signUpEnroll">
+        <div className="multiFormDiv">
+          <MultiStep />
         </div>
       </div>
     );

@@ -17,12 +17,12 @@ export class StepThree extends React.Component {
 
   adminOther = () => {
     return (
-      <div>
+      <div className="signupForm">
         <label htmlFor="Admin">Please Provide Admin Info</label>
         <input
           type="text"
           name="AdminName"
-          id="signupInput"
+          className="signupInput"
           onChange={this.handleAdminName}
           placeholder="Name"
           value={this.state.AdminName}
@@ -30,7 +30,7 @@ export class StepThree extends React.Component {
         <input
           type="text"
           name="AdminPhone"
-          id="signupInput"
+          className="signupInput"
           onChange={this.handleAdminPhone}
           placeholder="Phone"
           value={this.state.AdminPhone}
@@ -38,7 +38,7 @@ export class StepThree extends React.Component {
         <input
           type="text"
           name="AdminEmail"
-          id="signupInput"
+          className="signupInput"
           onChange={this.handleAdminEmail}
           placeholder="Email"
           value={this.state.AdminEmail}
@@ -84,16 +84,16 @@ export class StepThree extends React.Component {
 
   render() {
     return (
-      <div>
+      <div >
         <SimpleStorage parent={this} />
-        <div id="signup-form">
-          <div id="signupDiv">
+        <div className="signupForm">
+          <div className="signupDiv">
             <label htmlFor="Admin">
               Will you be the Administrator of the plan?
             </label>
             <select
               name="Admin"
-              id="signupInputDrop"
+              className="signupInputDrop"
               onChange={this.handleOtherAdminChange}
               value={this.state.Admin}
             >
@@ -105,13 +105,13 @@ export class StepThree extends React.Component {
             </select>
             {this.state.adminOther ? this.adminOther() : null}
           </div>
-          <div id="signupDiv">
+          <div className="signupDiv">
             <label htmlFor="PlanStatus">
               Does your company have a 401k plan now?
             </label>
             <select
               name="PlanStatus"
-              id="signupInputDrop"
+              className="signupInputDrop"
               onChange={this.handlePlanStatusChange}
               value={this.state.PlanStatus}
             >

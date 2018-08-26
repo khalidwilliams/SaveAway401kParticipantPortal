@@ -23,7 +23,6 @@ ol.progtrckr li span {
 .progtrckr em {
   display: none;
   font-weight: 700;
-  padding-left: 1rem;
 }
 @media (max-width: 650px) {
   .progtrckr em {
@@ -93,35 +92,29 @@ ol.progtrckr li.progtrckr-done:hover:before {
   align-items: center;
 }
 
-#formInput {
-}
-
 #formHeader {
   display: flex;
   justify-content: center;
 }
 
-#nextButton {
+.nextButton {
   height: 35px;
   font-size: 1.5rem;
   background-color: rgb(146, 43, 33, 0.9);
   color: white;
   border-radius: 4px;
   margin: 1rem;
+  margin-left: 5rem
 }
 
-#multiPageSubmit {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-#submitButtonMulti {
-  height: 40px;
+.previousButton {
+  height: 35px;
   font-size: 1.5rem;
   background-color: rgb(146, 43, 33, 0.9);
   color: white;
   border-radius: 4px;
-  margin-right: 10rem;
+  margin: 1rem;
+  margin-left: 5rem
 }
 
 #signupInput {

@@ -6,30 +6,30 @@ import NavBar from "./NavBar";
 export default function WhatWeDo() {
   return (
     <div>
-      <div id="aboutSections">
+      <div className="aboutSections">
         <NavBar />
-        <div id="aboutContent">
+        <div className="aboutContent">
           <h1>
             SaveAway401k passionately believes every American deserves to live a
             happy and productive retirement.
           </h1>
-          <div>
+          <div id="aboutInfo">
             <h2> Our Mission </h2>
-            <h4>
+            <h3>
               In the past, 401k plans have been geared to the needs of larger
               business. They have been complicated to setup, timely to administer,
               and have huge hidden fees that erode retirement savings over time.{" "}
-            </h4>
-            <h3>It does not have to be that way.</h3>
+            </h3>
+            <h2>It does not have to be that way.</h2>
             <hr />
-            <h4>
+            <h3>
               SaveAway401k offers affordable plans for small businesses, making
               it simple for both the employer and employee to setup and
               administer their plan. We offer extremely low-cost ETF fund
               choices that allow participants to keep fees they would normally be
               paying to fund managers.
-            </h4>
-            <h3>Contact us to see how we can help.</h3>
+            </h3>
+            <h2>Contact us to see how we can help.</h2>
             <hr />
             <h2> WHAT WE HAVE ACHIEVED</h2>
             <div id="accomplishList">

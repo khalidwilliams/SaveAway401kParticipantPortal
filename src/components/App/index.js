@@ -19,6 +19,7 @@ import News from "../News/Index";
 import Confirmation from "../CompanyEnrollment/Confirmation";
 import * as routes from "../../constants/routes";
 import "./index.css";
+import "./NavBar.css";
 
 const App = () => (
   <Router>

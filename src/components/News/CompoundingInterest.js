@@ -8,27 +8,27 @@ export default class CompoundingInterest extends React.Component {
   render() {
     return (
       <div>
-        <div id="blogHeader">
-          <h1 id="blogTitle">Your 401k's best friend? Compounding Interest</h1>
-          <h3 id="blogDate">April 12, 2018</h3>
+        <div className="blogHeader">
+          <h1 className="blogTitle">Your 401k's best friend? Compounding Interest</h1>
+          <h3 className="blogDate">April 12, 2018</h3>
         </div>
-        <div id="blogContent">
-          <div id="blogSection">
-            <div id="pdfContainer">
+        <div className="blogContent">
+          <div className="blogSection">
+            <div className="pdfContainer">
               <img
-                id="blogSingleImage"
+                className="blogSingleImage"
                 src={CompoundingInterestPic}
                 alt="CompoundingInterestPic"
               />
             </div>
-            <h4 id="sectionTitle">
+            <h4 className="sectionTitle">
               You probably heard your mother or father ask you when you got your
               first REAL job: "What kind of benefits do they offer? Medical?
               Dental? 401k? Paid time off?" These were some of the first
               questions I got barraged with upon delivering the news that I had
               landed my first 9 to 5 corporate job at the age of 23.
             </h4>
-            <p id="blogPara">
+            <p className="blogPara">
               "Ooooh", my father exclaimed "You're going to want to max out that
               401k, get full company match. You'll thank yourself later". I
               sighed. I was 23, and probably at the stage of most 23 year-olds
@@ -37,7 +37,7 @@ export default class CompoundingInterest extends React.Component {
               of my meager paycheck, and shelved it aside for "my retirement"
               (which was the farthest thing from my mind at the time).
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               There was some timeless, sage wisdom in my father's advice that I
               absorbed. (other pieces I avoided such as "Don't get a dog if you
               are going to live in the city" and "Keep a full tank of gas in the
@@ -45,28 +45,28 @@ export default class CompoundingInterest extends React.Component {
               in the stock market, and figured it would be fun to make
               investments every paycheck.
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               Compounding interest is what makes 401k plans so powerful, and
               getting started early is the best way to maximize compounding
               interest. Take this quote from Warren Buffett:
             </p>
-            <p id="quote">
+            <p className="quote">
               "My wealth has come from a combination of living in America, some
               lucky genes, and compound interest".
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               "Okay, Okay.", you say. "You've got my attention, what is
               Compounding Interest".
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               Compounding interest is simply money you've set aside, that is
               growing at a certain percentage per year. Here's a simple example
               of compounding interest at work.....
             </p>
           </div>
           <hr />
-          <div id="blogSection">
-            <p id="blogPara">
+          <div className="blogSection">
+            <p className="blogPara">
               Let's take three friends, and we'll name them Susan (age 25) ,
               Jerry (age 35) & Mark (age 45). They've all decided to put $1,000
               per month into their 401k plan for their retirement at age 65.
@@ -78,7 +78,7 @@ export default class CompoundingInterest extends React.Component {
               a long period of time, smoothing out for big up and down years).
               So how did these three friends fare?
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               Remember 45 year-old Mark? He held up his end of the pack. He
               invested $1,000 every month for 10 years (a total of $120,000).
               When he turned 55 years old, he stopped investing and let his
@@ -90,8 +90,8 @@ export default class CompoundingInterest extends React.Component {
               started invested those first dollars to help his retirement fund
               grow.
             </p>
-            <div id="imagePara">
-              <p id="imageParaSection">
+            <div className="imagePara">
+              <p className="imageParaSection">
                 Jerry has an even better story. Because he started at age 35, he
                 had 10 years of compounding interest helping out his $120,000
                 savings. But he stopped investing when he was 45, and had 20
@@ -109,13 +109,13 @@ export default class CompoundingInterest extends React.Component {
                 investing until she was 65. Her ending balance? $1,445,000! GO
                 SUSAN!
               </p>
-              <div id="imageBox">
-                <img id="blogImage" src={totalsavings} alt="totalsavings" />
+              <div className="imageBox">
+                <img className="blogImage" src={totalsavings} alt="totalsavings" />
               </div>
             </div>
             <hr />
-            <div id="imagePara">
-              <p id="imageParaSection">
+            <div className="imagePara">
+              <p className="imageParaSection">
                 This simple illustration should demonstrate that compounding
                 interest works best when time is on your side. It's never too
                 late to start investing in your 401k, and if you haven't
@@ -127,8 +127,8 @@ export default class CompoundingInterest extends React.Component {
                 And subsequently, how much (or little) compounding interest can
                 work for you!
               </p>
-              <div id="imageBox">
-                <img id="blogImage" src={simple} alt="simple" />
+              <div className="imageBox">
+                <img className="blogImage" src={simple} alt="simple" />
               </div>
             </div>
           </div>

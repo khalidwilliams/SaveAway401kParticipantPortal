@@ -12,7 +12,8 @@ const loginStyles = {
   margin: "20px auto",
   border: "1px solid #ddd",
   borderRadius: "5px",
-  padding: "10px"
+  padding: "10px",
+  color: "white"
 };
 
 const SignInPage = ({ history }) => (
@@ -106,7 +107,7 @@ class SignInForm extends Component {
           </label>
         </div>
 
-        <button disabled={isInvalid} type="submit" id="accountSignin">
+        <button disabled={isInvalid} type="submit" className="submitButton">
           Sign In
         </button>
 

@@ -8,7 +8,7 @@ import Footer from "../Footer/Index";
 export default function AboutUs() {
   return (
     <div>
-      <div id="aboutSections">
+      <div className="aboutSections">
         <NavBar />
         <div>
           <WhatWeDo />

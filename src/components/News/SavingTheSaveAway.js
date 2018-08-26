@@ -6,15 +6,15 @@ export default class SavingTheSaveAway extends React.Component {
   render() {
     return (
       <div>
-        <div id="blogHeader">
-          <h1 id="blogTitle">
+        <div className="blogHeader">
+          <h1 className="blogTitle">
             Saving the SaveAway way (Say that 3 times fast...)
           </h1>
-          <h3 id="blogDate">March 8, 2018</h3>
+          <h3 className="blogDate">March 8, 2018</h3>
         </div>
-        <div id="blogContent">
-          <div id="blogSection">
-            <p id="blogPara">
+        <div className="blogContent">
+          <div className="blogSection">
+            <p className="blogPara">
               Believe it or not, America's educational system cranks out
               thousands of work-ready employees each year. Whether a person
               graduates from High School and heads straight to the workforce, or
@@ -22,12 +22,12 @@ export default class SavingTheSaveAway extends React.Component {
               case, most employees are not armed with sufficient knowledge of
               capital markets.
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               On someone's first day of work, they have no idea what they should
               be doing for their retirement, their just worried about getting
               their feet wet in their new job.
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               40% of small businesses in America (defined as under 250
               employees), or roughly 30 million people, have no established
               retirement at their place of business. That means the only way
@@ -39,7 +39,7 @@ export default class SavingTheSaveAway extends React.Component {
               fulfilling retirement. Most likely, they'll just have to work into
               their 70's and 80's---and possibly to their dying day.
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               Their is a solution to this problem. If every business in America
               had a 401k plan, then employees would have access to a Traditional
               or Roth 401k plan, and be able to save up to $18,500 per year.
@@ -47,7 +47,7 @@ export default class SavingTheSaveAway extends React.Component {
               type of plan, even an average wage earner can save enough money to
               enjoy a long and enjoyable retirement.
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               Below is a savings schedule of a janitor that worked for an
               elementary school. Each year, he budgeted enough money to put into
               his 401k to save $1,000,000 in just 21 years! This is a perfect
@@ -55,15 +55,15 @@ export default class SavingTheSaveAway extends React.Component {
               investing---and letting the markets and compounding interest do
               the heavy lifting.
             </p>
-            <p id="blogPara">
+            <p className="blogPara">
               Could you be budgeting money each year into a 401k plan? Do you
               plan on working for the next 20 years, and would you like to have
               a decent sized next egg to be able to enjoy your golden years? See
               below for one example of how a janitor was able to do just that!
             </p>
-            <div id="pdfContainer">
+            <div className="pdfContainer">
               <img
-                id="blogSingleImage"
+                className="blogSingleImage"
                 src={yearstoretirement}
                 alt="yearstoretirement"
               />

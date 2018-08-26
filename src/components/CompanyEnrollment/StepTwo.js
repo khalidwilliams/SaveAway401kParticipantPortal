@@ -37,7 +37,7 @@ export class StepTwo extends React.Component {
         <input
           type="text"
           name="provider"
-          id="signupInput"
+          className="signupInput"
           onChange={this.handleProviderChangeTwo}
           value={this.state.provider}
         />
@@ -52,7 +52,7 @@ export class StepTwo extends React.Component {
         <input
           type="text"
           name="paymentCycle"
-          id="signupInput"
+          className="signupInput"
           onChange={this.handlePaymentCycleChange}
           value={this.state.paymentCycle}
         />
@@ -114,8 +114,8 @@ export class StepTwo extends React.Component {
     return (
       <div>
         <SimpleStorage parent={this} />
-        <h2 id="formHeader">Please Indicate Your Enrollment Preferences</h2>
-        <div id="formSection2">
+        <h2 className="formHeader">Please Indicate Your Enrollment Preferences</h2>
+        <div className="formSection2">
           <label htmlFor="AutoEnroll">
             Would you like to Auto Enroll Employees?
           </label>
@@ -123,7 +123,7 @@ export class StepTwo extends React.Component {
             name="AutoEnroll"
             onChange={this.handleAutoEnrollChange}
             value={this.state.AutoEnroll}
-            id="signupInputDrop"
+            className="signupInputDrop"
           >
             <option value="" disabled selected>
               Please Select Yes or No
@@ -137,7 +137,7 @@ export class StepTwo extends React.Component {
           </label>
           <input
             type="text"
-            id="dropDownInput"
+            className="dropDownInput"
             onChange={this.handlePercentageChange}
             value={this.state.enrollmentPercentage}
             name="enrollmentPercentage"
@@ -151,7 +151,7 @@ export class StepTwo extends React.Component {
                 name="planType"
                 onChange={this.handlePlanChange}
                 value={this.state.planType}
-                id="signupInputDrop"
+                className="signupInputDrop"
               >
                 <option value="" disabled selected>
                   Looking to start a..
@@ -190,10 +190,10 @@ export class StepTwo extends React.Component {
         </div>
 
         <hr />
-        <div id="formSection2">
+        <div className="formSection2">
           <label htmlFor="provider">Payroll Provider</label>
           <select
-            id="signupInputDrop"
+            className="signupInputDrop"
             name="provider"
             onChange={this.handleOtherProviderChangeTwo}
             value={this.state.provider}

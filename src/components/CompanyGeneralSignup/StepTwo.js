@@ -7,22 +7,22 @@ export class StepTwo extends React.Component {
     super();
     this.state = {
       payroll: "",
-      provider: "",
+      provclassNameer: "",
       heardAbout: "",
-      providerOther: false,
+      provclassNameerOther: false,
       heardAboutOther: false
     };
   }
 
-  providerOther = () => {
+  provclassNameerOther = () => {
     return (
-      <div>
-        <label htmlFor="provider">Please indicate your provider</label>
+      <div className="signupForm">
+        <label htmlFor="provclassNameer">Please indicate your provider</label>
         <input
           type="text"
-          name="provider"
-          id="signupInput"
-          onChange={this.handleProviderChange}
+          name="provclassNameer"
+          className="signupInput"
+          onChange={this.handleProvclassNameerChange}
         />
       </div>
     );
@@ -30,12 +30,12 @@ export class StepTwo extends React.Component {
 
   heardAboutOther = () => {
     return (
-      <div>
+      <div className="signupForm">
         <label htmlFor="heardAbout">Please indicate your source</label>
         <input
           type="text"
           name="heardAbout"
-          id="signupInput"
+          className="signupInput"
           onChange={this.handleHeardAboutChange}
         />
       </div>
@@ -46,26 +46,26 @@ export class StepTwo extends React.Component {
     this.setState({ payroll: event.target.value });
   };
 
-  handleProviderChange = event => {
-    this.setState({ provider: event.target.value });
+  handleProvclassNameerChange = event => {
+    this.setState({ provclassNameer: event.target.value });
   };
 
   handleHeardAboutChange = event => {
     this.setState({ heardAbout: event.target.value });
   };
 
-  handleOtherProviderChange = event => {
+  handleOtherProvclassNameerChange = event => {
     this.setState(
-      { provider: event.target.value, providerOther: false },
+      { provclassNameer: event.target.value, provclassNameerOther: false },
       () => {
-        if (this.state.provider === "Other") {
-          this.setState({ providerOther: true });
+        if (this.state.provclassNameer === "Other") {
+          this.setState({ provclassNameerOther: true });
         }
       }
     );
   };
 
-  handleHeardAboutProviderChange = event => {
+  handleHeardAboutProvclassNameerChange = event => {
     this.setState(
       { heardAbout: event.target.value, heardAboutOther: false },
       () => {
@@ -80,14 +80,14 @@ export class StepTwo extends React.Component {
     return (
       <div>
         <SimpleStorage parent={this} />
-        <div id="signup-form">
-          <div id="signupDiv">
+        <div className="signupForm">
+          <div className="signupDiv">
             <label htmlFor="payroll">
-              Do you currently have a payroll provider?
+              Do you currently have a payroll provclassNameer?
             </label>
             <select
               name="payroll"
-              id="signupInputDrop"
+              className="signupInputDrop"
               onChange={this.handlePayrollChange}
               value={this.state.payroll}
             >
@@ -98,13 +98,13 @@ export class StepTwo extends React.Component {
               <option>Yes</option>
             </select>
           </div>
-          <div id="signupDiv">
-            <label htmlFor="provider">If yes, Select Your Provider</label>
+          <div className="signupDiv">
+            <label htmlFor="provclassNameer">If yes, Select Your ProvclassNameer</label>
             <select
-              name="provider"
-              id="signupInputDrop"
-              onChange={this.handleOtherProviderChange}
-              value={this.state.provider}
+              name="provclassNameer"
+              className="signupInputDrop"
+              onChange={this.handleOtherProvclassNameerChange}
+              value={this.state.provclassNameer}
             >
               <option value="" disabled selected>
                 Please Select One...
@@ -116,16 +116,16 @@ export class StepTwo extends React.Component {
               <option>SurePayroll</option>
               <option>Other</option>
             </select>
-            {this.state.providerOther ? this.providerOther() : null}
+            {this.state.provclassNameerOther ? this.provclassNameerOther() : null}
           </div>
-          <div id="signupDiv">
+          <div className="signupDiv">
             <label htmlFor="heardAbout">
               How Do you hear about SaveAway401k?
             </label>
             <select
               name="heardAbout"
-              id="signupInputDrop"
-              onChange={this.handleHeardAboutProviderChange}
+              className="signupInputDrop"
+              onChange={this.handleHeardAboutProvclassNameerChange}
               value={this.state.heardAbout}
             >
               <option value="" disabled selected>

@@ -22,7 +22,7 @@ export class StepThree extends React.Component {
         <input
           type="text"
           name="AdminName"
-          id="signupInput"
+          className="signupInput"
           onChange={this.handleAdminName}
           placeholder="Name"
           value={this.state.AdminName}
@@ -30,7 +30,7 @@ export class StepThree extends React.Component {
         <input
           type="text"
           name="AdminPhone"
-          id="signupInput"
+          className="signupInput"
           onChange={this.handleAdminPhone}
           placeholder="Phone"
           value={this.state.AdminPhone}
@@ -38,7 +38,7 @@ export class StepThree extends React.Component {
         <input
           type="text"
           name="AdminEmail"
-          id="signupInput"
+          className="signupInput"
           onChange={this.handleAdminEmail}
           placeholder="Email"
           value={this.state.AdminEmail}
@@ -85,10 +85,10 @@ export class StepThree extends React.Component {
     return (
       <div>
         <SimpleStorage parent={this} />
-        <h2 id="formHeader">
+        <h2 className="formHeader">
           Please Indicate Your Administrator and Current Plan
         </h2>
-        <div id="formSection2">
+        <div className="formSection2">
           <label htmlFor="Admin">
             Will you be the Administrator of the plan?
           </label>
@@ -96,7 +96,7 @@ export class StepThree extends React.Component {
             name="Admin"
             onChange={this.handleOtherAdminChangeTwo}
             value={this.state.Admin}
-            id="signupInputDrop"
+            className="signupInputDrop"
           >
             <option value="" disabled selected>
               Please Select Yes or No
@@ -113,7 +113,7 @@ export class StepThree extends React.Component {
             name="PlanStatus"
             onChange={this.handlePlanStatusChange}
             value={this.state.PlanStatus}
-            id="signupInputDrop"
+            className="signupInputDrop"
           >
             <option value="" disabled selected>
               Please Select Yes or No

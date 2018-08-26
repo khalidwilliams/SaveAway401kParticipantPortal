@@ -45,12 +45,12 @@ export class StepOne extends React.Component {
     return (
       <div>
         <SimpleStorage parent={this} />
-        <div id="signup-form">
-          <div id="signupDiv">
+        <div className="signupForm">
+          <div className="signupDiv">
             <label htmlFor="FullName">Full Name</label>
             <input
               type="text"
-              id="signupInput"
+              className="signupInput"
               value={this.state.FullName}
               onChange={this.handleNameChange}
               name="FullName"
@@ -58,17 +58,17 @@ export class StepOne extends React.Component {
             <label htmlFor="CompanyName">Company Name</label>
             <input
               type="text"
-              id="signupInput"
+              className="signupInput"
               value={this.state.CompanyName}
               onChange={this.handleCompanyNameChange}
               name="CompanyName"
             />
           </div>
-          <div id="signupDiv">
+          <div className="signupDiv">
             <label htmlFor="CompanyEmail">Email Adress</label>
             <input
               type="text"
-              id="signupInput"
+              className="signupInput"
               value={this.state.CompanyEmail}
               onChange={this.handleEmailChange}
               name="CompanyEmail"
@@ -76,23 +76,23 @@ export class StepOne extends React.Component {
             <label htmlFor="CompanyPhone">Company Phone Number</label>
             <input
               type="text"
-              id="signupInput"
+              className="signupInput"
               value={this.state.CompanyPhone}
               onChange={this.handleCompanyPhoneChange}
               name="CompanyPhone"
             />
           </div>
-          <div id="signupDiv">
+          <div className="signupDiv">
             <label htmlFor="State">What State do You Operate Within?</label>
             <States />
           </div>
-          <div id="signupDiv">
+          <div className="signupDiv">
             <label htmlFor="EmployeeNumber">
               How many employees do you have?
             </label>
             <select
               name="EmployeeNumber"
-              id="signupInputDrop"
+              className="signupInputDrop"
               onChange={this.handleEmployeeNumberChange}
               value={this.state.EmployeeNumber}
             >

@@ -75,7 +75,7 @@ export default class Welcome extends React.Component {
             </div>
             <div id="signup">
               <h2>Signup for a free consultation </h2>
-              <form id="signup-form" onSubmit={this.addBasicInfo}>
+              <form className="signupForm" onSubmit={this.addBasicInfo}>
                 <label htmlFor="signupName" id="welcomePageForm">
                   Your Name
                 </label>
@@ -105,7 +105,7 @@ export default class Welcome extends React.Component {
                   <option value="20-100">20-100 employees</option>
                   <option value="100-200">100-200 employees</option>
                 </select>
-                <input type="submit" id="submitButton" value="Submit" />
+                <input type="submit" className="submitButton" value="Submit" />
               </form>
             </div>
           </div>

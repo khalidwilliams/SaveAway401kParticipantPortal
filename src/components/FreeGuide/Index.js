@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
-import Footer from "../Footer/Index";
+import FooterMovable from "../Footer/footerMovable";
 
 var baseURL = "https://saveawaytest.herokuapp.com/";
 
@@ -68,8 +68,8 @@ class FreeGuide extends Component {
       <div>
         <div id="infoSignup">
           <div id="signup">
-            <h2>Signup and We Will Send you a Free Guide! </h2>
-            <form id="signup-form" onSubmit={this.addBasicInfo}>
+            <h2>Signup and Receive a Free Guide! </h2>
+            <form className="signupForm" onSubmit={this.addBasicInfo}>
               <label htmlFor="signupName">Your Full Name</label>
               <input type="text" name="signupName" />
               <label htmlFor="signupEmail">Your Company Email Adress</label>
@@ -89,11 +89,12 @@ class FreeGuide extends Component {
                 <option value="20-100">20-100 employees</option>
                 <option value="100-200">100-200 employees</option>
               </select>
-              <input type="submit" id="submitButton" value="Submit" />
+              <br />
+              <input type="submit" className="submitButton" value="Submit" />
             </form>
           </div>
         </div>
-        <Footer />
+        <FooterMovable />
       </div>
     );
   }

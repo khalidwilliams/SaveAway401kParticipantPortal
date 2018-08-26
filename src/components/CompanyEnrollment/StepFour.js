@@ -132,93 +132,93 @@ class StepFour extends Component {
     return (
       <div>
         <SimpleStorage parent={this} />
-        <h2 id="formHeader">Please Confirm and Submit Your Information</h2>
+        <h2 className="formHeader">Please Confirm and Submit Your Information</h2>
         <form onSubmit={this.addCompanyInfo}>
-          <div id="formSection">
-            <div id="formAnswer">
+          <div className="formSection">
+            <div className="formAnswer">
               <label htmlFor="companyName">Company Name</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="companyName"
                 defaultValue={this.state.companyName}
               />
               <label htmlFor="companyPhone">Company Phone Number</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="companyPhone"
                 defaultValue={this.state.companyPhone}
               />
             </div>
           </div>
           <br />
-          <div id="formSection">
-            <div id="formAnswer">
+          <div className="formSection">
+            <div className="formAnswer">
               <label htmlFor="accountName">Your Name</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="accountName"
                 defaultValue={this.state.accountName}
               />
               <label htmlFor="signupEmail">Your Email</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="signupEmail"
                 defaultValue={this.state.signupEmail}
               />
             </div>
           </div>
           <br />
-          <div id="formSection">
+          <div className="formSection">
             <label htmlFor="signupAdress">Company Adress</label>
             <hr />
-            <div id="formAnswer">
+            <div className="formAnswer">
               <label htmlFor="signupAdressStreet">Street </label>
               <input
-                id="formInput"
+                className="formInput"
                 name="signupAdressStreet"
                 defaultValue={this.state.signupAdressStreet}
               />
               <label htmlFor="signupAdressApt">Apt, Unit, Floor</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="signupAdressApt"
                 defaultValue={this.state.signupAdressApt}
               />
             </div>
             <br />
-            <div id="formAnswer">
+            <div className="formAnswer">
               <label htmlFor="signupAdressCity">City</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="signupAdressCity"
                 defaultValue={this.state.signupAdressCity}
               />
               <label htmlFor="signupAdressState">State</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="signupAdressState"
                 defaultValue={this.state.signupAdressState}
               />
               <label htmlFor="signupAdressZip">Zip Code</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="signupAdressZip"
                 defaultValue={this.state.signupAdressZip}
               />
             </div>
           </div>
           <br />
-          <div id="formSection">
-            <div id="formAnswer">
+          <div className="formSection">
+            <div className="formAnswer">
               <label htmlFor="companyEIN">Company Tax Number (EIN)</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="companyEIN"
                 defaultValue={this.state.companyEIN}
               />
               <label htmlFor="businessHours">Business Hours</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="businessHours"
                 defaultValue={this.state.businessHours}
               />
@@ -227,30 +227,30 @@ class StepFour extends Component {
           <br />
           <hr />
           <br />
-          <div id="formSection2">
-            <div id="formAnswer">
+          <div className="formSection2">
+            <div className="formAnswer">
               <label htmlFor="AutoEnroll">
                 Would you like to Auto Enroll Employees?
               </label>
               <input
-                id="formInput"
+                className="formInput"
                 name="AutoEnroll"
                 defaultValue={this.state.AutoEnroll}
               />
               <label htmlFor="planType">Plan Type</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="planType"
                 defaultValue={this.state.planType}
               />
             </div>
             <hr />
-            <div id="formAnswer">
+            <div className="formAnswer">
               <label htmlFor="enrollmentPercentage">
                 Auto Enrollment Percentage
               </label>
               <input
-                id="formInput"
+                className="formInput"
                 name="enrollmentPercentage"
                 defaultValue={this.state.enrollmentPercentage}
               />
@@ -259,29 +259,29 @@ class StepFour extends Component {
           <br />
           <hr />
           <br />
-          <div id="formSection2">
-            <div id="formAnswer">
+          <div className="formSection2">
+            <div className="formAnswer">
               <label htmlFor="provider">Payroll Provider</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="provider"
                 defaultValue={this.state.provider}
               />
               <label htmlFor="paymentCycle">Payment Cycle</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="paymentCycle"
                 defaultValue={this.state.paymentCycle}
               />
             </div>
           </div>
-          <div id="formSection2">
-            <div id="formAnswer">
+          <div className="formSection2">
+            <div className="formAnswer">
               <label htmlFor="Admin">
                 Will you be the Administrator of the plan?
               </label>
               <input
-                id="formInput"
+                className="formInput"
                 name="Admin"
                 defaultValue={this.state.Admin}
               />
@@ -292,30 +292,30 @@ class StepFour extends Component {
               information. <br />
               ***Note: it will be blank if you are the admin.
             </label>
-            <div id="adminOtherInputs">
+            <div className="adminOtherInputs">
               <input
-                id="formInput"
+                className="formInput"
                 name="AdminName"
                 defaultValue={this.state.AdminName}
               />
               <input
-                id="formInput"
+                className="formInput"
                 name="AdminPhone"
                 defaultValue={this.state.AdminPhone}
               />
               <input
-                id="formInput"
+                className="formInput"
                 name="AdminEmail"
                 defaultValue={this.state.AdminEmail}
               />
             </div>
             <hr />
-            <div id="formAnswer">
+            <div className="formAnswer">
               <label htmlFor="PlanStatus">
                 Does your company have a 401k plan now?
               </label>
               <input
-                id="formInput"
+                className="formInput"
                 name="PlanStatus"
                 defaultValue={this.state.PlanStatus}
               />
@@ -323,10 +323,10 @@ class StepFour extends Component {
           </div>
           <br />
           <hr />
-          <div id="multiPageSubmit">
+          <div className="multiPageSubmit">
             <input
               type="submit"
-              id="submitButtonMulti"
+              className="submitButton"
               defaultValue="Submit Your Enrollment"
             />
           </div>

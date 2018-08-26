@@ -18,12 +18,12 @@ import SaveAway401kVigorous from "./Assets/SaveAway401kVigorous.png";
 export default function Pricing() {
   return (
     <div>
-      <div id="aboutSections">
+      <div className="aboutSections">
         <NavBar />
 
         <div id="fundLists">
           <div id="fundsDescription">
-            <h1>
+            <h2>
               At SaveAway, we offer only funds that have low expense ratios.
               <br />
               Many Mutual Fund companies have funds with
@@ -36,123 +36,123 @@ export default function Pricing() {
               <br />
               By investing in ETFs (Exchange Traded Funds) you ensure that you
               are paying the lowest possible percentage in fees.
-            </h1>
+            </h2>
             <hr />
             <hr />
           </div>
 
           <div id="fundBreakDowns">
-            <div id="fundInfo">
+            <div className="fundInfo">
               <a
-                id="fundTitle"
+                className="fundTitle"
                 href={SaveAway401kFundChoicesSecure}
                 target="_blank"
               >
-                <h3 id="fundHeader">
+                <h3 className="fundHeader">
                   Secure Model
                   <br />
                   Portfolio Details
                 </h3>
               </a>
               <a
-                id="fundTitle"
+                className="fundTitle"
                 href={SaveAway401kFundChoicesSecure}
                 target="_blank"
               >
                 <img
-                  id="fundIcon"
+                  className="fundIcon"
                   src={SaveAway401kSecure}
                   alt="SaveAway 401k Fund Choices Secure"
                 />
               </a>
             </div>
-            <div id="fundInfo">
+            <div className="fundInfo">
               <a
-                id="fundTitle"
+                className="fundTitle"
                 href={SaveAway401kFundChoicesSensible}
                 target="_blank"
               >
-                <h3 id="fundHeader">
+                <h3 className="fundHeader">
                   Sensible Model <br />
                   Portfolio Details
                 </h3>
               </a>
               <a
-                id="fundTitle"
+                className="fundTitle"
                 href={SaveAway401kFundChoicesSensible}
                 target="_blank"
               >
                 <img
-                  id="fundIcon"
+                  className="fundIcon"
                   src={SaveAway401kSensible}
                   alt="SaveAway 401k Fund Choices Sensible"
                 />
               </a>
             </div>
-            <div id="fundInfo">
+            <div className="fundInfo">
               <a
-                id="fundTitle"
+                className="fundTitle"
                 href={SaveAway401kFundChoicesStandard}
                 target="_blank"
               >
-                <h3 id="fundHeader">
+                <h3 className="fundHeader">
                   Standard Model <br />
                   Portfolio Details
                 </h3>
               </a>
               <a
-                id="fundTitle"
+                className="fundTitle"
                 href={SaveAway401kFundChoicesStandard}
                 target="_blank"
               >
                 <img
-                  id="fundIcon"
+                  className="fundIcon"
                   src={SaveAway401kStandard}
                   alt="SaveAway 401k Fund Choices Standard"
                 />
               </a>
             </div>
-            <div id="fundInfo">
+            <div className="fundInfo">
               <a
-                id="fundTitle"
+                className="fundTitle"
                 href={SaveAway401kFundChoicesConventional}
                 target="_blank"
               >
-                <h3 id="fundHeader">
+                <h3 className="fundHeader">
                   Conventional Model <br />
                   Portfolio Details
                 </h3>
               </a>
               <a
-                id="fundTitle"
+                className="fundTitle"
                 href={SaveAway401kFundChoicesConventional}
                 target="_blank"
               >
                 <img
-                  id="fundIcon"
+                  className="fundIcon"
                   src={SaveAway401kConventional}
                   alt="SaveAway 401k Fund Choices Conventional"
                 />
               </a>
             </div>
-            <div id="fundInfo">
+            <div className="fundInfo">
               <a
-                id="fundTitle"
+                className="fundTitle"
                 href={SaveAway401kFundChoicesVigorous}
                 target="_blank"
               >
-                <h3 id="fundHeader">
+                <h3 className="fundHeader">
                   Vigorous Model <br />
                   Portfolio Details
                 </h3>
               </a>
               <a
-                id="fundTitle"
+                className="fundTitle"
                 href={SaveAway401kFundChoicesVigorous}
                 target="_blank"
               >
                 <img
-                  id="fundIcon"
+                  className="fundIcon"
                   src={SaveAway401kVigorous}
                   alt="SaveAway 401k Fund Choices Vigorous"
                 />
@@ -162,14 +162,14 @@ export default function Pricing() {
         </div>
 
         <div id="fullFund">
-          <a id="fundTitle" href={SaveAway401kFundChoicesFull} target="_blank">
-            <h3 id="fullFundHeader">
+          <a className="fundTitle" href={SaveAway401kFundChoicesFull} target="_blank">
+            <h4 id="fullFundHeader">
               Complete Model
               <br />
               Portfolio Details
-            </h3>
+            </h4>
           </a>
-          <a id="fundTitle" href={SaveAway401kFundChoicesFull} target="_blank">
+          <a className="fundTitle" href={SaveAway401kFundChoicesFull} target="_blank">
             <img
               id="fullFundIcon"
               src={SaveAway401kFull}

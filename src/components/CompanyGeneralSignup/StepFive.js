@@ -6,7 +6,7 @@ var baseURL = "https://saveawaytest.herokuapp.com/";
 
 const Confirm = ({ history }) => (
   <div>
-  <h1>Confirm Info</h1>
+    <h1>Confirm Info</h1>
     <StepFive history={history} />
   </div>
 );
@@ -111,34 +111,36 @@ class StepFive extends Component {
     return (
       <div>
         <SimpleStorage parent={this} />
-        <h2 id="formHeader">Please Confirm and Submit Your Information</h2>
+        <h2 className="formHeader">
+          Please Confirm and Submit Your Information
+        </h2>
         <form onSubmit={this.addCompanyInfo}>
-          <div id="signup-form">
-            <div id="signupDiv">
+          <div className="signupForm">
+            <div className="signupDiv">
               <label htmlFor="FullName">Full Name:</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="FullName"
                 defaultdefaultValue={this.state.FullName}
               />
               <label htmlFor="CompanyName">Company Name:</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="CompanyName"
                 defaultValue={this.state.CompanyName}
               />
             </div>
             <hr />
-            <div id="signupDiv">
+            <div className="signupDiv">
               <label htmlFor="CompanyEmail">Email Adress:</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="CompanyEmail"
                 defaultValue={this.state.CompanyEmail}
               />
               <label htmlFor="CompanyPhone">Company Phone Number:</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="CompanyPhone"
                 defaultValue={this.state.CompanyPhone}
               />
@@ -147,34 +149,34 @@ class StepFive extends Component {
             <div>
               <label htmlFor="State">State You Operate Within:</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="State"
                 defaultValue={this.state.State}
               />
               <label htmlFor="EmployeeNumber">Number of employees:</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="EmployeeNumber"
                 defaultValue={this.state.EmployeeNumber}
               />
             </div>
           </div>
           <br />
-          <div id="signup-form">
-            <div id="signupDiv">
+          <div className="signupForm">
+            <div className="signupDiv">
               <label htmlFor="payroll">
                 Do you currently have a payroll provider:
               </label>
               <input
-                id="formInput"
+                className="formInput"
                 name="payroll"
                 defaultValue={this.state.payroll}
               />
             </div>
-            <div id="signupDiv">
+            <div className="signupDiv">
               <label htmlFor="provider">If yes, your provider is:</label>
               <input
-                id="formInput"
+                className="formInput"
                 name="provider"
                 defaultValue={this.state.provider}
               />
@@ -184,20 +186,20 @@ class StepFive extends Component {
                 You heard about SaveAway401k from:
               </label>
               <input
-                id="formInput"
+                className="formInput"
                 name="heardAbout"
                 defaultValue={this.state.heardAbout}
               />
             </div>
           </div>
           <br />
-          <div id="signup-form">
-            <div id="signupDiv">
+          <div className="signupForm">
+            <div className="signupDiv">
               <label htmlFor="Admin">
                 Will you be the Administrator of the plan?
               </label>
               <input
-                id="formInput"
+                className="formInput"
                 name="Admin"
                 defaultValue={this.state.Admin}
               />
@@ -208,54 +210,54 @@ class StepFive extends Component {
               information. <br />
               ***Note: it will be blank if you are the admin.
             </label>
-            <div id="adminOtherInputs">
+            <div className="adminOtherInputs">
               <input
-                id="formInput"
+                className="formInput"
                 name="AdminName"
                 defaultValue={this.state.AdminName}
               />
               <input
-                id="formInput"
+                className="formInput"
                 name="AdminPhone"
                 defaultValue={this.state.AdminPhone}
               />
               <input
-                id="formInput"
+                className="formInput"
                 name="AdminEmail"
                 defaultValue={this.state.AdminEmail}
               />
             </div>
             <hr />
-            <div id="signupDiv">
+            <div className="signupDiv">
               <label htmlFor="PlanStatus">
                 Does your company have a 401k plan now?
               </label>
               <input
-                id="formInput"
+                className="formInput"
                 name="PlanStatus"
                 defaultValue={this.state.PlanStatus}
               />
+              </div>
+              <br />
+              <div>
+                <label htmlFor="checked">
+                  You agree to the terms? Check Box if Yes
+                </label>
+                <input
+                  className="formInput"
+                  name="checked"
+                  type="checkbox"
+                  checked={true}
+                  autoFocus
+                />
+              </div>
             </div>
-            <br />
-            <div id="signupDiv">
-              <label htmlFor="checked">
-                You agree to the terms? Check Box if Yes
-              </label>
-              <input
-                id="formInput"
-                name="checked"
-                type="checkbox"
-                checked={true}
-                autoFocus
-              />
-            </div>
-          </div>
           <br />
           <hr />
-          <div id="multiPageSubmit">
+          <div className="multiPageSubmit">
             <input
               type="submit"
-              id="submitButtonMulti"
+              className="submitButton"
               defaultValue="Signup for your Account"
             />
           </div>

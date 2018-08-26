@@ -5,26 +5,26 @@ export default class Template extends React.Component {
   render() {
     return (
       <div>
-        <div id="blogHeader">
-          <h1 id="blogTitle"> </h1>
-          <h3 id="blogDate"></h3>
+        <div className="blogHeader">
+          <h1 className="blogTitle"> </h1>
+          <h3 className="blogDate"></h3>
         </div>
-        <div id="blogContent">
-        <div id="blogSection">
-        <img id="blogImage" src={} alt="" />
-          <h4 id="sectionTitle"> </h4>
-          <p id="blogPara" > </p>
+        <div className="blogContent">
+        <div className="blogSection">
+        <img className="blogImage" src={} alt="" />
+          <h4 className="sectionTitle"> </h4>
+          <p className="blogPara" > </p>
         </div>
 
-        <div id="imagePara">
-          <p id="imageParaSection"> </p>
-            <div id="imageBox">
+        <div className="imagePara">
+          <p className="imageParaSection"> </p>
+            <div className="imageBox">
               <img
-                id="blogImage"
+                className="blogImage"
                 src={}
                 alt=""
               />
-              <p id="imageDescription">
+              <p className="imageDescription">
               </p>
             </div>
         </div>

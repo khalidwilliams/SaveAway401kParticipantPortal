@@ -117,7 +117,7 @@ footer {
   background-color: #f9ebea;
 }
 
-#navItem {
+.navItem {
   display: flex;
   padding: 0.5rem 1rem;
   font-family: DINAlternateRegular, sans-serif;
@@ -127,7 +127,7 @@ footer {
   border-style: dotted;
   color: white;
 }
-#navItem:hover {
+.navItem:hover {
   color: #f9ebea;
 }
 
@@ -195,31 +195,42 @@ footer {
   margin: 1rem;
 }
 
-#signup-form {
+.signupForm {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   color: white;
-  background-color: rgba(249, 235, 234, 0.5);
+  background-color: rgba(163, 106, 102, 0.5);
   font-size: 1.5rem;
   border-radius: 5px;
   border-color: rgba(146, 43, 33, 0.9);
   border-style: groove;
+  padding:1rem
 }
 
 #signupSelect {
   width: auto;
 }
 
-#companySignupDiv {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  font-size: 1.3rem;
-  padding-left: 5rem;
+#welcomePage{
+  padding: 0 1rem;
+  margin:0
 }
 
-#signupDiv {
+.signUpEnroll{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width:100%
+}
+
+.multiFormDiv {
+  color: white;
+  font-size: 1.3rem;
+  margin:2rem;
+}
+
+.signupDiv {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -229,7 +240,7 @@ footer {
   padding-bottom: 1.2rem;
 }
 
-#signupDivOther {
+.signupDivOther {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -240,22 +251,23 @@ footer {
   padding-bottom: 1.2rem;
 }
 
-#accountDiv {
+.accountDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border-bottom-style: ridge;
-  border-color: rgba(146, 43, 33, 0.7);
+  background-color: rgba(146, 43, 33, 0.7);
   border-radius: 2px;
+  background-color:
 }
 
-#loginPage {
+.loginPage {
   text-align: center;
   color: white;
 }
 
-#loginContainer {
+.loginContainer {
   color: white;
   font-size: 2rem;
   display: flex;
@@ -263,8 +275,11 @@ footer {
   align-items: center;
   flex-direction: column;
 }
-
-#loginInput {
+#accountCreationForm{
+  background-color: rgba(152, 100, 95, 0.7);
+  padding:1rem
+}
+.loginInput {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -294,13 +309,15 @@ footer {
 #accomplishList {
   display: flex;
   flex-direction: row;
+  font-size: 1.2rem;
 }
 
 #navBarSide {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  width: 15%;
+  flex-direction: column;
+  width: 180px;
   height: 70%;
   margin-left: 2rem;
   background-color: rgb(146, 43, 33, 0.9);
@@ -308,19 +325,28 @@ footer {
   border-radius: 4px;
 }
 
+#blogDir {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+  padding:0
+}
+
 /*same height centered*/
-#navItemAbout1 {
+.navItemAbout1 {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   font-family: DINAlternateRegular, sans-serif;
-  width: 120px;
+  width: 145px;
+  font-weight: normal;
   height: 60px;
-  font-size: 1.2;
-  padding: 0.5rem;
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
-  margin-left: 0.7rem;
+  font-size: 1.3rem;
+  padding: 0.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  text-align: center;
   border: 1px;
   border-radius: 5px;
   border-style: ridge;
@@ -329,13 +355,13 @@ footer {
 }
 
 /*small font centered*/
-#navItemAbout {
+.navItemAbout {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   font-family: DINAlternateRegular, sans-serif;
-  width: 120px;
-  font-size: 1.2rem;
+  width: 150px;
+  font-size: 1.5rem;
   padding: 0.5rem;
   margin-top: 1.2rem;
   margin-bottom: 1.2rem;
@@ -347,21 +373,27 @@ footer {
   background-color: rgb(146, 43, 33, 0.9);
 }
 
-#navItemAbout:hover {
+.navItemAbout:hover {
   color: #f9ebea;
 }
 
-#aboutContent {
+.aboutContent {
   padding: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
   color: white;
+  width: 100%;
 }
 
-#aboutSections {
+.aboutSections {
   display: flex;
   flex-direction: row;
+}
+
+#aboutInfo {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 #fundsDescription {
@@ -391,7 +423,7 @@ footer {
 }
 
 #fullFundHeader {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 #fullFundIcon {
@@ -399,7 +431,7 @@ footer {
   padding: 0.5rem;
 }
 
-#fundIcon {
+.fundIcon {
   width: 95%;
   margin: 0.5rem;
 }
@@ -417,14 +449,14 @@ footer {
   margin-bottom: 1.5rem;
 }
 
-#formSection {
+.formSection {
   background-color: rgb(146, 43, 33, 0.4);
   margin: 0.5rem;
   border-radius: 3px;
   border-style: groove;
 }
 
-#formSection2 {
+.formSection2 {
   background-color: rgb(146, 43, 33, 0.3);
   margin: 0.5rem;
   border-radius: 3px;
@@ -432,12 +464,12 @@ footer {
   border-style: groove;
 }
 
-#shorterInput {
+.shorterInput {
   width: 120px;
   height: 18px;
 }
 
-#dropDownInput {
+.dropDownInput {
   width: 200px;
   height: 25px;
 }
@@ -485,22 +517,26 @@ footer {
   width: 150px;
 }
 
-#submitButton {
+.submitButton {
   height: 40px;
   font-size: 1.5rem;
   background-color: rgb(146, 43, 33, 0.9);
   color: white;
   border-radius: 4px;
 }
+.multiPageSubmit{
+  display: flex;
+  justify-content: flex-end;
+}
 
-#accountSignin:disabled {
+.accountSignin:disabled {
   height: 40px;
   font-size: 1.5rem;
   border-radius: 4px;
   background-color: rgba(112, 123, 124, 0.4);
 }
 
-#accountSignin {
+.accountSignin {
   height: 40px;
   font-size: 1.5rem;
   border-radius: 4px;
@@ -516,17 +552,40 @@ footer {
   color: white;
 }
 
+#guide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 #guideHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   color: white;
+  align-items: center;
 }
 
-.retirement {
-  display: flex;
-  width: 90%;
-  padding: 2.5rem;
+#guideDownLoad {
+  font-size: 2rem;
+  background-color: rgba(249, 235, 234, 0.5);
+  padding: 0.5rem;
+  border-radius: 4px;
+  border-style: outset;
+  margin: 2rem;
+  margin-right: 3rem;
+}
+
+
+
+#retirementPhoto {
+  width: 660px;
+}
+
+#guideImage {
+  width: 75%;
+  padding: 2rem 2.5rem;
 }
 
 .accountInfo {
@@ -534,12 +593,12 @@ footer {
   padding: 0.5rem 2.5rem;
 }
 
-#guideInfo {
-  padding: 0.5rem 2.5rem;
+.guideInfo {
+  padding: 0.5rem 6rem;
   color: white;
 }
 
-#guideInfoStory {
+.guideInfoStory {
   padding: 0.5rem 4rem;
   color: white;
 }
@@ -586,47 +645,48 @@ footer {
   width: 100%;
 }
 
-#blogHeader {
+.blogHeader {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-#blogTitle {
+.blogTitle {
   font-size: 5rem;
 }
 
-#blogDate {
+.blogDate {
   font-style: italic;
   font-size: 1.5rem;
 }
 
-#blogContent {
+.blogContent {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 1rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
-#blogSingleImage {
+.blogSingleImage {
   width: 50%;
 }
 
-#sectionTitle {
+.sectionTitle {
   font-size: 2.5rem;
   margin: 0;
 }
 
-#blogPara {
+.blogPara {
   font-size: 1.5rem;
   margin: 0.5;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-#blogParaIndented {
+.blogParaIndented {
   font-size: 1.5rem;
   margin: 0.5;
   margin-left: 3rem;
@@ -634,15 +694,15 @@ footer {
   padding-right: 0.5rem;
 }
 
-#blogParaItallic {
+.blogParaItallic {
   font-size: 1.5rem;
   margin: 0.5;
   font-style: italic;
-  padding-left: 0.5rem;
+  padding-left: 1.5rem;
   padding-right: 0.5rem;
 }
 
-#quote {
+.quote {
   font-size: 1.5rem;
   margin: 0.5;
   font-style: italic;
@@ -651,18 +711,18 @@ footer {
   margin-left: 3rem;
 }
 
-#imagePara {
+.imagePara {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-#blogImage {
+.blogImage {
   width: 100%;
 }
 
-#imageBox {
+.imageBox {
   display: flex;
   flex-direction: column;
   padding-left: 0.5rem;
@@ -671,21 +731,23 @@ footer {
   margin-right: 0.5rem;
 }
 
-#imageParaSection {
+.imageParaSection {
   font-size: 1.5rem;
   margin: 0.5;
   width: 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-#imageDescription {
+.imageDescription {
   font-size: 1.2rem;
 }
 
-#pdfImage {
+.pdfImage {
   width: 70%;
 }
 
-#pdfContainer {
+.pdfContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -699,6 +761,8 @@ footer {
 
 #titlePrice {
   font-size: 4rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
 }
 
 #pricingSection {
@@ -707,11 +771,13 @@ footer {
   background-color: #ae7167;
   color: #8b3d30;
   margin: 1rem;
+  margin-top: 0;
   padding: 1rem;
   border-radius: 4px;
   border-color: #5c2319;
   border-width: 3px;
   border-style: solid;
+  width: 90%;
 }
 
 #pricingSection:hover {
@@ -729,12 +795,12 @@ footer {
   background-color: #ae7167;
   color: #8b3d30;
   margin: 1rem;
-  margin-left: 6rem;
   padding: 1rem;
   border-radius: 4px;
   border-color: #5c2319;
   border-width: 3px;
   border-style: solid;
+  width: 70%;
 }
 
 #pricingSection2:hover {
@@ -743,7 +809,6 @@ footer {
   color: #8b3d30;
   background-color: rgb(254, 242, 241, 0.5);
   margin: 1rem;
-  margin-left: 6rem;
   padding: 1rem;
 }
 
@@ -753,12 +818,12 @@ footer {
   background-color: #ae7167;
   color: #8b3d30;
   margin: 1rem;
-  margin-left: 12rem;
   padding: 1rem;
   border-radius: 4px;
   border-color: #5c2319;
   border-width: 3px;
   border-style: solid;
+  width: 50%;
 }
 
 #pricingSection3:hover {
@@ -767,27 +832,76 @@ footer {
   color: #8b3d30;
   background-color: rgb(254, 242, 241, 0.5);
   margin: 1rem;
-  margin-left: 12rem;
   padding: 1rem;
+}
+
+#planName {
+  font-size: 3.5rem;
+  text-align: left;
+  font-weight: bold;
+  font-style: oblique;
+  font-variant: small-caps;
+  margin: 0;
+  margin-left: 0.5rem;
 }
 
 #planDeets {
   display: flex;
   flex-direction: row;
-  margin-left: 5rem;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
-#planName {
+#planInfo {
+  font-size: 2.8rem;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+#planName2 {
   font-size: 3rem;
   text-align: left;
   font-weight: bold;
   font-style: oblique;
+  font-variant: small-caps;
+  margin: 0;
+  margin-left: 0.5rem;
 }
 
-#planInfo {
+#planInfo2 {
+  font-size: 2.5rem;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+#planDeets2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+#planName3 {
+  font-size: 2.5rem;
+  text-align: left;
+  font-weight: bold;
+  font-style: oblique;
+  font-variant: small-caps;
+  margin: 0;
+  margin-left: 0.5rem;
+}
+
+#planInfo3 {
   font-size: 2rem;
-  margin: 0.5rem;
-  margin-left: 5rem;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+#planDeets3 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 #passwordForget {

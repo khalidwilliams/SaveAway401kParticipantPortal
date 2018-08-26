@@ -5,8 +5,8 @@ import * as routes from "../../constants/routes";
 import SimpleStorage from "../../stores/SimpleStorage";
 
 const loginStyles = {
-  width: "90%",
-  maxWidth: "600px",
+  wclassNameth: "90%",
+  maxWclassNameth: "600px",
   margin: "20px auto",
   border: "3px solid #ddd",
   borderRadius: "5px",
@@ -14,13 +14,8 @@ const loginStyles = {
 };
 
 const SignUpPage = ({ history }) => (
-  <div id="signup-form">
+  <div className="signupForm">
     <SimpleStorage parent={this} />
-    <h1 id="loginPage">Sign Up for an Account</h1>
-    <p>
-      note: you will not be able to create an account unless your passwords
-      match
-    </p>
     <StepFour history={history} />
   </div>
 );
@@ -60,7 +55,7 @@ class StepFour extends Component {
       .then(authUser => {
         // Create a user in your own accessible Firebase Database too
         db
-          .doCreateUser(authUser.user.uid, username, email)
+          .doCreateUser(authUser.user.uclassName, username, email)
           .then(
             alert("Account Created! Click next to confirm your information")
           )
@@ -95,15 +90,15 @@ class StepFour extends Component {
     return (
       <div style={loginStyles}>
         <SimpleStorage parent={this} />
-        <div id="accountDiv">
-          <h3 id="formHeader"> Create your Account </h3>
+        <div className="accountDiv">
+          <h3 className="formHeader"> Create your Account </h3>
+          <p>
+            note: you will not be able to create an account unless your
+            passwords match
+          </p>
         </div>
-        <p>
-          note: you will not be able to create an account unless your passwords
-          match
-        </p>
-        <form onSubmit={this.onSubmit}>
-          <div id="loginInput">
+        <form id="accountCreationForm" onSubmit={this.onSubmit}>
+          <div className="loginInput">
             <label>
               Username
               <input
@@ -132,7 +127,7 @@ class StepFour extends Component {
             </label>
           </div>
           <br />
-          <div id="loginInput">
+          <div className="loginInput">
             <label>
               Password
               <input
@@ -180,7 +175,11 @@ class StepFour extends Component {
             </label>
           </div>
 
-          <button disabled={isInvalid} type="submit" id="accountSignin">
+          <button
+            disabled={isInvalid}
+            type="submitButton"
+            className="accountSignin"
+          >
             Create Account
           </button>
 
