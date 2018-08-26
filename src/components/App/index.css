@@ -211,6 +211,11 @@ footer {
   width: auto;
 }
 
+.mutliStepLine{
+  border-radius: 1rem;
+  border-width: 0.1rem
+}
+
 #welcomePage{
   padding: 0 1rem;
   margin:0
@@ -267,29 +272,65 @@ footer {
   color: white;
 }
 
-.loginContainer {
+#loginContainer {
   color: white;
   font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: rgba(249, 235, 234, 0.5);
+  border-radius: 4px
 }
+
+#formHeader{
+  font-size: 2rem;
+  margin:0;
+  margin-top: 1rem;
+  margin-bottom: 0.7rem
+}
+
 #accountCreationForm{
   background-color: rgba(152, 100, 95, 0.7);
   padding:1rem
 }
+
 .loginInput {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  border-bottom-style: ridge;
+  border-color: rgba(146, 43, 33, 0.7);
+  border-radius: 2px;
+  margin-top:1rem
+}
+
+.signUpInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 2rem;
+  margin:0
+}
+
+.signUpInfo{
+  height:1.5rem;
+  font-size: 1.1rem
+}
+
+.signUpLabel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #accountInfoLabel {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem
 }
 
 .accountInfoInput {
@@ -297,6 +338,25 @@ footer {
   padding-left: 1rem;
   font-size: 1.3rem;
   margin-left: 1rem;
+}
+
+#terms{
+  margin-left: 2rem;
+  padding:1rem
+}
+
+.signInButton{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 10rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem
+}
+
+#passwordForget {
+  font-size: 1.2rem;
+  margin-left: 18rem
 }
 
 #linkToSignup {

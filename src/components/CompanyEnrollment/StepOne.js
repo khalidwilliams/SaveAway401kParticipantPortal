@@ -180,7 +180,7 @@ export class StepOne extends React.Component {
           />
         </div>
         <br />
-        <hr />
+        <hr className="mutliStepLine"/>
       </div>
     );
   }

@@ -123,7 +123,7 @@ export class StepThree extends React.Component {
           </select>
         </div>
         <br />
-        <hr />
+        <hr className="mutliStepLine"/>
       </div>
     );
   }

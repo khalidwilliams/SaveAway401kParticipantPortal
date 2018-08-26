@@ -91,15 +91,15 @@ class StepFour extends Component {
       <div style={loginStyles}>
         <SimpleStorage parent={this} />
         <div className="accountDiv">
-          <h3 className="formHeader"> Create your Account </h3>
+          <h3 id="formHeader"> Create your Account </h3>
           <p>
-            note: you will not be able to create an account unless your
-            passwords match
+            Note: You will not be able to create an account unless your
+            passwords match.
           </p>
         </div>
         <form id="accountCreationForm" onSubmit={this.onSubmit}>
-          <div className="loginInput">
-            <label>
+          <div className="signUpInput">
+            <label className="signUpLabel">
               Username
               <input
                 value={username}
@@ -110,9 +110,10 @@ class StepFour extends Component {
                 }
                 type="text"
                 placeholder="Username"
+                className="signUpInfo"
               />
             </label>
-            <label>
+            <label className="signUpLabel">
               Email
               <input
                 value={email}
@@ -123,12 +124,13 @@ class StepFour extends Component {
                 }
                 type="text"
                 placeholder="Email Address"
+                className="signUpInfo"
               />
             </label>
           </div>
           <br />
-          <div className="loginInput">
-            <label>
+          <div className="signUpInput">
+            <label className="signUpLabel">
               Password
               <input
                 value={passwordOne}
@@ -139,6 +141,7 @@ class StepFour extends Component {
                 }
                 type="password"
                 placeholder="Password"
+                className="signUpInfo"
               />
               <input
                 value={passwordTwo}
@@ -149,11 +152,12 @@ class StepFour extends Component {
                 }
                 type="password"
                 placeholder="Confirm Password"
+                className="signUpInfo"
               />
             </label>
           </div>
           <hr />
-          <div>
+          <div id="terms">
             <span>By clicking "Accept" I agree that:</span>
             <ul>
               <li>
@@ -175,14 +179,15 @@ class StepFour extends Component {
             </label>
           </div>
 
-          <button
-            disabled={isInvalid}
-            type="submitButton"
-            className="accountSignin"
-          >
-            Create Account
-          </button>
-
+          <div className="signInButton">
+            <button
+              disabled={isInvalid}
+              type="submitButton"
+              className="accountSignin"
+            >
+              Create Account
+            </button>
+          </div>
           {error && <p>{error.message}</p>}
         </form>
       </div>

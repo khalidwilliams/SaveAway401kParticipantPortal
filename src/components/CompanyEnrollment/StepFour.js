@@ -4,11 +4,12 @@ import SimpleStorage, { resetParentState } from "../../stores/SimpleStorage";
 
 var baseURL = "https://saveawaytest.herokuapp.com/";
 
-const Confirm = ({ history }) =>
+const Confirm = ({ history }) => (
   <div>
     <h1>Confirm Info</h1>
     <StepFour history={history} />
   </div>
+);
 
 class StepFour extends Component {
   constructor(props) {
@@ -127,12 +128,14 @@ class StepFour extends Component {
 
   render() {
     if (this.state.redirect === true) {
-  return <Redirect to="/Confirmation" />;
-}
+      return <Redirect to="/Confirmation" />;
+    }
     return (
       <div>
         <SimpleStorage parent={this} />
-        <h2 className="formHeader">Please Confirm and Submit Your Information</h2>
+        <h2 className="formHeader">
+          Please Confirm and Submit Your Information
+        </h2>
         <form onSubmit={this.addCompanyInfo}>
           <div className="formSection">
             <div className="formAnswer">
@@ -330,7 +333,6 @@ class StepFour extends Component {
               defaultValue="Submit Your Enrollment"
             />
           </div>
-
           <hr />
         </form>
       </div>

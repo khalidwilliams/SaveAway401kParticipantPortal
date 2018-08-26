@@ -227,7 +227,7 @@ export class StepTwo extends React.Component {
           {this.state.paymentCycleOther ? this.paymentCycleOther() : null}
         </div>
         <br />
-        <hr />
+        <hr className="mutliStepLine"/>
       </div>
     );
   }

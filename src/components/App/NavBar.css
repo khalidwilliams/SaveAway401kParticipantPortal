@@ -98,21 +98,21 @@ ol.progtrckr li.progtrckr-done:hover:before {
 }
 
 .nextButton {
-  height: 35px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   background-color: rgb(146, 43, 33, 0.9);
   color: white;
   border-radius: 4px;
+  border-width: 2px;
   margin: 1rem;
   margin-left: 5rem
 }
 
 .previousButton {
-  height: 35px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   background-color: rgb(146, 43, 33, 0.9);
   color: white;
   border-radius: 4px;
+  border-width: 2px;
   margin: 1rem;
   margin-left: 5rem
 }

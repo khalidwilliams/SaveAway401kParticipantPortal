@@ -1,35 +1,26 @@
-[debug] [2018-08-26T00:07:19.549Z] ----------------------------------------------------------------------
-[debug] [2018-08-26T00:07:19.551Z] Command:       /usr/local/Cellar/node/9.8.0/bin/node /usr/local/bin/firebase deploy
-[debug] [2018-08-26T00:07:19.551Z] CLI Version:   3.18.6
-[debug] [2018-08-26T00:07:19.551Z] Platform:      darwin
-[debug] [2018-08-26T00:07:19.551Z] Node Version:  v9.8.0
-[debug] [2018-08-26T00:07:19.552Z] Time:          Sat Aug 25 2018 18:07:19 GMT-0600 (MDT)
-[debug] [2018-08-26T00:07:19.552Z] ----------------------------------------------------------------------
+[debug] [2018-08-26T00:50:48.344Z] ----------------------------------------------------------------------
+[debug] [2018-08-26T00:50:48.346Z] Command:       /usr/local/Cellar/node/9.8.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-08-26T00:50:48.346Z] CLI Version:   3.18.6
+[debug] [2018-08-26T00:50:48.346Z] Platform:      darwin
+[debug] [2018-08-26T00:50:48.346Z] Node Version:  v9.8.0
+[debug] [2018-08-26T00:50:48.347Z] Time:          Sat Aug 25 2018 18:50:48 GMT-0600 (MDT)
+[debug] [2018-08-26T00:50:48.347Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-08-26T00:07:19.567Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-08-26T00:07:19.567Z] > authorizing via signed-in user
-[debug] [2018-08-26T00:07:19.569Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-08-26T00:07:19.569Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- { refresh_token: '1/ckha9ZyDYg4RZF3XBg1090kBvj2z3grSFOuW3rxd1fw',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Sat Aug 25 2018 18:07:19 GMT-0600 (MDT)
-[debug] [2018-08-26T00:07:19.774Z] <<< HTTP RESPONSE 200
-[debug] [2018-08-26T00:07:19.780Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/saveaway-401k  
+[debug] [2018-08-26T00:50:48.361Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-26T00:50:48.361Z] > authorizing via signed-in user
+[debug] [2018-08-26T00:50:48.364Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/saveaway-401k  
   
- Sat Aug 25 2018 18:07:19 GMT-0600 (MDT)
-[debug] [2018-08-26T00:07:20.176Z] <<< HTTP RESPONSE 200
-[debug] [2018-08-26T00:07:20.176Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/saveaway-401k/tokens  
+ Sat Aug 25 2018 18:50:48 GMT-0600 (MDT)
+[debug] [2018-08-26T00:50:48.763Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-26T00:50:48.764Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/saveaway-401k/tokens  
   
- Sat Aug 25 2018 18:07:20 GMT-0600 (MDT)
-[debug] [2018-08-26T00:07:20.777Z] <<< HTTP RESPONSE 200
+ Sat Aug 25 2018 18:50:48 GMT-0600 (MDT)
+[debug] [2018-08-26T00:50:49.156Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Deploying to 'saveaway-401k'...
 [info] 
 [info] i  deploying hosting
 [info] i  hosting: preparing public/build directory for upload...
-[debug] [2018-08-26T00:07:24.055Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/saveaway-401k/uploads/-LKnYbOlKe5RoTIV3NaO?fileCount=129&message=  
+[debug] [2018-08-26T00:50:53.714Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/saveaway-401k/uploads/-LKnhZCuIcg-kkHqZRHN?fileCount=172&message=  
   
- Sat Aug 25 2018 18:07:24 GMT-0600 (MDT)
+ Sat Aug 25 2018 18:50:53 GMT-0600 (MDT)

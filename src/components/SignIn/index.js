@@ -10,7 +10,7 @@ const loginStyles = {
   width: "90%",
   maxWidth: "500px",
   margin: "20px auto",
-  border: "1px solid #ddd",
+  border: "2px solid #ddd",
   borderRadius: "5px",
   padding: "10px",
   color: "white"
@@ -19,7 +19,7 @@ const loginStyles = {
 const SignInPage = ({ history }) => (
   <div style={loginStyles}>
     <div>
-      <h1 id="loginPage"> Login to Your Account Here </h1>
+      <h1 id="loginPage"> Login to Your Account  </h1>
       <SignInForm history={history} />
       <PasswordForgetLink />
     </div>
@@ -76,7 +76,7 @@ class SignInForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit} id="loginContainer">
-        <div id="loginInput">
+        <div className="loginInput">
           <label id="accountInfoLabel">
             Email
             <input
@@ -90,7 +90,7 @@ class SignInForm extends Component {
             />
           </label>
         </div>
-        <div id="loginInput">
+        <div className="loginInput">
           <label id="accountInfoLabel">
             Password
             <input
@@ -106,11 +106,11 @@ class SignInForm extends Component {
             />
           </label>
         </div>
-
-        <button disabled={isInvalid} type="submit" className="submitButton">
-          Sign In
-        </button>
-
+        <div className="signInButton">
+          <button disabled={isInvalid} type="submit" className="submitButton">
+            Sign In
+          </button>
+        </div>
         {error && <p>{error.message}</p>}
       </form>
     );

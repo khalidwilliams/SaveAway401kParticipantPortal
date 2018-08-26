@@ -124,7 +124,7 @@ export default class MultiStep extends React.Component {
         {steps[this.state.compState].component}
         <div style={this.props.showNavigation ? {} : { display: "none" }}>
           <button
-            className="nextButton"
+            className="previousButton"
             style={this.state.showPreviousBtn ? {} : { display: "none" }}
             onClick={this.previous}
           >
@@ -132,7 +132,7 @@ export default class MultiStep extends React.Component {
           </button>
 
           <button
-            className="previousButton"
+            className="nextButton"
             style={this.state.showNextBtn ? {} : { display: "none" }}
             onClick={this.next}
           >

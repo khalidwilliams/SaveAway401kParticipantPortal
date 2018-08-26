@@ -125,7 +125,7 @@ export class StepThree extends React.Component {
           <br />
           <hr />
         </div>
-        <hr />
+        <hr className="mutliStepLine"/>
       </div>
     );
   }
