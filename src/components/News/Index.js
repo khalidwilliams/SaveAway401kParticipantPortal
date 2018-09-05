@@ -16,7 +16,7 @@ export default class News extends React.Component {
         <div className="aboutSections">
           <div id="navBarSide">
             <div id="blogDir">
-              <h4 >Blog Directory </h4>
+              <h4>Blog Directory </h4>
             </div>
             <nav>
               <a href="#Roth">
@@ -38,24 +38,24 @@ export default class News extends React.Component {
                 <h2 className="navItemAbout1">Saving The Save Away</h2>
               </a>
             </nav>
-          </div>{" "}
-          <div className="blogFeed">
-            <ScrollableAnchor className={"Roth"}>
+          </div>
+          <div id="blogFeed">
+            <ScrollableAnchor id={"Roth"}>
               <Roth />
             </ScrollableAnchor>
-            <ScrollableAnchor className={"RetirementSavings"}>
+            <ScrollableAnchor id={"RetirementSavings"}>
               <RetirementSavings />
             </ScrollableAnchor>
-            <ScrollableAnchor className={"Secrets"}>
+            <ScrollableAnchor id={"Secrets"}>
               <Secrets />
             </ScrollableAnchor>
-            <ScrollableAnchor className={"CompoundingInterest"}>
+            <ScrollableAnchor id={"CompoundingInterest"}>
               <CompoundingInterest />
             </ScrollableAnchor>
-            <ScrollableAnchor className={"ContributionLimits"}>
+            <ScrollableAnchor id={"ContributionLimits"}>
               <ContributionLimits />
             </ScrollableAnchor>
-            <ScrollableAnchor className={"SavingTheSaveAway"}>
+            <ScrollableAnchor id={"SavingTheSaveAway"}>
               <SavingTheSaveAway />
             </ScrollableAnchor>
           </div>
