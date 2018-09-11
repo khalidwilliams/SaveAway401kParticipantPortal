@@ -46,6 +46,27 @@ export default class MultiStep extends React.Component {
       showNextBtn: true,
       compState: 0,
       navState: getNavStates(0, 5),
+      companyName: "",
+      accountName: "",
+      signupEmail: "",
+      companyPhone: "",
+      signupAdressStreet: "",
+      signupAdressApt: "",
+      signupAdressCity: "",
+      signupAdressState: "",
+      signupAdressZip: "",
+      companyEIN: "",
+      businessHours: "",
+      AutoEnroll: "",
+      enrollmentPercentage: "",
+      planType: "",
+      provider: "",
+      paymentCycle: "",
+      Admin: "",
+      PlanStatus: "",
+      AdminName: "",
+      AdminPhone: "",
+      AdminEmail: ""
     };
   }
 
@@ -73,7 +94,89 @@ export default class MultiStep extends React.Component {
     }
   };
 
-  next = () => {
+  getEnteredInfo = event => {
+    event.preventDefault();
+    return {
+      companyName: this.state.companyName,
+      accountName: this.state.accountName,
+      companyPhone: this.state.companyPhone,
+      signupEmail: this.state.signupEmail,
+      signupAdressStreet: this.state.signupAdressStreet,
+      signupAdressApt: this.state.signupAdressApt,
+      signupAdressCity: this.state.signupAdressCity,
+      signupAdressState: this.state.signupAdressState,
+      signupAdressZip: this.state.signupAdressZip,
+      companyEIN: this.state.companyEIN,
+      businessHours: this.state.businessHours,
+      AutoEnroll: this.state.AutoEnroll,
+      enrollmentPercentage: this.state.enrollmentPercentage,
+      planType: this.state.planType,
+      provider: this.state.provider,
+      paymentCycle: this.state.paymentCycle,
+      Admin: this.state.Admin,
+      AdminName: this.state.AdminName,
+      AdminPhone: this.state.AdminPhone,
+      AdminEmail: this.state.AdminEmail,
+      PlanStatus: this.state.PlanStatus
+    };
+  };
+
+  sendMessage = event => {
+    fetch("https://saveaway-email-server.herokuapp.com/companyEnrollment1", {
+      method: "post",
+      body: JSON.stringify(this.getEnteredInfo(event)),
+      headers: new Headers({
+        "Content-Type": "application/json"
+      })
+    })
+      .then(resp => resp.json())
+      .then(resp => {
+        this.response = resp.message;
+      });
+      console.log(this.state);
+  };
+
+  handleStepOne = data => {
+    this.setState({
+      companyName: data.companyName,
+      accountName: data.accountName,
+      signupEmail: data.signupEmail,
+      companyPhone: data.companyPhone,
+      signupAdressStreet: data.signupAdressStreet,
+      signupAdressApt: data.signupAdressApt,
+      signupAdressCity: data.signupAdressCity,
+      signupAdressState: data.signupAdressState,
+      signupAdressZip: data.signupAdressZip,
+      companyEIN: data.companyEIN,
+      businessHours: data.businessHours
+    });
+    console.log("handle1", this.state);
+  };
+
+  handleStepTwo = data => {
+    this.setState({
+      AutoEnroll: data.AutoEnroll,
+      enrollmentPercentage: data.enrollmentPercentage,
+      planType: data.planType,
+      provider: data.provider,
+      paymentCycle: data.paymentCycle
+    });
+    console.log("handle2", this.state);
+  };
+
+  handleStepThree = data => {
+    this.setState({
+      Admin: data.Admin,
+      PlanStatus: data.PlanStatus,
+      AdminName: data.AdminName,
+      AdminPhone: data.AdminPhone,
+      AdminEmail: data.AdminEmail
+    });
+    console.log("handle3", this.state);
+  };
+
+  next = (event) => {
+    this.sendMessage(event)
     this.setNavState(this.state.compState + 1);
   };
 
@@ -106,23 +209,19 @@ export default class MultiStep extends React.Component {
       { name: "Welcome", component: <CompanyEnrollment /> },
       {
         name: "Step One",
-        component: <StepOne  />
+        component: <StepOne sendData={this.handleStepOne} />
       },
       {
         name: "Step Two",
-        component: (
-          <StepTwo  />
-        )
+        component: <StepTwo sendData={this.handleStepTwo}/>
       },
       {
         name: "Step Three",
-        component: (
-          <StepThree  />
-        )
+        component: <StepThree sendData={this.handleStepThree}/>
       },
       {
         name: "Confirm!",
-        component: <StepFour  />
+        component: <StepFour />
       }
     ];
 

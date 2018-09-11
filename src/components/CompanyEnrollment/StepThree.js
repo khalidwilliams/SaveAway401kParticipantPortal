@@ -79,6 +79,7 @@ export class StepThree extends React.Component {
 
   handlePlanStatusChange = event => {
     this.setState({ PlanStatus: event.target.value });
+    this.props.sendData(this.state);
   };
 
   render() {

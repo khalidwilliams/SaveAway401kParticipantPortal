@@ -100,6 +100,7 @@ export class StepTwo extends React.Component {
         }
       }
     );
+    this.props.sendData(this.state);
   };
 
   openModal = () => {
@@ -114,7 +115,9 @@ export class StepTwo extends React.Component {
     return (
       <div>
         <SimpleStorage parent={this} />
-        <h2 className="formHeader">Please Indicate Your Enrollment Preferences</h2>
+        <h2 className="formHeader">
+          Please Indicate Your Enrollment Preferences
+        </h2>
         <div className="formSection2">
           <label htmlFor="AutoEnroll">
             Would you like to Auto Enroll Employees?
@@ -227,7 +230,7 @@ export class StepTwo extends React.Component {
           {this.state.paymentCycleOther ? this.paymentCycleOther() : null}
         </div>
         <br />
-        <hr className="mutliStepLine"/>
+        <hr className="mutliStepLine" />
       </div>
     );
   }

@@ -68,6 +68,7 @@ export class StepOne extends React.Component {
 
   handleBusinessHoursChange = event => {
     this.setState({ businessHours: event.target.value });
+    this.props.sendData(this.state);
   };
 
   render() {
@@ -180,7 +181,7 @@ export class StepOne extends React.Component {
           />
         </div>
         <br />
-        <hr className="mutliStepLine"/>
+        <hr className="mutliStepLine" />
       </div>
     );
   }
