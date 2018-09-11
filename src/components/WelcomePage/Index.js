@@ -12,6 +12,23 @@ var sectionStyle = {
 var baseURL = "https://saveawaytest.herokuapp.com/";
 
 export default class Welcome extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      message: "",
+      signupName: "",
+      signupEmail: "",
+      signupPhone: "",
+      signupCoName: "",
+      EmployeeNumber: ""
+    };
+    this.initialState = this.state;
+  }
+
+  resetForm = () => {
+    this.setState(this.initialState);
+  };
+
   getBasicInfo = event => {
     event.preventDefault();
     var data = new FormData(event.target);
@@ -39,6 +56,7 @@ export default class Welcome extends React.Component {
   };
 
   addBasicInfo = event => {
+    this.setState({ message: "Please Wait" });
     event.preventDefault();
     console.log(this.getBasicInfo(event));
     fetch(baseURL + "freeConsultation", {
@@ -51,7 +69,15 @@ export default class Welcome extends React.Component {
         "Acess-Control-Allow-Headers": "GET, POST, HEAD, OPTIONS",
         "Content-Type": "application/json"
       })
-    }).then(this.sendMessage(event));
+    })
+      .then(this.sendMessage(event))
+      .then(
+        setTimeout(() => {
+          this.setState({
+            message: "Information Sent!"
+          });
+        }, 1000)
+      );
   };
 
   render() {
@@ -106,6 +132,7 @@ export default class Welcome extends React.Component {
                   <option value="100-200">100-200 employees</option>
                 </select>
                 <input type="submit" className="submitButton" value="Submit" />
+                <p> {this.state.message} </p>
               </form>
             </div>
           </div>

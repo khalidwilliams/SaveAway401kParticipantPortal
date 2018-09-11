@@ -237,21 +237,21 @@ class StepFive extends Component {
                 name="PlanStatus"
                 defaultValue={this.state.PlanStatus}
               />
-              </div>
-              <br />
-              <div>
-                <label htmlFor="checked">
-                  You agree to the terms? Check Box if Yes
-                </label>
-                <input
-                  className="formInput"
-                  name="checked"
-                  type="checkbox"
-                  checked={true}
-                  autoFocus
-                />
-              </div>
             </div>
+            <br />
+            <div>
+              <label htmlFor="checked">
+                You agree to the terms? Check Box if Yes
+              </label>
+              <input
+                className="formInput"
+                name="checked"
+                type="checkbox"
+                checked={true}
+                autoFocus
+              />
+            </div>
+          </div>
           <br />
           <hr />
           <div className="multiPageSubmit">

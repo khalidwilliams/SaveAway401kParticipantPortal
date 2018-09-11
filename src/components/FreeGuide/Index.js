@@ -12,7 +12,8 @@ const GuideSubmit = ({ history }) => (
 
 class FreeGuide extends Component {
   state = {
-    redirect: false
+    redirect: false,
+    message: ""
   };
 
   getBasicInfo = event => {
@@ -43,6 +44,7 @@ class FreeGuide extends Component {
 
   addBasicInfo = event => {
     const { history } = this.props;
+    this.setState({ message: "Please Wait" });
     event.preventDefault();
     console.log(this.getBasicInfo(event));
     fetch(baseURL + "guideRegistration", {
@@ -54,7 +56,20 @@ class FreeGuide extends Component {
       })
     })
       .then(this.sendMessage(event))
-      .then(this.setState({ redirect: true }))
+      .then(
+        setTimeout(() => {
+          this.setState({
+            message: "Information Sent!"
+          });
+        }, 1000)
+      )
+      .then(
+        setTimeout(() => {
+          this.setState({
+            redirect: true
+          });
+        }, 3000)
+      )
       .catch(error => {
         console.log(error);
       });
@@ -91,6 +106,7 @@ class FreeGuide extends Component {
               </select>
               <br />
               <input type="submit" className="submitButton" value="Submit" />
+              <p> {this.state.message} </p>
             </form>
           </div>
         </div>
