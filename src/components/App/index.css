@@ -315,6 +315,10 @@ footer {
   margin:0
 }
 
+.signupInputDrop{
+  width:auto
+}
+
 .signUpInfo{
   height:1.5rem;
   font-size: 1.1rem
@@ -909,7 +913,7 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 #planInfo {
@@ -938,7 +942,7 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 #planName3 {
@@ -961,7 +965,7 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 #passwordForget {

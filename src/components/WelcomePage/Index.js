@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import FooterMovable from "../Footer/footerMovable";
 import lightBulb from "./Assets/lightBulb.jpg";
+import Loader from "react-loader-spinner";
 
 var sectionStyle = {
   backgroundImage: `url(${lightBulb})`,
@@ -16,6 +17,7 @@ export default class Welcome extends React.Component {
     super();
     this.state = {
       message: "",
+      isLoading: false,
       signupName: "",
       signupEmail: "",
       signupPhone: "",
@@ -56,7 +58,7 @@ export default class Welcome extends React.Component {
   };
 
   addBasicInfo = event => {
-    this.setState({ message: "Please Wait" });
+    this.setState({ isLoading: true });
     event.preventDefault();
     console.log(this.getBasicInfo(event));
     fetch(baseURL + "freeConsultation", {
@@ -74,7 +76,8 @@ export default class Welcome extends React.Component {
       .then(
         setTimeout(() => {
           this.setState({
-            message: "Information Sent!"
+            message: "Information Sent!",
+            isLoading: false
           });
         }, 1000)
       );
@@ -115,6 +118,7 @@ export default class Welcome extends React.Component {
                     Phone
                   </label>
                   <input type="text" name="signupPhone" id="inputWelcome" />
+                  <br />
                   <label htmlFor="signupEmail" id="welcomePageForm1">
                     Email
                   </label>
@@ -131,8 +135,17 @@ export default class Welcome extends React.Component {
                   <option value="20-100">20-100 employees</option>
                   <option value="100-200">100-200 employees</option>
                 </select>
+                {this.state.isLoading === true ? (
+                  <Loader
+                    type="ThreeDots"
+                    color="#c33539"
+                    height="50"
+                    width="100"
+                  />
+                ) : (
+                  <p> {this.state.message} </p>
+                )}
                 <input type="submit" className="submitButton" value="Submit" />
-                <p> {this.state.message} </p>
               </form>
             </div>
           </div>

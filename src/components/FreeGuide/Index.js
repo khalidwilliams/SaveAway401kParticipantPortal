@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
 import FooterMovable from "../Footer/footerMovable";
+import Loader from "react-loader-spinner";
 
 var baseURL = "https://saveawaytest.herokuapp.com/";
 
@@ -13,7 +14,8 @@ const GuideSubmit = ({ history }) => (
 class FreeGuide extends Component {
   state = {
     redirect: false,
-    message: ""
+    message: "",
+    isLoading: false
   };
 
   getBasicInfo = event => {
@@ -44,7 +46,7 @@ class FreeGuide extends Component {
 
   addBasicInfo = event => {
     const { history } = this.props;
-    this.setState({ message: "Please Wait" });
+    this.setState({ isLoading: true });
     event.preventDefault();
     console.log(this.getBasicInfo(event));
     fetch(baseURL + "guideRegistration", {
@@ -59,7 +61,8 @@ class FreeGuide extends Component {
       .then(
         setTimeout(() => {
           this.setState({
-            message: "Information Sent!"
+            message: "Information Sent!",
+            isLoading: false
           });
         }, 1000)
       )
@@ -105,8 +108,17 @@ class FreeGuide extends Component {
                 <option value="100-200">100-200 employees</option>
               </select>
               <br />
+              {this.state.isLoading === true ? (
+                <Loader
+                  type="ThreeDots"
+                  color="#c33539"
+                  height="50"
+                  width="100"
+                />
+              ) : (
+                <p> {this.state.message} </p>
+              )}
               <input type="submit" className="submitButton" value="Submit" />
-              <p> {this.state.message} </p>
             </form>
           </div>
         </div>

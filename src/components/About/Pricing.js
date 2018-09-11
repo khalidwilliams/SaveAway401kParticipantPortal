@@ -20,8 +20,8 @@ export default function FundChoices() {
               <Link to="/CompanySignup">
                 <h2 id="planName"> SingularK</h2>
                 <div id="planDeets">
-                  <h4 id="planInfo">Setup: $100 |</h4>
-                  <h4 id="planInfo">| Monthly: $10 </h4>
+                  <h4 id="planInfo">Setup: $100 </h4>
+                  <h4 id="planInfo"> Monthly: $10 </h4>
                 </div>
               </Link>
             </div>
@@ -30,8 +30,8 @@ export default function FundChoices() {
               <Link to="/CompanySignup">
                 <h2 id="planName2">PetiteK</h2>
                 <div id="planDeets2">
-                  <h4 id="planInfo2">Setup: $250 |</h4>
-                  <h4 id="planInfo2">| Monthly: $50 </h4>
+                  <h4 id="planInfo2">Setup: $250 </h4>
+                  <h4 id="planInfo2"> Monthly: $50 </h4>
                 </div>
               </Link>
             </div>
@@ -40,8 +40,8 @@ export default function FundChoices() {
               <Link to="/CompanySignup">
                 <h2 id="planName3">UniversalK</h2>
                 <div id="planDeets3">
-                  <h4 id="planInfo3">Setup: $500 |</h4>
-                  <h4 id="planInfo3">| Monthly: $75 </h4>
+                  <h4 id="planInfo3">Setup: $500 </h4>
+                  <h4 id="planInfo3"> Monthly: $75 </h4>
                 </div>
               </Link>
             </div>

@@ -41,6 +41,7 @@
     "react": "^15.6.1",
     "react-dev-utils": "^4.0.1",
     "react-dom": "^15.6.1",
+    "react-loader-spinner": "^2.0.6",
     "react-modal": "^3.5.1",
     "react-multistep": "^3.2.1",
     "react-responsive": "^4.1.0",
