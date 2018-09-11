@@ -593,6 +593,16 @@ footer {
   justify-content: flex-end;
 }
 
+.waitingMessage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Loader{
+  text-align: center;
+}
+
 .accountSignin:disabled {
   height: 40px;
   font-size: 1.5rem;

@@ -78,8 +78,9 @@ export class StepThree extends React.Component {
   };
 
   handlePlanStatusChange = event => {
-    this.setState({ PlanStatus: event.target.value });
-    this.props.sendData(this.state);
+    this.setState({ PlanStatus: event.target.value }, () => {
+      this.props.sendData(this.state);
+    });
   };
 
   render() {
@@ -124,7 +125,7 @@ export class StepThree extends React.Component {
           </select>
         </div>
         <br />
-        <hr className="mutliStepLine"/>
+        <hr className="mutliStepLine" />
       </div>
     );
   }

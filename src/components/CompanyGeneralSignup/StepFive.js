@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
 import SimpleStorage, { resetParentState } from "../../stores/SimpleStorage";
+import Loader from "react-loader-spinner";
 
 var baseURL = "https://saveawaytest.herokuapp.com/";
 
@@ -45,7 +46,9 @@ class StepFive extends Component {
       AdminPhone: AdminPhone,
       AdminEmail: AdminEmail,
       PlanStatus: PlanStatus,
-      checked: checked
+      checked: checked,
+      message: "",
+      isLoading: false
     };
   }
 
@@ -87,6 +90,7 @@ class StepFive extends Component {
 
   addCompanyInfo = event => {
     const { history } = this.props;
+    this.setState({ isLoading: true });
     event.preventDefault();
     console.log(this.getCompanyInfo(event));
     fetch(baseURL + "basicInfo", {
@@ -98,7 +102,21 @@ class StepFive extends Component {
     })
       .then(this.sendMessage(event))
       .then(resetParentState(this, this.initialState))
-      .then(this.setState({ redirect: true }))
+      .then(
+        setTimeout(() => {
+          this.setState({
+            message: "Information Sent!",
+            isLoading: false
+          });
+        }, 1000)
+      )
+      .then(
+        setTimeout(() => {
+          this.setState({
+            redirect: true
+          });
+        }, 2000)
+      )
       .catch(error => {
         console.log(error);
       });
@@ -121,7 +139,7 @@ class StepFive extends Component {
               <input
                 className="formInput"
                 name="FullName"
-                defaultdefaultValue={this.state.FullName}
+                defaultValue={this.state.FullName}
               />
               <label htmlFor="CompanyName">Company Name:</label>
               <input
@@ -254,6 +272,19 @@ class StepFive extends Component {
           </div>
           <br />
           <hr />
+          <div className="waitingMessage">
+            {this.state.isLoading === true ? (
+              <Loader
+                type="ThreeDots"
+                color="#c33539"
+                height="50"
+                width="100"
+                className="Loader"
+              />
+            ) : (
+              <p > {this.state.message} </p>
+            )}
+          </div>
           <div className="multiPageSubmit">
             <input
               type="submit"

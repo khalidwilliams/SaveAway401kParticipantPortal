@@ -67,8 +67,9 @@ export class StepOne extends React.Component {
   };
 
   handleBusinessHoursChange = event => {
-    this.setState({ businessHours: event.target.value });
-    this.props.sendData(this.state);
+    this.setState({ businessHours: event.target.value }, () => {
+      this.props.sendData(this.state);
+    });
   };
 
   render() {

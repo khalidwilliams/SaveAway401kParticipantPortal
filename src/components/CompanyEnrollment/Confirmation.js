@@ -11,10 +11,9 @@ export default class Confirmation extends React.Component {
       <div>
         <div id="confirmation">
           <div id="confirmationInfo">
-            <h1>Your form has been submitted!</h1>
-            <h3>
+            <h2>
               We will be in contact with you soon for next steps on your account
-            </h3>
+            </h2>
             <a href="https://imgflip.com/gif/21gr1">
               <img src="https://i.imgflip.com/21gr1.gif" id="gif" alt="Good to Go!"/>
             </a>

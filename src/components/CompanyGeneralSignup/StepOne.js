@@ -29,6 +29,12 @@ export class StepOne extends React.Component {
     });
   };
 
+  handleStateChange = data => {
+    this.setState({ State: data.State }, () => {
+      this.props.sendData(this.state);
+    });
+  };
+
   handleCompanyNameChange = event => {
     this.setState({ CompanyName: event.target.value });
   };
@@ -38,7 +44,9 @@ export class StepOne extends React.Component {
   };
 
   handleEmployeeNumberChange = event => {
-    this.setState({ EmployeeNumber: event.target.value });
+    this.setState({ EmployeeNumber: event.target.value }, () => {
+      this.props.sendData(this.state);
+    });
   };
 
   render() {
@@ -84,7 +92,7 @@ export class StepOne extends React.Component {
           </div>
           <div className="signupDiv">
             <label htmlFor="State">What State do You Operate Within?</label>
-            <States />
+            <States handleStatesChange={this.handleStateChange} />
           </div>
           <div className="signupDiv">
             <label htmlFor="EmployeeNumber">
@@ -107,7 +115,7 @@ export class StepOne extends React.Component {
           <br />
           <hr />
         </div>
-        <hr className="mutliStepLine"/>
+        <hr className="mutliStepLine" />
       </div>
     );
   }

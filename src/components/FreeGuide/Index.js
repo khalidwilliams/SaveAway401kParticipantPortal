@@ -99,7 +99,7 @@ class FreeGuide extends Component {
               <label htmlFor="EmployeeNumber">
                 How many employees do you have?
               </label>
-              <select name="EmployeeNumber">
+              <select name="EmployeeNumber" className="signupInputDrop">
                 <option value="" disabled selected>
                   Looking to offer 401Ks to..
                 </option>

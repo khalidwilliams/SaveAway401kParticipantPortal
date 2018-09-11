@@ -47,15 +47,18 @@ export class StepThree extends React.Component {
     );
   };
 
-
   handlePlanStatusChange = event => {
-    this.setState({ PlanStatus: event.target.value });
+    this.setState({ PlanStatus: event.target.value }, () => {
+      this.props.sendData(this.state);
+    });
   };
 
   handleOtherAdminChange = event => {
     this.setState({ Admin: event.target.value, adminOther: false }, () => {
       if (this.state.Admin === "No, it will be someone else") {
         this.setState({ adminOther: true });
+      } else {
+        this.props.sendData(this.state);
       }
     });
   };
@@ -84,7 +87,7 @@ export class StepThree extends React.Component {
 
   render() {
     return (
-      <div >
+      <div>
         <SimpleStorage parent={this} />
         <div className="signupForm">
           <div className="signupDiv">
@@ -125,7 +128,7 @@ export class StepThree extends React.Component {
           <br />
           <hr />
         </div>
-        <hr className="mutliStepLine"/>
+        <hr className="mutliStepLine" />
       </div>
     );
   }

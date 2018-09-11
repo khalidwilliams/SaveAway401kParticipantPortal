@@ -41,10 +41,14 @@ class StepFour extends Component {
   }
 
   handleCheckedChanged = event => {
-    this.setState(prevState => ({
-      checked: !prevState.checked
-    }));
-    console.log(this.state);
+    this.setState(
+      prevState => ({
+        checked: !prevState.checked
+      }),
+      () => {
+        this.props.sendData(this.state);
+      }
+    );
   };
 
   onSubmit = event => {

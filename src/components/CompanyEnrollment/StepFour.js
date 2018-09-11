@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
 import SimpleStorage, { resetParentState } from "../../stores/SimpleStorage";
+import Loader from "react-loader-spinner";
 
 var baseURL = "https://saveawaytest.herokuapp.com/";
 
@@ -61,7 +62,9 @@ class StepFour extends Component {
       AdminName: AdminName,
       AdminPhone: AdminPhone,
       AdminEmail: AdminEmail,
-      PlanStatus: PlanStatus
+      PlanStatus: PlanStatus,
+      message: "",
+      isLoading: false
     };
   }
 
@@ -109,6 +112,7 @@ class StepFour extends Component {
 
   addCompanyInfo = event => {
     const { history } = this.props;
+    this.setState({ isLoading: true });
     event.preventDefault();
     console.log(this.getCompanyInfo(event));
     fetch(baseURL + "companyEnrollment", {
@@ -120,7 +124,21 @@ class StepFour extends Component {
     })
       .then(this.sendMessage(event))
       .then(resetParentState(this, this.initialState))
-      .then(this.setState({ redirect: true }))
+      .then(
+        setTimeout(() => {
+          this.setState({
+            message: "Information Sent!",
+            isLoading: false
+          });
+        }, 1000)
+      )
+      .then(
+        setTimeout(() => {
+          this.setState({
+            redirect: true
+          });
+        }, 2000)
+      )
       .catch(error => {
         console.log(error);
       });
@@ -326,6 +344,19 @@ class StepFour extends Component {
           </div>
           <br />
           <hr />
+          <div className="waitingMessage">
+            {this.state.isLoading === true ? (
+              <Loader
+                type="ThreeDots"
+                color="#c33539"
+                height="50"
+                width="100"
+                className="Loader"
+              />
+            ) : (
+              <p > {this.state.message} </p>
+            )}
+          </div>
           <div className="multiPageSubmit">
             <input
               type="submit"

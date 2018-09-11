@@ -77,7 +77,9 @@ export class StepTwo extends React.Component {
   };
 
   handlePaymentCycleChange = event => {
-    this.setState({ paymentCycle: event.target.value });
+    this.setState({ paymentCycle: event.target.value }, () => {
+      this.props.sendData(this.state);
+    });
   };
 
   handleOtherProviderChangeTwo = event => {
@@ -97,10 +99,11 @@ export class StepTwo extends React.Component {
       () => {
         if (this.state.paymentCycle === "Other") {
           this.setState({ paymentCycleOther: true });
+        } else {
+          this.props.sendData(this.state);
         }
       }
     );
-    this.props.sendData(this.state);
   };
 
   openModal = () => {

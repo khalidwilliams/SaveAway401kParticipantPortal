@@ -43,7 +43,22 @@ export default class MultiStep extends React.Component {
     showPreviousBtn: false,
     showNextBtn: true,
     compState: 0,
-    navState: getNavStates(0, 5)
+    navState: getNavStates(0, 5),
+    FullName: "",
+    CompanyEmail: "",
+    State: "",
+    CompanyName: "",
+    CompanyPhone: "",
+    EmployeeNumber: "",
+    payroll: "",
+    provider: "",
+    heardAbout: "",
+    Admin: "",
+    PlanStatus: "",
+    AdminName: "",
+    AdminPhone: "",
+    AdminEmail: "",
+    checked: null
   };
 
   setNavState = next => {
@@ -70,7 +85,83 @@ export default class MultiStep extends React.Component {
     }
   };
 
-  next = () => {
+  getEnteredInfo = event => {
+    event.preventDefault();
+    return {
+      FullName: this.state.FullName,
+      CompanyEmail: this.state.CompanyEmail,
+      State: this.state.State,
+      CompanyName: this.state.CompanyName,
+      CompanyPhone: this.state.CompanyPhone,
+      EmployeeNumber: this.state.EmployeeNumber,
+      payroll: this.state.payroll,
+      provider: this.state.provider,
+      heardAbout: this.state.heardAbout,
+      Admin: this.state.Admin,
+      PlanStatus: this.state.PlanStatus,
+      AdminName: this.state.AdminName,
+      AdminPhone: this.state.AdminPhone,
+      AdminEmail: this.state.AdminEmail,
+      checked: this.state.checked
+    };
+  };
+
+  sendMessage = event => {
+    fetch("https://saveaway-email-server.herokuapp.com/basicInfo1", {
+      method: "post",
+      body: JSON.stringify(this.getEnteredInfo(event)),
+      headers: new Headers({
+        "Content-Type": "application/json"
+      })
+    })
+      .then(resp => resp.json())
+      .then(resp => {
+        this.response = resp.message;
+      });
+    console.log(this.state);
+  };
+
+  handleStepOne = data => {
+    this.setState({
+      FullName: data.FullName,
+      CompanyEmail: data.CompanyEmail,
+      State: data.State,
+      CompanyName: data.CompanyName,
+      CompanyPhone: data.CompanyPhone,
+      EmployeeNumber: data.EmployeeNumber
+    });
+    console.log("handle1", this.state);
+  };
+
+  handleStepTwo = data => {
+    this.setState({
+      payroll: data.payroll,
+      provider: data.provider,
+      heardAbout: data.heardAbout
+    });
+    console.log("handle2", this.state);
+  };
+
+  handleStepThree = data => {
+    this.setState({
+      Admin: data.Admin,
+      PlanStatus: data.PlanStatus,
+      AdminName: data.AdminName,
+      AdminPhone: data.AdminPhone,
+      AdminEmail: data.AdminEmail
+    });
+    console.log("handle3", this.state);
+  };
+
+  handleStepFour = data => {
+    this.setState({
+      checked: data.checked
+    });
+    console.log("handle4", this.state);
+  };
+
+  next = event => {
+    this.sendMessage(event);
     this.setNavState(this.state.compState + 1);
   };
 
@@ -100,18 +191,18 @@ export default class MultiStep extends React.Component {
 
   render() {
     const steps = [
-      { name: "Step One", component: <StepOne /> },
+      { name: "Step One", component: <StepOne sendData={this.handleStepOne}/> },
       {
         name: "Step Two",
-        component: <StepTwo />
+        component: <StepTwo sendData={this.handleStepTwo}/>
       },
       {
         name: "Step Three",
-        component: <StepThree />
+        component: <StepThree sendData={this.handleStepThree}/>
       },
       {
         name: "Step Four",
-        component: <StepFour />
+        component: <StepFour sendData={this.handleStepFour}/>
       },
       {
         name: "Confirm!",
