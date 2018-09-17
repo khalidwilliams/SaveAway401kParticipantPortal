@@ -29,22 +29,6 @@ a:hover {
   font-weight: bold;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  font-family: DINAlternateBold;
-  background-color: rgba(146, 43, 33, 0.9);
-}
-
-nav {
-  display: flex;
-  font-size: 1rem;
-  padding-right: 1rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
-}
-
 select {
   font-size: 1.3rem;
   color: #626567;
@@ -62,6 +46,243 @@ input {
   height: 15px;
   margin: 0.5rem;
 }
+
+/*General*/
+#formHeader{
+  font-size: 2rem;
+  margin:0;
+  margin-top: 1rem;
+  margin-bottom: 0.7rem
+}
+
+#accountCreationForm{
+  background-color: rgba(152, 100, 95, 0.7);
+  padding:1rem
+}
+
+#compoundLine {
+  width: 70%;
+}
+
+#quote {
+  padding: 0 3.5rem;
+  color: white;
+  font-style: italic;
+}
+
+#confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+#confirmationInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#confirmButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  font-size: 1.5rem;
+  background-color: #a96659;
+  color: white;
+  border-radius: 4px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#gif {
+  width: 100%;
+}
+
+.accountInfo {
+  width: 90%;
+  padding: 0.5rem 2.5rem;
+}
+
+.submitButton {
+  height: 40px;
+  font-size: 1.5rem;
+  background-color: rgb(146, 43, 33, 0.9);
+  color: white;
+  border-radius: 4px;
+}
+.multiPageSubmit{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.waitingMessage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Loader{
+  text-align: center;
+}
+
+.mutliStepLine{
+  border-radius: 1rem;
+  border-width: 0.1rem
+}
+
+.multiFormDiv {
+  color: white;
+  font-size: 1.3rem;
+  margin:2rem;
+}
+
+.accountDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom-style: ridge;
+  background-color: rgba(146, 43, 33, 0.7);
+  border-radius: 2px;
+  background-color:
+}
+
+.formSection {
+  background-color: rgb(146, 43, 33, 0.4);
+  margin: 0.5rem;
+  border-radius: 3px;
+  border-style: groove;
+}
+
+.formSection2 {
+  background-color: rgb(146, 43, 33, 0.3);
+  margin: 0.5rem;
+  border-radius: 3px;
+  padding: 1rem;
+  border-style: groove;
+}
+
+.shorterInput {
+  width: 120px;
+  height: 18px;
+}
+
+.dropDownInput {
+  width: 200px;
+  height: 25px;
+}
+
+/*Header*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  font-family: DINAlternateBold;
+  background-color: rgba(146, 43, 33, 0.9);
+}
+
+nav {
+  display: flex;
+  font-size: 1rem;
+  padding-right: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#navBar {
+  display: flex;
+  flex-direction: row;
+}
+
+#accomplishList {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+}
+
+#navBarSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 180px;
+  height: 70%;
+  margin-left: 2rem;
+  background-color: rgb(146, 43, 33, 0.9);
+  margin-top: 3.5rem;
+  border-radius: 4px;
+}
+
+/*same height centered*/
+.navItemAbout1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: DINAlternateRegular, sans-serif;
+  width: 145px;
+  font-weight: normal;
+  height: 60px;
+  font-size: 1.3rem;
+  padding: 0.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  text-align: center;
+  border: 1px;
+  border-radius: 5px;
+  border-style: ridge;
+  color: white;
+  background-color: rgb(146, 43, 33, 0.9);
+}
+
+/*small font centered*/
+.navItemAbout {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: DINAlternateRegular, sans-serif;
+  width: 150px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  margin-left: 0.7rem;
+  border: 1px;
+  border-radius: 5px;
+  border-style: ridge;
+  color: white;
+  background-color: rgb(146, 43, 33, 0.9);
+}
+
+.navItemAbout:hover {
+  color: #f9ebea;
+}
+
+.logo {
+  height: 8rem;
+  padding: 1rem;
+}
+
+.navItem {
+  display: flex;
+  padding: 0.5rem 1rem;
+  font-family: DINAlternateRegular, sans-serif;
+  margin: 0.4rem;
+  border: 1px;
+  border-radius: 5px;
+  border-style: dotted;
+  color: white;
+}
+.navItem:hover {
+  color: #f9ebea;
+}
+
+/*Footer*/
 
 footer {
   display: flex;
@@ -89,48 +310,7 @@ footer {
   bottom: 0;
 }
 
-.logo {
-  height: 8rem;
-  padding: 1rem;
-}
-
-#navBar {
-  display: flex;
-  flex-direction: row;
-}
-
-#signOutButton {
-  display: flex;
-  padding: 0.5rem 1rem;
-  font-family: DINAlternateRegular, sans-serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0.4rem;
-  border: 1px;
-  border-radius: 5px;
-  border-style: dotted;
-  color: white;
-  background-color: rgba(146, 43, 33, 0.9);
-}
-#signOutButton:hover {
-  color: #8b3d30;
-  background-color: #f9ebea;
-}
-
-.navItem {
-  display: flex;
-  padding: 0.5rem 1rem;
-  font-family: DINAlternateRegular, sans-serif;
-  margin: 0.4rem;
-  border: 1px;
-  border-radius: 5px;
-  border-style: dotted;
-  color: white;
-}
-.navItem:hover {
-  color: #f9ebea;
-}
-
+/*Welcome*/
 #infoSignup {
   display: flex;
   flex-direction: row;
@@ -186,260 +366,12 @@ footer {
   padding-top: 0;
 }
 
-#signup {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  color: white;
-  margin: 1rem;
-}
-
-.signupForm {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  background-color: rgba(163, 106, 102, 0.5);
-  font-size: 1.5rem;
-  border-radius: 5px;
-  border-color: rgba(146, 43, 33, 0.9);
-  border-style: groove;
-  padding:1rem
-}
-
-#signupSelect {
-  width: auto;
-}
-
-.mutliStepLine{
-  border-radius: 1rem;
-  border-width: 0.1rem
-}
-
 #welcomePage{
   padding: 0 1rem;
   margin:0
 }
 
-.signUpEnroll{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width:100%
-}
-
-.multiFormDiv {
-  color: white;
-  font-size: 1.3rem;
-  margin:2rem;
-}
-
-.signupDiv {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  border-bottom-style: ridge;
-  border-color: rgba(146, 43, 33, 0.7);
-  border-radius: 2px;
-  padding-bottom: 1.2rem;
-}
-
-.signupDivOther {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  border-bottom-style: ridge;
-  border-color: rgba(146, 43, 33, 0.7);
-  border-radius: 2px;
-  padding-bottom: 1.2rem;
-}
-
-.accountDiv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-bottom-style: ridge;
-  background-color: rgba(146, 43, 33, 0.7);
-  border-radius: 2px;
-  background-color:
-}
-
-.loginPage {
-  text-align: center;
-  color: white;
-}
-
-#loginContainer {
-  color: white;
-  font-size: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgba(249, 235, 234, 0.5);
-  border-radius: 4px
-}
-
-#formHeader{
-  font-size: 2rem;
-  margin:0;
-  margin-top: 1rem;
-  margin-bottom: 0.7rem
-}
-
-#accountCreationForm{
-  background-color: rgba(152, 100, 95, 0.7);
-  padding:1rem
-}
-
-.loginInput {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  border-bottom-style: ridge;
-  border-color: rgba(146, 43, 33, 0.7);
-  border-radius: 2px;
-  margin-top:1rem
-}
-
-.signUpInput {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  font-size: 2rem;
-  margin:0
-}
-
-.signupInputDrop{
-  width:auto
-}
-
-.signUpInfo{
-  height:1.5rem;
-  font-size: 1.1rem
-}
-
-.signUpLabel{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#accountInfoLabel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem
-}
-
-.accountInfoInput {
-  height: 25px;
-  padding-left: 1rem;
-  font-size: 1.3rem;
-  margin-left: 1rem;
-}
-
-#terms{
-  margin-left: 2rem;
-  padding:1rem
-}
-
-.signInButton{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-left: 10rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem
-}
-
-#passwordForget {
-  font-size: 1.2rem;
-  margin-left: 18rem
-}
-
-#linkToSignup {
-  display: flex;
-  justify-content: center;
-  color: white;
-  padding-right: 0.8rem;
-}
-
-#accomplishList {
-  display: flex;
-  flex-direction: row;
-  font-size: 1.2rem;
-}
-
-#navBarSide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 180px;
-  height: 70%;
-  margin-left: 2rem;
-  background-color: rgb(146, 43, 33, 0.9);
-  margin-top: 3.5rem;
-  border-radius: 4px;
-}
-
-#blogDir {
-  color: white;
-  font-size: 1.5rem;
-  margin: 0;
-  padding:0
-}
-
-/*same height centered*/
-.navItemAbout1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: DINAlternateRegular, sans-serif;
-  width: 145px;
-  font-weight: normal;
-  height: 60px;
-  font-size: 1.3rem;
-  padding: 0.2rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  margin-left: 0.5rem;
-  text-align: center;
-  border: 1px;
-  border-radius: 5px;
-  border-style: ridge;
-  color: white;
-  background-color: rgb(146, 43, 33, 0.9);
-}
-
-/*small font centered*/
-.navItemAbout {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-family: DINAlternateRegular, sans-serif;
-  width: 150px;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
-  margin-left: 0.7rem;
-  border: 1px;
-  border-radius: 5px;
-  border-style: ridge;
-  color: white;
-  background-color: rgb(146, 43, 33, 0.9);
-}
-
-.navItemAbout:hover {
-  color: #f9ebea;
-}
+/*About*/
 
 .aboutContent {
   padding: 2rem;
@@ -455,11 +387,25 @@ footer {
   flex-direction: row;
 }
 
+#companyInfo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
 #aboutInfo {
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
+/*Fund Info */
+.fundIcon {
+  width: 95%;
+  margin: 0.5rem;
+}
 #fundsDescription {
   color: white;
 }
@@ -495,48 +441,216 @@ footer {
   padding: 0.5rem;
 }
 
-.fundIcon {
-  width: 95%;
-  margin: 0.5rem;
-}
+/*Pricing Info*/
 
 #priceImage {
   padding: 1rem;
 }
 
-#companyInfo {
+#pricingContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+}
+
+#titlePrice {
+  font-size: 4rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+/*Plan One*/
+
+#pricingSection {
+  display: flex;
+  flex-direction: column;
+  background-color: #ae7167;
+  color: #8b3d30;
+  margin: 1rem;
+  margin-top: 0;
+  padding: 1rem;
+  border-radius: 4px;
+  border-color: #5c2319;
+  border-width: 3px;
+  border-style: solid;
+  width: 90%;
+}
+
+.pricingSection:hover {
+  display: flex;
+  flex-direction: column;
+  color: #8b3d30;
+  background-color: rgb(254, 242, 241, 0.5);
+  margin: 1rem;
+  padding: 1rem;
+}
+
+#planName {
+  font-size: 3.5rem;
+  text-align: left;
+  font-weight: bold;
+  font-style: oblique;
+  font-variant: small-caps;
+  margin: 0;
+  margin-left: 0.5rem;
+}
+
+#planDeets {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  margin-bottom: 1.5rem;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
-.formSection {
-  background-color: rgb(146, 43, 33, 0.4);
-  margin: 0.5rem;
-  border-radius: 3px;
-  border-style: groove;
+#planInfo {
+  font-size: 2.8rem;
+  margin: 0;
+  margin-right: 0.5rem;
 }
 
-.formSection2 {
-  background-color: rgb(146, 43, 33, 0.3);
-  margin: 0.5rem;
-  border-radius: 3px;
+/*Plan Two*/
+
+#pricingSection2 {
+  display: flex;
+  flex-direction: column;
+  background-color: #ae7167;
+  color: #8b3d30;
+  margin: 1rem;
   padding: 1rem;
-  border-style: groove;
+  border-radius: 4px;
+  border-color: #5c2319;
+  border-width: 3px;
+  border-style: solid;
+  width: 70%;
 }
 
-.shorterInput {
-  width: 120px;
-  height: 18px;
+.pricingSection2:hover {
+  display: flex;
+  flex-direction: column;
+  color: #8b3d30;
+  background-color: rgb(254, 242, 241, 0.5);
+  margin: 1rem;
+  padding: 1rem;
 }
 
-.dropDownInput {
-  width: 200px;
-  height: 25px;
+#planName2 {
+  font-size: 3rem;
+  text-align: left;
+  font-weight: bold;
+  font-style: oblique;
+  font-variant: small-caps;
+  margin: 0;
+  margin-left: 0.5rem;
 }
+
+#planInfo2 {
+  font-size: 2.5rem;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+#planDeets2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+/*Plan three*/
+
+#pricingSection3 {
+  display: flex;
+  flex-direction: column;
+  background-color: #ae7167;
+  color: #8b3d30;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  border-color: #5c2319;
+  border-width: 3px;
+  border-style: solid;
+  width: 50%;
+}
+
+.pricingSection3:hover {
+  display: flex;
+  flex-direction: column;
+  color: #8b3d30;
+  background-color: rgb(254, 242, 241, 0.5);
+  margin: 1rem;
+  padding: 1rem;
+}
+
+#planName3 {
+  font-size: 2.5rem;
+  text-align: left;
+  font-weight: bold;
+  font-style: oblique;
+  font-variant: small-caps;
+  margin: 0;
+  margin-left: 0.5rem;
+}
+
+#planInfo3 {
+  font-size: 2rem;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+#planDeets3 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.enrollButton{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(146, 43, 33, 0.9);
+  background-color: rgb(255, 248, 247, 0.6);
+  border-radius: 4px;
+  margin-right: 5rem;
+  width:100px;
+  height:30px;
+  margin:0;
+  margin-right: 1.5rem;
+  margin-top: 1rem
+}
+
+.enrollButton:hover{
+  color: rgb(255, 248, 247, 0.8);
+  background-color: rgb(146, 43, 33, 0.9);
+}
+
+.moreButton{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(146, 43, 33, 0.9);
+  background-color: rgb(255, 248, 247, 0.6);
+  border-radius: 4px;
+  margin-right: 5rem;
+  width:120px;
+  height:30px;
+  margin:0;
+  margin-right: 1.5rem;
+  margin-top: 1rem
+}
+
+.moreButton:hover{
+  color: rgb(255, 248, 247, 0.8);
+  background-color: rgb(146, 43, 33, 0.9);
+}
+
+.enrollSection{
+  display:flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/*Company Enrollment*/
 
 #modalButton {
   height: 30px;
@@ -581,41 +695,13 @@ footer {
   width: 150px;
 }
 
-.submitButton {
-  height: 40px;
-  font-size: 1.5rem;
-  background-color: rgb(146, 43, 33, 0.9);
+/*News*/
+
+#blogDir {
   color: white;
-  border-radius: 4px;
-}
-.multiPageSubmit{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.waitingMessage{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Loader{
-  text-align: center;
-}
-
-.accountSignin:disabled {
-  height: 40px;
   font-size: 1.5rem;
-  border-radius: 4px;
-  background-color: rgba(112, 123, 124, 0.4);
-}
-
-.accountSignin {
-  height: 40px;
-  font-size: 1.5rem;
-  border-radius: 4px;
-  background-color: rgb(146, 43, 33, 0.9);
-  color: white;
+  margin: 0;
+  padding:0
 }
 
 #blogFeed {
@@ -625,100 +711,6 @@ footer {
   flex-direction: column;
   color: white;
 }
-
-#guide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#guideHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  color: white;
-  align-items: center;
-}
-
-#guideDownLoad {
-  font-size: 2rem;
-  background-color: rgba(249, 235, 234, 0.5);
-  padding: 0.5rem;
-  border-radius: 4px;
-  border-style: outset;
-  margin: 2rem;
-  margin-right: 3rem;
-}
-
-
-
-#retirementPhoto {
-  width: 660px;
-}
-
-#guideImage {
-  width: 75%;
-  padding: 2rem 2.5rem;
-}
-
-.accountInfo {
-  width: 90%;
-  padding: 0.5rem 2.5rem;
-}
-
-.guideInfo {
-  padding: 0.5rem 6rem;
-  color: white;
-}
-
-.guideInfoStory {
-  padding: 0.5rem 4rem;
-  color: white;
-}
-
-#compoundLine {
-  width: 70%;
-}
-
-#quote {
-  padding: 0 3.5rem;
-  color: white;
-  font-style: italic;
-}
-
-#confirmation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-}
-
-#confirmationInfo {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-#confirmButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  width: 100%;
-  font-size: 1.5rem;
-  background-color: #a96659;
-  color: white;
-  border-radius: 4px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-#gif {
-  width: 100%;
-}
-
 .blogHeader {
   display: flex;
   align-items: center;
@@ -827,231 +819,14 @@ footer {
   align-items: center;
 }
 
-#pricingContent {
-  display: flex;
-  flex-direction: column;
-  margin-left: 5rem;
-}
-
-#titlePrice {
-  font-size: 4rem;
-  margin: 0;
-  margin-bottom: 0.5rem;
-}
-
-#pricingSection {
-  display: flex;
-  flex-direction: column;
-  background-color: #ae7167;
-  color: #8b3d30;
-  margin: 1rem;
-  margin-top: 0;
-  padding: 1rem;
-  border-radius: 4px;
-  border-color: #5c2319;
-  border-width: 3px;
-  border-style: solid;
-  width: 90%;
-}
-
-.pricingSection:hover {
-  display: flex;
-  flex-direction: column;
-  color: #8b3d30;
-  background-color: rgb(254, 242, 241, 0.5);
-  margin: 1rem;
-  padding: 1rem;
-}
-
-#pricingSection2 {
-  display: flex;
-  flex-direction: column;
-  background-color: #ae7167;
-  color: #8b3d30;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 4px;
-  border-color: #5c2319;
-  border-width: 3px;
-  border-style: solid;
-  width: 70%;
-}
-
-.pricingSection2:hover {
-  display: flex;
-  flex-direction: column;
-  color: #8b3d30;
-  background-color: rgb(254, 242, 241, 0.5);
-  margin: 1rem;
-  padding: 1rem;
-}
-
-#pricingSection3 {
-  display: flex;
-  flex-direction: column;
-  background-color: #ae7167;
-  color: #8b3d30;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 4px;
-  border-color: #5c2319;
-  border-width: 3px;
-  border-style: solid;
-  width: 50%;
-}
-
-.pricingSection3:hover {
-  display: flex;
-  flex-direction: column;
-  color: #8b3d30;
-  background-color: rgb(254, 242, 241, 0.5);
-  margin: 1rem;
-  padding: 1rem;
-}
-
-#planName {
-  font-size: 3.5rem;
-  text-align: left;
-  font-weight: bold;
-  font-style: oblique;
-  font-variant: small-caps;
-  margin: 0;
-  margin-left: 0.5rem;
-}
-
-#planDeets {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-#planInfo {
-  font-size: 2.8rem;
-  margin: 0;
-  margin-right: 0.5rem;
-}
-
-#planName2 {
-  font-size: 3rem;
-  text-align: left;
-  font-weight: bold;
-  font-style: oblique;
-  font-variant: small-caps;
-  margin: 0;
-  margin-left: 0.5rem;
-}
-
-#planInfo2 {
-  font-size: 2.5rem;
-  margin: 0;
-  margin-right: 0.5rem;
-}
-
-#planDeets2 {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-#planName3 {
-  font-size: 2.5rem;
-  text-align: left;
-  font-weight: bold;
-  font-style: oblique;
-  font-variant: small-caps;
-  margin: 0;
-  margin-left: 0.5rem;
-}
-
-#planInfo3 {
-  font-size: 2rem;
-  margin: 0;
-  margin-right: 0.5rem;
-}
-
-#planDeets3 {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-#passwordForget {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.guideInfo {
+  padding: 0.5rem 6rem;
   color: white;
-  flex-direction: column;
 }
 
-#passwordForgetInput {
-  height: 50px;
-  width: 300px;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-#passwordRecoverForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#search-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-}
-
-.enrollButton{
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(146, 43, 33, 0.9);
-  background-color: rgb(255, 248, 247, 0.6);
-  border-radius: 4px;
-  margin-right: 5rem;
-  width:100px;
-  height:30px;
-  margin:0;
-  margin-right: 1.5rem;
-  margin-top: 1rem
-}
-
-.enrollButton:hover{
-  color: rgb(255, 248, 247, 0.8);
-  background-color: rgb(146, 43, 33, 0.9);
-}
-
-.moreButton{
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(146, 43, 33, 0.9);
-  background-color: rgb(255, 248, 247, 0.6);
-  border-radius: 4px;
-  margin-right: 5rem;
-  width:120px;
-  height:30px;
-  margin:0;
-  margin-right: 1.5rem;
-  margin-top: 1rem
-}
-
-.moreButton:hover{
-  color: rgb(255, 248, 247, 0.8);
-  background-color: rgb(146, 43, 33, 0.9);
-}
-
-.enrollSection{
-  display:flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+.guideInfoStory {
+  padding: 0.5rem 4rem;
+  color: white;
 }
 
 .modalPlan{
@@ -1099,4 +874,251 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+/*Guide*/
+
+#guide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#guideHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+  align-items: center;
+}
+
+#guideDownLoad {
+  font-size: 2rem;
+  background-color: rgba(249, 235, 234, 0.5);
+  padding: 0.5rem;
+  border-radius: 4px;
+  border-style: outset;
+  margin: 2rem;
+  margin-right: 3rem;
+}
+
+#retirementPhoto {
+  width: 660px;
+}
+
+#guideImage {
+  width: 75%;
+  padding: 2rem 2.5rem;
+}
+
+/*Company Signup*/
+.signUpEnroll{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width:100%
+}
+
+.signupDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom-style: ridge;
+  border-color: rgba(146, 43, 33, 0.7);
+  border-radius: 2px;
+  padding-bottom: 1.2rem;
+}
+
+.signupDivOther {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  border-bottom-style: ridge;
+  border-color: rgba(146, 43, 33, 0.7);
+  border-radius: 2px;
+  padding-bottom: 1.2rem;
+}
+
+.accountInfoInput {
+  height: 25px;
+  padding-left: 1rem;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+.signInButton{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 10rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem
+}
+
+.accountSignin:disabled {
+  height: 40px;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  background-color: rgba(112, 123, 124, 0.4);
+}
+
+.accountSignin {
+  height: 40px;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  background-color: rgb(146, 43, 33, 0.9);
+  color: white;
+}
+
+
+.loginInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-bottom-style: ridge;
+  border-color: rgba(146, 43, 33, 0.7);
+  border-radius: 2px;
+  margin-top:1rem
+}
+
+.signUpInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 2rem;
+  margin:0
+}
+
+.signupInputDrop{
+  width:auto
+}
+
+.signUpInfo{
+  height:1.5rem;
+  font-size: 1.1rem
+}
+
+.signUpLabel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: rgba(163, 106, 102, 0.5);
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border-color: rgba(146, 43, 33, 0.9);
+  border-style: groove;
+  padding:1rem
+}
+
+.loginPage {
+  text-align: center;
+  color: white;
+}
+
+#terms{
+  margin-left: 2rem;
+  padding:1rem
+}
+
+#accountInfoLabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem
+}
+
+/*Login Sign In*/
+#signOutButton {
+  display: flex;
+  padding: 0.5rem 1rem;
+  font-family: DINAlternateRegular, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.4rem;
+  border: 1px;
+  border-radius: 5px;
+  border-style: dotted;
+  color: white;
+  background-color: rgba(146, 43, 33, 0.9);
+}
+#signOutButton:hover {
+  color: #8b3d30;
+  background-color: #f9ebea;
+}
+
+#signup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: white;
+  margin: 1rem;
+}
+
+#loginContainer {
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(249, 235, 234, 0.5);
+  border-radius: 4px
+}
+
+#signupSelect {
+  width: auto;
+}
+
+#passwordForget {
+  font-size: 1.2rem;
+  margin-left: 18rem
+}
+
+#linkToSignup {
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-right: 0.8rem;
+}
+
+#passwordForget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+}
+
+#passwordForgetInput {
+  height: 50px;
+  width: 300px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#passwordRecoverForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
 }

@@ -3,7 +3,7 @@ import { withRouter, Redirect } from "react-router-dom";
 import SimpleStorage, { resetParentState } from "../../stores/SimpleStorage";
 import Loader from "react-loader-spinner";
 
-var baseURL = "https://saveawaytest.herokuapp.com/";
+var baseURL = "https://saveaway401k.herokuapp.com/";
 
 const Confirm = ({ history }) => (
   <div>
@@ -74,8 +74,8 @@ class StepFour extends Component {
     return {
       companyName: data.get("companyName"),
       accountName: data.get("accountName"),
-      companyPhone: data.get("companyPhone"),
       signupEmail: data.get("signupEmail"),
+      companyPhone: data.get("companyPhone"),
       signupAdressStreet: data.get("signupAdressStreet"),
       signupAdressApt: data.get("signupAdressApt"),
       signupAdressCity: data.get("signupAdressCity"),
@@ -119,7 +119,8 @@ class StepFour extends Component {
       method: "post",
       body: JSON.stringify(this.getCompanyInfo(event)),
       headers: new Headers({
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
       })
     })
       .then(this.sendMessage(event))
