@@ -1,6 +1,9 @@
 import React from "react";
 import Modal from "react-modal";
 import SimpleStorage from "../../stores/SimpleStorage";
+import SaveAway401kPetiteK from "./Assets/SaveAway401kPetiteK.pdf";
+import SaveAway401kSingularK from "./Assets/SaveAway401kSingularK.pdf";
+import SaveAway401kUniversalK from "./Assets/SaveAway401kUniversalK.pdf";
 
 const customStyles = {
   content: {
@@ -182,13 +185,44 @@ export class StepTwo extends React.Component {
               style={customStyles}
             >
               <div id="modal">
-                <button onClick={this.closeModal} id="submitButton">
+                <button onClick={this.closeModal} className="submitButton">
                   Close
                 </button>
                 <div>
-                  <h1>SingularK</h1>
-                  <h1>PetiteK</h1>
-                  <h1>UniversalK</h1>
+                  <div className="modalPlan">
+                    <a href={SaveAway401kSingularK} target="_blank">
+                      <h1>SingularK</h1>
+                    </a>
+                    <div className="readMoreModal">
+                      <h3> Read more about this plan</h3>
+                      <a href={SaveAway401kSingularK} target="_blank">
+                        <h4 className="modalPlanButton">Here</h4>
+                      </a>
+                    </div>
+                  </div>
+                  <div className="modalPlan2">
+                    <a href={SaveAway401kPetiteK} target="_blank">
+                      <h1>PetiteK</h1>
+                    </a>
+                    <div className="readMoreModal">
+                      <h3> Read more about this plan</h3>
+                      <a href={SaveAway401kPetiteK} target="_blank">
+                        <h4 className="modalPlanButton">Here</h4>{" "}
+                      </a>
+                    </div>
+                  </div>
+                  <div className="modalPlan">
+                    <a href={SaveAway401kUniversalK} target="_blank">
+                      <h1>UniversalK</h1>
+                    </a>
+
+                    <div className="readMoreModal">
+                      <h3> Read more about this plan</h3>
+                      <a href={SaveAway401kUniversalK} target="_blank">
+                        <h4 className="modalPlanButton">Here</h4>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Modal>
