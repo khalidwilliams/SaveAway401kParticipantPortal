@@ -161,13 +161,21 @@ export default function Pricing() {
         </div>
 
         <div id="fullFund">
-          <a className="fundTitle" href={SaveAway401kFundChoicesFull} target="_blank">
+          <a
+            className="fundTitle"
+            href={SaveAway401kFundChoicesFull}
+            target="_blank"
+          >
             <h4 id="fullFundHeader">
               Complete<br />
               Portfolio
             </h4>
           </a>
-          <a className="fundTitle" href={SaveAway401kFundChoicesFull} target="_blank">
+          <a
+            className="fundTitle"
+            href={SaveAway401kFundChoicesFull}
+            target="_blank"
+          >
             <img
               id="fullFundIcon"
               src={SaveAway401kFull}
