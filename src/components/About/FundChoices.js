@@ -49,9 +49,8 @@ export default function Pricing() {
                 target="_blank"
               >
                 <h3 className="fundHeader">
-                  Secure Model
-                  <br />
-                  Portfolio Details
+                  Secure <br />
+                  Portfolio
                 </h3>
               </a>
               <a
@@ -73,8 +72,8 @@ export default function Pricing() {
                 target="_blank"
               >
                 <h3 className="fundHeader">
-                  Sensible Model <br />
-                  Portfolio Details
+                  Sensible<br />
+                  Portfolio
                 </h3>
               </a>
               <a
@@ -96,8 +95,8 @@ export default function Pricing() {
                 target="_blank"
               >
                 <h3 className="fundHeader">
-                  Standard Model <br />
-                  Portfolio Details
+                  Standard<br />
+                  Portfolio
                 </h3>
               </a>
               <a
@@ -119,8 +118,8 @@ export default function Pricing() {
                 target="_blank"
               >
                 <h3 className="fundHeader">
-                  Conventional Model <br />
-                  Portfolio Details
+                  Conventional<br />
+                  Portfolio
                 </h3>
               </a>
               <a
@@ -142,8 +141,8 @@ export default function Pricing() {
                 target="_blank"
               >
                 <h3 className="fundHeader">
-                  Vigorous Model <br />
-                  Portfolio Details
+                  Vigorous<br />
+                  Portfolio
                 </h3>
               </a>
               <a
@@ -164,9 +163,8 @@ export default function Pricing() {
         <div id="fullFund">
           <a className="fundTitle" href={SaveAway401kFundChoicesFull} target="_blank">
             <h4 id="fullFundHeader">
-              Complete Model
-              <br />
-              Portfolio Details
+              Complete<br />
+              Portfolio
             </h4>
           </a>
           <a className="fundTitle" href={SaveAway401kFundChoicesFull} target="_blank">
