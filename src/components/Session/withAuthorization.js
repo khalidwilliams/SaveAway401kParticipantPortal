@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import { inject, observer } from "mobx-react";
 import { compose } from "recompose";
 
-import { firebase } from "../../firebase";
+import firebase from "../../firebase.js";
 import * as routes from "../../constants/routes";
 
 const withAuthorization = condition => Component => {

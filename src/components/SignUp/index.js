@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 
-import { auth, db } from "../../firebase";
+import { auth, db } from "../../firebase.js";
+// import firebase from "../../firebase";
 import * as routes from "../../constants/routes";
+
+// var auth = firebase.auth();
+// var db = firebase.db();
 
 const loginStyles = {
   width: "90%",
