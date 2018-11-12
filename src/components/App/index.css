@@ -1122,3 +1122,25 @@ footer {
   align-content: center;
   text-align: center;
 }
+
+
+/* Participant Pages */
+
+#participant-container {
+  height: 100em;
+  width: 100 em;
+  background-color: #F7FFF7
+}
+
+.participant-header {
+  height: 4em;
+  text-align: center;
+}
+
+.participant-header > img {
+  height: 100%;
+}
+
+.participant-form {
+  border: solid black;
+}
