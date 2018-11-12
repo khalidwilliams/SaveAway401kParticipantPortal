@@ -20,10 +20,15 @@ import Confirmation from "../CompanyEnrollment/Confirmation";
 import * as routes from "../../constants/routes";
 import "./index.css";
 import "./NavBar.css";
+import ParticipantPages from "../../ParticipantPages";
 
 const App = () => (
   <Router>
     <div className="app">
+
+    { /* Following route will contain participant pages during development*/}
+    <Route exact path="/Participants" component={ParticipantPages} />
+
       <Navigation />
       <Route exact path={routes.HOME} component={Welcome} />
       <Route exact path={routes.WELCOME} component={Welcome} />
