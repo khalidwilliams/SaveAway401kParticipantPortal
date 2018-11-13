@@ -1127,8 +1127,8 @@ footer {
 /* Participant Pages */
 
 #participant-container {
-  height: 100em;
-  width: 100 em;
+  height: 35em;
+  width: 100%;
   background-color: #F7FFF7
 }
 
@@ -1141,6 +1141,67 @@ footer {
   height: 100%;
 }
 
+#SignUp-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* Participant SignUp */
+
 .participant-form {
+  height: auto;
+  width:50%;
   border: solid black;
+  display: grid;
+  grid-template-rows: 4em 2em 2em 2em 2em 2em 2em;
+  grid-template-columns: 50%;
+  grid-template-areas: 
+    "title title"
+    "fname lname"
+    "email email"
+    "password1 password1"
+    "password2 password2"
+    "company company"
+    "confirm confirm";
+  grid-row-gap: 10px;
+}
+
+.form-item {
+  border: solid blue;
+}
+
+#sign-up-title{
+  grid-area: title;
+}
+
+.fname {
+  grid-area:fname;
+  border: solid slateblue;
+}
+
+.lname {
+  grid-area: lname;
+  border: solid slateblue;
+}
+
+
+.participant-signup-email {
+  grid-area: email;
+}
+
+#participant-signup-password-1 {
+  grid-area: password1;
+}
+
+#participant-signup-password-2 {
+  grid-area: password2;
+}
+
+#participant-signup-company-dropdown {
+  grid-area: company;
+}
+
+#participant-signup-submit {
+  grid-area: confirm;
 }

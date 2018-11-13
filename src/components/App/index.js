@@ -27,7 +27,7 @@ const App = () => (
     <div className="app">
 
     { /* Following route will contain participant pages during development*/}
-    <Route exact path="/Participants" component={ParticipantPages} />
+    <Route path="/Participants" component={ParticipantPages} />
 
       <Navigation />
       <Route exact path={routes.HOME} component={Welcome} />
