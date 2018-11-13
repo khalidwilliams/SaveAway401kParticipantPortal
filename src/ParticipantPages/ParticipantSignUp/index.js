@@ -10,31 +10,26 @@ export default class ParticipantSignUp extends Component {
                     <div className="form-item" id="sign-up-title" >
                         Sign Up and Start Saving Today! 
                     </div>
-                    <div className="form-item fname" >
-                        {/* <label for="participant-signup-fname" type="text">First Name </label>
-                        <input id="participant-signup-fname"></input> */}
-                    </div>
-                    <div className="form-item lname" >
-                        {/* <label for="participant-signup-lname">Last Name </label>
-                        <input id="participant-signup-lname" type="text"></input> */}
 
-                    </div>
-                    <div className="form-item participant-signup-email">
-                        {/* <label for="participant-signup-email">Email</label>
-                        <input id="participant-signup-email" type="text" /> */}
-                    </div>
-                    <div className="form-item" id="participant-signup-password-1">
-                    
-                    </div>
-                    <div className="form-item" id="participant-signup-password-2">
-                    
-                    </div>
-                    <div className="form-item" id="participant-signup-company-dropdown">
-                    
-                    </div>
-                    <div className="form-item" id="participant-signup-submit">
-                    
-                    </div>
+                    <label className="l1a">First Name </label>
+                    <input id="participant-signup-fname" type="text"></input>   
+
+                    <label classname="l1b" >Last Name </label>
+                    <input id="participant-signup-lname" type="text"></input>
+
+                    <label classname="l2">Email</label>
+                    <input id="participant-signup-email" type="text" />
+
+                    <label className="l3">Password</label>
+                    <input id="participant-signup-password-1" type="password" />
+
+                    <label className="l4">Confirm Password</label>
+                    <input id="participant-signup-password-2" type="password" />
+
+                    <label className="l5">Company</label>
+                    <input id="participant-signup-company-dropdown" />
+
+                    <input type="submit" value="submit" id="participant-signup-submit"/>
                 </form>
 
             </div> 

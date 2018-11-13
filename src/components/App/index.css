@@ -148,7 +148,7 @@ input {
   border-bottom-style: ridge;
   background-color: rgba(146, 43, 33, 0.7);
   border-radius: 2px;
-  background-color:
+  
 }
 
 .formSection {
@@ -1127,7 +1127,7 @@ footer {
 /* Participant Pages */
 
 #participant-container {
-  height: 35em;
+  height: auto;
   width: 100%;
   background-color: #F7FFF7
 }
@@ -1152,56 +1152,122 @@ footer {
 .participant-form {
   height: auto;
   width:50%;
-  border: solid black;
+  border-radius: .5em;
   display: grid;
-  grid-template-rows: 4em 2em 2em 2em 2em 2em 2em;
-  grid-template-columns: 50%;
+  grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas: 
     "title title"
+    "l1a l1b"
     "fname lname"
+    "l2 l2"
     "email email"
+    "l3 l3"
     "password1 password1"
+    "l4 l4"
     "password2 password2"
+    "l5 l5"
     "company company"
     "confirm confirm";
-  grid-row-gap: 10px;
+  grid-row-gap: 0px;
+  margin-bottom: 3em;
+  padding-top: 1em;
+  background-color: #eae9e9;
+}
+
+.participant-form > label {
+  padding: 0;
+  margin-bottom:0;
+}
+
+.participant-form > input {
+  align-self: baseline;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 0;
+  height: 2em;
+}
+
+.participant-form > input:focus {
+  outline: none;
 }
 
 .form-item {
-  border: solid blue;
+  align-self: center;
+  justify-self: center;
 }
+
 
 #sign-up-title{
   grid-area: title;
+  font-size: x-large;
 }
 
-.fname {
+.l1a {
+  grid-area: l1a;
+}
+
+#participant-signup-fname {
   grid-area:fname;
-  border: solid slateblue;
+
 }
 
-.lname {
+.l1b {
+  grid-area: l1b;
+}
+
+#participant-signup-lname {
   grid-area: lname;
-  border: solid slateblue;
+ 
 }
 
+.l2 {
+  grid-area: l2;
+}
 
-.participant-signup-email {
+#participant-signup-email {
   grid-area: email;
+}
+
+.l3 {
+  grid-area: l3
 }
 
 #participant-signup-password-1 {
   grid-area: password1;
 }
 
+.l4 {
+  grid-area: l4;
+}
+
 #participant-signup-password-2 {
   grid-area: password2;
+}
+
+.l5 {
+  grid-area: l5;
 }
 
 #participant-signup-company-dropdown {
   grid-area: company;
 }
 
+
 #participant-signup-submit {
   grid-area: confirm;
+  border-radius: .4em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  font-family: DINAlternateRegular;
+  font-size: 75%;
+  background-color:#c3c3c3; 
+}
+
+#participant-signup-submit:hover {
+  background-color:#d8d8d8;
+}
+
+#participant-signup-submit:focus {
+
 }
