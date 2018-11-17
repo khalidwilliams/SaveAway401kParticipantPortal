@@ -3,10 +3,13 @@ import ParticipantSignUp from "./ParticipantSignUp/index";
 import {Route} from "react-router";
 import { observer } from "mobx-react";
 import AccountSetUp from "./AccountSetUp/index"
+import pStore from "../stores/ParticipantStore"
 
 export default class ParticipantPages extends Component {
     
     render() {
+        pStore.participantPage = true;
+        console.log(pStore);
         return (
             <div id="participant-container">
                 <div className="participant-header">

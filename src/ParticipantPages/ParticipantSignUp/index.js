@@ -72,24 +72,22 @@ export default class ParticipantSignUp extends Component {
                     let newUserRef = usersRef.push();
                     console.log(usersRef)
 
-                    // newUserRef.set({
-                    //     test: "worked",
-                    // })
-
                     newUserRef.set({
                         email: email,
                         password: password1,
                         company: company,
                         first_name: fname,
                         last_name: lname,
+                        setUpComplete: false,
                     })
 
                     console.log(newUserRef)
 
 
-                    // let participant = this.state;
-                    // participant = JSON.stringify(participant)
-                    // pStore.setParticipant(participant)
+                    let participant = this.state;
+                    // console.log(participant)
+                    pStore.setParticipant(participant)
+                    pStore.firstTime();
                 })
                 .catch((error) => {
                     // var errorCode = error.code;
@@ -117,11 +115,15 @@ export default class ParticipantSignUp extends Component {
     }
 
     test(){
-        let ref = db.ref();
-        console.log(ref);
-        ref.set('/users');
-        console.log('ref: ', ref)
-        console.log('ref/users: ', ref.child("/users"))
+        // let ref = db.ref();
+        // console.log(ref);
+        // ref.set('/users');
+        // console.log('ref: ', ref)
+        // console.log('ref/users: ', ref.child("/users"))
+        let participant = this.state;
+        pStore.setParticipant(participant)
+        console.log(pStore)
+        console.log(participant)
     }
 
     render() {
