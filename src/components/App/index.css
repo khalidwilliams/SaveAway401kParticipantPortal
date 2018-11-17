@@ -1127,7 +1127,8 @@ footer {
 /* Participant Pages */
 
 #participant-container {
-  height: auto;
+  position: absolute;
+  height: 100%;
   width: 100%;
   background-color: #F7FFF7
 }
@@ -1154,10 +1155,11 @@ footer {
   width:50%;
   border-radius: .5em;
   display: grid;
-  grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1.5fr .5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 
     "title title"
+    "info info"
     "l1a l1b"
     "fname lname"
     "l2 l2"
@@ -1201,6 +1203,13 @@ footer {
 #sign-up-title{
   grid-area: title;
   font-size: x-large;
+}
+.form-info {
+  grid-area: info;
+  font-size:small;
+  justify-self: right;
+  margin-right:.5em;
+  color:#96352c;
 }
 
 .l1a {

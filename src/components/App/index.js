@@ -23,11 +23,12 @@ import "./NavBar.css";
 import ParticipantPages from "../../ParticipantPages";
 
 const App = () => (
+  
   <Router>
     <div className="app">
 
-    { /* Following route will contain participant pages during development*/}
-    <Route path="/Participants" component={ParticipantPages} />
+     { /* Following route will contain participant pages during development*/}
+      <Route path="/Participants" component={ParticipantPages} />
 
       <Navigation />
       <Route exact path={routes.HOME} component={Welcome} />

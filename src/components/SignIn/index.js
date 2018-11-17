@@ -65,7 +65,7 @@ class SignInForm extends Component {
       .catch(error => {
         this.setState(updateByPropertyName("error", error));
       });
-
+      
     event.preventDefault();
   };
 
