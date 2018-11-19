@@ -1280,3 +1280,80 @@ footer {
 #participant-signup-submit:focus {
 
 }
+
+/* Layout for Participant Account Pages (SetUp and Display) */
+
+.account-page {
+  display: flex;
+  flex-direction: row;
+  height:100%;
+}
+
+
+/* Participant Nav Styling */
+
+.participant-nav {
+  flex: 1;
+}
+
+.participant-nav > ul {
+  padding-left: 25px;
+}
+
+.participant-nav-link {
+  list-style-type: none;
+}
+
+/* Participant Content Styling */
+
+.participant-content {
+  flex: 7;
+}
+
+/* Participant Set Up Info Styling */
+
+#set-up-info-container {
+
+}
+
+#set-up-info-form {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-areas: 
+    "name name"
+    "fname lname"
+    "age age"
+    "ageInput ageInput"
+    "exitsting existing"
+    "eInput eInput"
+}
+
+#psu1-name {
+  grid-area: name;
+}
+
+#psu1-fname-input {
+  grid-area: fname;
+}
+
+#psu1-lname-input {
+  grid-area: lname
+}
+
+#psu1-age {
+  grid-area: age;
+}
+
+#psu1-age-input {
+  grid-area: ageInput;
+}
+
+#psu1-existing {
+  grid-area: existing;
+}
+
+#psu1-existing-input {
+  grid-area: eInput;
+}
