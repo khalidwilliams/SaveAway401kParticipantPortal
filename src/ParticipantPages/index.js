@@ -17,6 +17,7 @@ export default class ParticipantPages extends Component {
                 </div>
 
                 {/* Render the ParticipantSignUp section if no one is logged in (need to work with auth for this) */}
+                <Route exact path="/Participants" component={ParticipantSignUp} />
                 <Route exact path="/Participants/SignUp" component={ParticipantSignUp} />
                 <Route path="/Participants/SetUp" render={() => <AccountSetUp currentPage={"Info"} />} />
 

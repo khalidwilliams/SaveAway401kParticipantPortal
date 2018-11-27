@@ -15,7 +15,8 @@ class ParticipantStore {
     @observable participantPage;
 
 
-    setParticipant = participant => {
+    setParticipant = (participant, id) => {
+        this.currentParticipant.id = id;
         this.currentParticipant.email = participant.email;
         this.currentParticipant.fname = participant.fname;
         this.currentParticipant.lname = participant.lname;
@@ -26,9 +27,10 @@ class ParticipantStore {
     }
 
     firstTime = () => { 
-        // This will be set to true after the Set Up pages have been filled out completely
+        // setUpComplete will be set to true after the Set Up pages have been filled out completely
         this.currentParticipant.setUpComplete = false;  
         console.log(this.currentParticipant)
+        // this information needs to get pushed to the database as well
     }
 }
 

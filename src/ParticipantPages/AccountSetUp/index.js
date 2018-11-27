@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ParticipantNav from "../ParticipantNavigation/index";
-import ParticipantContent from "../ParticipantContent/index"
+import ParticipantContent from "../ParticipantContent/index";
+import pStore from "../../stores/ParticipantStore";
 
 export default class AccountSetUp extends Component {
 
@@ -29,7 +30,7 @@ export default class AccountSetUp extends Component {
         return(
             <div className="account-page">
                 <ParticipantNav linkList={this.state.navLinks.setUp} changePage={(e) => this.changePage(e.target.textContent)} />
-                <ParticipantContent currentPage={this.state.currentPage} />               
+                <ParticipantContent currentPage={this.state.currentPage} changePage={(newPage) => this.changePage(newPage)} />               
                 
             </div>
         )

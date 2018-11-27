@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import { auth, db } from "../../firebase.js";
 import pStore from "../../stores/ParticipantStore";
+
 
 const INITIAL_STATE = {
     fname: "",
@@ -19,7 +20,8 @@ export default class ParticipantSignUp extends Component {
         super(props);
         this.state =
         {
-            ...INITIAL_STATE
+            ...INITIAL_STATE,
+            redirect: false,
         }
     }
 
@@ -65,9 +67,9 @@ export default class ParticipantSignUp extends Component {
             auth
                 .createUserWithEmailAndPassword(email, password1)
                 .then((user) => {
-                    let id= user.uid;
+                    let id = user.uid;
                     let usersRef = db.ref("/users");
-                    console.log(usersRef);
+                    
 
                     let newUserRef = usersRef.push();
                     console.log(usersRef)
@@ -82,18 +84,23 @@ export default class ParticipantSignUp extends Component {
                     })
 
                     console.log(newUserRef)
+                    console.log(newUserRef.key);
 
 
                     let participant = this.state;
                     // console.log(participant)
-                    pStore.setParticipant(participant)
+                    pStore.setParticipant(participant, newUserRef.key)
                     pStore.firstTime();
+                    
+                })
+                .then(() => {
+                    this.setState({redirect:true})
                 })
                 .catch((error) => {
                     // var errorCode = error.code;
                     var errorMessage = error.message;
                     console.log(error)
-                    console.log(errorMessage);
+                    alert(errorMessage);
                 })
 
                
@@ -106,7 +113,8 @@ export default class ParticipantSignUp extends Component {
 
         auth.onAuthStateChanged(firebaseUser => {
             if (firebaseUser) {
-                console.log(firebaseUser)
+                console.log(firebaseUser);
+
             } else {
                 console.log("logged out");
             }
@@ -127,6 +135,9 @@ export default class ParticipantSignUp extends Component {
     }
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect to="/Participants/SetUp" />
+        }
         return (
             <div id="SignUp-container">
                 <form className="participant-form">

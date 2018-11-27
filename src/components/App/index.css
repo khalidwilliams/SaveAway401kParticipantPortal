@@ -1130,12 +1130,14 @@ footer {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: #F7FFF7
+  background-color: #F5F5F5
 }
 
 .participant-header {
   height: 4em;
   text-align: center;
+  border-bottom: #a6a6a8 solid 1px;
+
 }
 
 .participant-header > img {
@@ -1174,7 +1176,7 @@ footer {
   grid-row-gap: 0px;
   margin-bottom: 3em;
   padding-top: 1em;
-  background-color: #eae9e9;
+  background-color: #e4e2e2;
 }
 
 .participant-form > label {
@@ -1294,6 +1296,8 @@ footer {
 
 .participant-nav {
   flex: 1;
+  border-right: #a6a6a8 solid 1px;
+  background-color: #b7b7b782;
 }
 
 .participant-nav > ul {
@@ -1312,26 +1316,32 @@ footer {
 
 /* Participant Set Up Info Styling */
 
-#set-up-info-container {
-
+#set-up-info-container > h2 {
+  text-align: center;
 }
 
 #set-up-info-form {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
   grid-template-areas: 
-    "name name"
+    "name1 name2"
     "fname lname"
+    "phone phone"
+    "phoneInput ."
     "age age"
     "ageInput ageInput"
-    "exitsting existing"
+    "existing ."
     "eInput eInput"
 }
 
-#psu1-name {
-  grid-area: name;
+#psu1-fname {
+  grid-area: name1;
+}
+
+#psu1-lname {
+  grid-area: name2;
 }
 
 #psu1-fname-input {
@@ -1340,6 +1350,14 @@ footer {
 
 #psu1-lname-input {
   grid-area: lname
+}
+
+#psu1-phone {
+  grid-area:phone;
+}
+
+#psu1-phone-input {
+  grid-area: phoneInput;
 }
 
 #psu1-age {
@@ -1356,4 +1374,10 @@ footer {
 
 #psu1-existing-input {
   grid-area: eInput;
+  display: flex;
+  flex-direction: column;
+}
+
+#psu1-existing-input > div {
+  margin-left: 1em;
 }
